@@ -1,0 +1,211 @@
+{
+  "SliderOne": "Stand Out From The Crowd",
+  "SliderOneText": "Your customer deserves a personalised human touch in customer support instead of automated chatbots",
+  "SliderTwo": "Capture every opportunity to make your customers feel special",
+  "SliderTwoText": "CogentHub treats your customers with Respect & Empathy ",
+  "SliderThird": "Provide Tailored Customer Support",
+  "SliderThirdText": "CogentHub offers you personalised solutions and customer service curated solely for your company.",
+  "BenefitTextOne": "We Will Help You Flourish In This Highly Competitive Market.",
+  "BenefitTextTwo": "Give You A Sense Of Security In The Current Volatile Times And Shrinking Economy.",
+  "BenefitTextThree": "We Will Help You Create A Loyal Customer Base And A Thriving Community For Your Customers.",
+  "BenefitTextFour": "We Will Improve Your Customer Retention With Unique Strategies To Increase Profits",
+  "DifferenceTitleOne": "You Want Result Oriented And Timely Delivery",
+  "DifferenceTitleTwo": "Protecting Your Customer Data Is Important To Us",
+  "DifferenceTitleThree": "You Seek The Best Experts To Handle Your Business",
+  "DifferenceTitleFour": "Your Customer Deserves To Feel Special",
+  "DifferenceTextOne": "Blending Knowledge With Right Approach, We Deliver Timely Results",
+  "DifferenceTextTwo": "So We Provide ISO 27701 Certified Data Security",
+  "DifferenceTextThree": "We Have A Young, Vibrant And Energetic Team working 24/7",
+  "DifferenceTextFour": "We Provide Personalised Human Touch In Customer Support",
+  "CareerInfo": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
+  "BenefitOne": "CogentHub is a global service provider delivering technology driven business solutions that has a proven record of fulfilling the strategic requirements of our clients. As a growing company, CogentHub has shone brightly among reputed companies in India and it is also the pioneer of KPO activities in the whole of Eastern India.",
+  "RetailTitle": "Our digital retail solutions boost growth, fund innovation, and transform the customer experience",
+  "RetailSubTitle": "Harnessing big data, the complexities of omnichannel integration, personalizing the customer retail experience, and running agile supply chains are all squeezing margins. We help retailers adopt digital retail solutions that transform end-to-end operations, free-up capital, improve support services, and keep customers happy.",
+  "RetailDataOne": "100",
+  "RetailCaptionOne": "Lorum Ipsum Lorum Ipsum",
+  "RetailDataTwo": "100",
+  "RetailCaptionTwo": "Lorum Ipsum Lorum Ipsum",
+  "RetailDataThree": "100",
+  "RetailCaptionThree": "Lorum Ipsum Lorum Ipsum",
+  "RetailSolutions": [
+    "Multichannel support ",
+    "24/7 Customer Support",
+    "Retail Lead Generation",
+    "Product Issues and Questions",
+    "Technical Support",
+    "Outbound Telemarketing",
+    "Inbound Document Processing"
+  ],
+  "FoodTechSolutions": [
+    "Customer Service",
+    "Live Chat and Email Support",
+    "Financial Services",
+    "Back Office Management",
+    "Front Office Management",
+    "Administrative Functions",
+    "Information Technology (IT)"
+  ],
+  "EcommerceSolutions": [
+    "24/7 Customer Support",
+    "Help desk solutions",
+    "Lead Generation",
+    "Outbound Telemarketing",
+    "Inbound Call Response",
+    "Next Gen Back Office Support",
+    "Technical Support",
+    "Promotional calls for product and services"
+  ],
+  "TravelTechSolutions": [
+    "Customer Data Analytics",
+    "Sales and Reservations",
+    "Monitoring Day to Day Operations",
+    "Seamless Customer Support",
+    "Handle Bookings and Cancellations",
+    "Technical Support",
+    "Live Chat and Email Support",
+    "Customer Relations"
+  ],
+  "EdTechSolutions": [
+    "Lead Generation",
+    "Student Catalogue Management",
+    "Technical Support",
+    "Subject Matter Expertise",
+    "Live Chat and Email Support",
+    "Cataloguing of content and knowledge"
+  ],
+  "RetailImg": "/retail.jpg",
+  "EcommerceTitle": "Foster Customer Loyalty and Enhance Your Brand Value with our E-Commerce Customer Services",
+  "FoodTechTitle": "Achieve Utmost Customer Satisfaction In Real-Time With Our Cutting-Edge Technology",
+  "TravelTechTitle": "Address Changing Customer Needs and Embrace Technological Advancements to Keep Your Guests Coming Back / Transform First Time Consumers into Lifelong Customers with our Broad Range of Industry Support Solutions Designed To Improve CX",
+  "EdTechTitle": "Enhance the Educational Experience with our Human-Centric Personalised Customer Contact ",
+  "RetailSolutionsSubText": "CogentHub BPO provides excellent cutting-edge solutions and flexible support for all Fashion and retail sectors. We offer innovative retail back office solutions by providing retailers with the correct data to enable in-store associates to engage with customers more successfully. We serve as an extension of your office and help maintain the seamless operation of your company.",
+  "EcommerceSolutionsSubText": "CogentHub achieves excellence by deploying immaculately planned operations based on our years of experience for E-Commerce Industries. We recognise that today customer service is the defining factor for your brand, and we promise we will excel on this front for you. We offer you cost-effective retail and e-commerce call centre solutions that perfectly suit your customer acquisition and retention requirements. Our contact centre strategies, methodology, latest tools, and technologies make it easier for our retail and e-commerce clients to meet the evolving customer expectations and improve their experience.",
+  "TravelTechSolutionsSubText": "The travel industry is currently facing significant challenges due to the Covid-19 pandemic, including cut-throat competition, pressure to acquire new customers, retaining customers on the demand side and managing partners and alliances on the supply side. Companies typically outsource travel processes to cut costs and streamline in-house operations. CogentHub delivers superior assistance for your Travel Tech business. Our services include your customer data analytics and monitoring of day to day operations. We can handle bookings and cancellations and provide seamless support to your customers whether they intend to travel for leisure or business.",
+  "FoodTechSolutionsSubText": "Substantial and frequently changing hurdles stand between food companies and success. A company’s bottom line often is subject to increased costs brought about by the economic recession, natural disasters, fluctuating commodity prices, regulatory changes and changing consumer demands, among other obstacles. To counter the costs of such hurdles and protect their bottom line, food companies of all sizes often outsource business functions such as Office Management, Administrative Functions, Financial Services, Human Resources, and Information Technology (IT). Hiring CogentHub BPO can surprisingly save much money for your FoodTech Business and, at the same time, can provide you with quality work.",
+  "EdTechSolutionsSubText": "Substantial and frequently changing hurdles stand between food companies and success. A company’s bottom line often is subject to increased costs brought about by the economic recession, natural disasters, fluctuating commodity prices, regulatory changes and changing consumer demands, among other obstacles. To counter the costs of such hurdles and protect their bottom line, food companies of all sizes often outsource business functions such as Office Management, Administrative Functions, Financial Services, Human Resources, and Information Technology (IT). Hiring CogentHub BPO can surprisingly save much money for your FoodTech Business and, at the same time, can provide you with quality work.",
+  "EcommerceImg": "https://wallpaperaccess.com/full/2593068.jpg",
+  "FoodTechImg": "https://media.istockphoto.com/photos/biotechnology-concept-food-tech-nutritional-science-picture-id1210343178?k=20&m=1210343178&s=170667a&w=0&h=t-zPLEWJNy0yt4ZIaSRen3O_rdEcJ6s5_OjH0FR5vu8=",
+  "TravelTechImg": "https://images.wallpaperscraft.com/image/single/vintage_retro_camera_126517_300x168.jpg",
+  "EdTechImg": "https://ak.picdn.net/shutterstock/videos/1058238850/thumb/6.jpg",
+  "IntegratedBpoImage": "https://images.unsplash.com/photo-1462180744199-87947354c7fe?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=874&q=80",
+  "IntegratedBpoTitle": "Integrated BPO",
+  "KnowledgeServicesTitle": "Knowledge Services",
+  "BackOfficeManagementTitle": "Back Office Management",
+  "FrontOfficeManagementTitle": "Front Office Management",
+  "BureauServicesTitle": "Bureau Services",
+  "IntegratedBpoSubTitle": "CogentHub offers quality outsourcing services devised to support your clients worldwide. Our integrated BPO platform seamlessly merges various benefits to ensure high-quality business process management for your enterprise.We have helped companies increase revenue, stabilise cash flows, optimise capital utilisation, cost reductions and maximum customer satisfaction. These augmentations can assist you to achieve that cutting edge against the competition.",
+  "KnowledgeServicesSubTitle": "We recognise that you are looking for ways to create value in the current economic scenario. Furthermore, there has to be a tight-grip on cost controls without losing productivity, quality and efficiency. Hence we have meticulously designed our international KPO Services product striving to support you with this business front. Using a critical strategic pillar, CogentHub focuses on enhancing time-to-market and organisational effectiveness. We achieve this by providing our team-mates with access to special skills that prepare them to deliver engaging experiences.",
+  "BackOfficeManagementSubTitle": "In today's competitive market, optimal operational performance has gained prime importance. At CogentHub, we have an excellent understanding of this subject, and we have prepared ourselves to respond to this situation. We offer Back-Office Management services to reduce your operating costs while facilitating efficiency enhancement of your system. We take pride in our extensive industry-based knowledge that empowers us to support you through your customer lifecycles.",
+  "FrontOfficeManagementSubTitle": "We worked hard to accomplish this in-depth understanding of the industry domain. We offer Front Office management services designed to manage your customer lifecycle efficiently. Our solutions will help you increase your revenue, improve your customer satisfaction and working capital management. It will further help you expand your margins and reduce your churning rates. We state this boldly since our clients across various sectors have encountered better competitive differentiation using our services.",
+  "BureauServicesSubTitle": "At CogentHub, we extend our services on telecommunications, front office management, call centre and live chat.We provide a world-class service line with affordable solutions for you and your business needs. We'll answer your calls, take a message, make a transfer, or provide any other service you need to ensure you do not miss a single business opportunity.",
+  "IntegratedBpoSolutions": [
+    "Solution",
+    "Solution",
+    "Solution",
+    "Solution",
+    "Solution",
+    "Solution"
+  ],
+  "IntegratedBpoAdvantages": [
+    {
+      "Title": "Quality Outsourcing Services",
+      "SubText": "CogentHub offers quality outsourcing services devised to support your clients worldwide."
+    },
+    {
+      "Title": "Integrated BPO Platform: The Future of Outsourcing",
+      "SubText": "Our integrated BPO platform seamlessly merges various benefits to ensure high-quality business process management for your enterprise."
+    },
+    {
+      "Title": "Multi-Dimensional View of the Business Landscape Dynamics",
+      "SubText": "Our associations with companies operating in multiple fields have provided us with a multi-dimensional view of the business landscape dynamics."
+    },
+    {
+      "Title": "Measure Your Enhancements",
+      "SubText": "At CogentHub, we firmly believe in delivering quantifiable results that will allow you to measure your efficiency and productivity enhancements."
+    },
+    {
+      "Title": "Improve Cash Flows with Customer Satisfaction",
+      "SubText": "We can help your company increase revenue, stabilise cash flows, optimise capital utilisation, cost reductions and maximum customer satisfaction."
+    }
+  ],
+  "KnowledgeServicesAdvantages": [
+    {
+      "Title": "Data Analytics and Insights",
+      "SubText": "We address business problems across industries and domains to empower your organisation with actionable insights through cutting edge data analytics."
+    },
+    {
+      "Title": "Market Research/ Business Research",
+      "SubText": "We provide research services and strategy consulting for accurate and succinct answers to your most pressing business questions."
+    },
+    {
+      "Title": "Global Reporting and Performance Management",
+      "SubText": "We provide efficient reporting and performance measurement across industries so that you can achieve operational excellence and productivity."
+    },
+    {
+      "Title": "Data Management",
+      "SubText": "We can provide you with efficient solutions for data integration, storage, retrieval and sharing for robust business reporting and analytics as required by your company."
+    }
+  ],
+  "BackOfficeManagementAdvantages": [
+    {
+      "Title": "Optimal Operational Performance",
+      "SubText": "We provide optimal operational performance so that you can thrive in today’s competitive marketplace."
+    },
+    {
+      "Title": "Enhance Your Efficiency",
+      "SubText": "We offer Back-Office Management services to reduce your operating costs while facilitating efficiency enhancement of your system. "
+    },
+    {
+      "Title": "Extensive Industry-Based Knowledge",
+      "SubText": "We take pride in our extensive industry-based knowledge that empowers us to support you through your customer lifecycles."
+    },
+    {
+      "Title": "Boost Customer Satisfaction",
+      "SubText": "Our back-office management services will help your business to boost your customer satisfaction."
+    },
+    {
+      "Title": "Automate Your Operations",
+      "SubText": "We will enable you to automate your operations and manage your entire record-keeping process electronically. This attribute allows you to access your enterprise data electronically. "
+    },
+    {
+      "Title": "Fast Turnaround Time",
+      "SubText": "We follow pre-defined business rules while routing documents to generate a fast turnaround time to ensure zero latencies."
+    }
+  ],
+  "FrontOfficeManagementAdvantages": [
+    {
+      "Title": "Efficiently Evaluate Issues With Technical/Help Desk Support",
+      "SubText": "CogentHub can provide help desk support services for both your employees and customers. We can efficiently evaluate issues and even offer technical support. You would greatly benefit from customer satisfaction and quality improvements."
+    },
+    {
+      "Title": "Manage Your Business Remarkably with Customer Service/support",
+      "SubText": "We will help you to manage your business in a remarkable way which will place your customers are at the top of the priority list. Customer service BPOs have deep understanding of technology and processes, access to elite and specialized talent, and can offer you the ability to staff up or down during certain times of year or market fluctuations, while simultaneously reducing costs."
+    },
+    {
+      "Title": "Make Informed Decisions with Market Survey & Research",
+      "SubText": "Understanding competitors is the first step to growing sustainably. CogentHub can provide you with Market insights and behaviour which will prove critical in making informed decisions."
+    },
+    {
+      "Title": "Manage Resources Efficiently with Scheduling",
+      "SubText": "Building a team and investing in a technology stack in-house is not always a realistic strategy for your company. Enlisting the aid of CogentHub allows your business to offer sophisticated customer service, including automation and a wide range of technology options, without a massive investment, and to gain expertise in the process. "
+    },
+    {
+      "Title": "Increase Your Revenue with Inbound/Outbound Sales",
+      "SubText": "Our solutions will help you increase your revenue, improve your customer satisfaction and working capital management."
+    }
+  ],
+  "BureauServicesAdvantages": [
+    {
+      "Title": "Support Your Clients Worldwide",
+      "SubText": "With our round the clock Telecommunications support, never lose an opportunity to cater to your clients worldwide. We will provide instant replies for customers, manage social media profiles for customer support and provide effective timely solution over email."
+    },
+    {
+      "Title": "Do Not Miss a Single Business Opportunity",
+      "SubText": "We'll answer your calls, take a message, make a transfer, or provide any other service you need to ensure you do not miss a single business opportunity."
+    },
+    {
+      "Title": "Resolve Customer Queries with Live Chat",
+      "SubText": "Offer round the clock live chat service to your clients worldwide. We will provide instant replies to customers, effective timely solutions over email, manage social media profiles for customer support and even transfer calls to relevant departments."
+    }
+  ]
+}
