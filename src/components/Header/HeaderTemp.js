@@ -9,6 +9,7 @@ import Industries from './HeaderItems/Industries'
 import Achievements from './HeaderItems/Achievements'
 import Career from './HeaderItems/Career'
 import Discover from './HeaderItems/Discover'
+import Add from './HeaderItems/Add'
 import MenuIcon from '@material-ui/icons/Menu'
 import useWindowDimensions from '../../useWindowDimensions'
 import Modal from 'react-bootstrap/Modal'
@@ -124,6 +125,7 @@ const useStyles = makeStyles((theme) => ({
 
 const HeaderTemp = ({ logo }) => {
   const classes = useStyles()
+  const [add, setAdd] = useState(null)
   const [insights, setInsights] = useState(null)
   const [services, setServices] = useState(null)
   const [industries, setIndustries] = useState(null)
@@ -299,6 +301,32 @@ const HeaderTemp = ({ logo }) => {
     }
   }
 
+  const onAdd = () => {
+    if (add === null) {
+      setAdd(true)
+    } else {
+      setAdd(!add)
+    }
+    if (insights != null) {
+      setInsights(false)
+    }
+    if (services != null) {
+      setServices(false)
+    }
+    if (achievements != null) {
+      setAchievements(false)
+    }
+    if (career != null) {
+      setCareer(false)
+    }
+    if (industries != null) {
+      setIndustries(false)
+    }
+    if (discover != null) {
+      setDiscover(false)
+    }
+  }
+
   return (
     <>
       {phoneView && (
@@ -389,12 +417,18 @@ const HeaderTemp = ({ logo }) => {
           Career
         </a>
         <a href="/discover">Discover</a>
-        {isAdmin && <a href="/addBlog">Add Blog</a>}
+        {isAdmin && (
+          <a href="#" onClick={onAdd}>
+            Add
+          </a>
+        )}
         <div className={classes.rightAlign}>
           {!isAdmin && (
-            <a href="/login" className={classes.button}>
-              Sign In
-            </a>
+            <div>
+              <a href="/login" className={classes.button}>
+                Sign In
+              </a>
+            </div>
           )}
           {isAdmin && (
             <a
@@ -425,6 +459,8 @@ const HeaderTemp = ({ logo }) => {
       {career === false && !phoneView && <Career boolean={false} />}
       {discover === true && !phoneView && <Discover boolean={true} />}
       {discover === false && !phoneView && <Discover boolean={false} />}
+      {add === true && !phoneView && <Add boolean={true} />}
+      {add === false && !phoneView && <Add boolean={false} />}
     </>
   )
 }

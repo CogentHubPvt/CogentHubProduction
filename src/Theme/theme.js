@@ -7,10 +7,11 @@ const theme = createTheme({
   background: {
     white: '#F2EFC4',
     green: '#188C4F',
-    lightGreen: '#ACE4C7',
+    lightGreen: '#B2F2D0',
   },
   text: {
     primary: '#188C4F',
+    secondary: '#B8B8B8',
   },
 })
 

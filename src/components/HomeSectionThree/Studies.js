@@ -56,10 +56,13 @@ const Studies = ({ inView }) => {
   return (
     <div className={classes.container}>
       <div className={classes.title}>
-        <h1>Case Studies & Blogs</h1>
+        <h1>Blogs And Case Studies</h1>
       </div>
       <div className={classes.subText}>
-        <p>Lorum Ipsum Lorum Ipsum Lorum Ipsum</p>
+        <p>
+          CogentHub's research models add values to enhance the business of its
+          customers.
+        </p>
       </div>
       <div className={classes.card}>
         <Row xs={1} md={2} className="g-4">
@@ -72,12 +75,8 @@ const Studies = ({ inView }) => {
                   src="https://e-file.huawei.com/-/media/EBG/Images/SolutionV4/enterprise-collaboration/03-remote-collabration.jpg?la=id-ID"
                 />
                 <Card.Body>
-                  <Card.Title>Card title</Card.Title>
-                  <Card.Text>
-                    This is a longer card with supporting text below as a
-                    natural lead-in to additional content. This content is a
-                    little bit longer.
-                  </Card.Text>
+                  <Card.Title>Dummy Blog Name</Card.Title>
+                  <Card.Text>Dummy Blog Caption</Card.Text>
                 </Card.Body>
               </Card>
             </div>
@@ -91,12 +90,8 @@ const Studies = ({ inView }) => {
                   src="https://c1.wallpaperflare.com/preview/482/39/625/workspace-workplace-partnership-office.jpg"
                 />
                 <Card.Body>
-                  <Card.Title>Card title</Card.Title>
-                  <Card.Text>
-                    This is a longer card with supporting text below as a
-                    natural lead-in to additional content. This content is a
-                    little bit longer.
-                  </Card.Text>
+                  <Card.Title>Dummy Blog Name</Card.Title>
+                  <Card.Text>Dummy Blog Caption</Card.Text>
                 </Card.Body>
               </Card>
             </div>
@@ -110,12 +105,8 @@ const Studies = ({ inView }) => {
                   src="https://c4.wallpaperflare.com/wallpaper/283/270/523/business-circuit-computer-internet-wallpaper-preview.jpg"
                 />
                 <Card.Body>
-                  <Card.Title>Card title</Card.Title>
-                  <Card.Text>
-                    This is a longer card with supporting text below as a
-                    natural lead-in to additional content. This content is a
-                    little bit longer.
-                  </Card.Text>
+                  <Card.Title>Dummy Blog Name</Card.Title>
+                  <Card.Text>Dummy Blog Caption</Card.Text>
                 </Card.Body>
               </Card>
             </div>
@@ -129,12 +120,8 @@ const Studies = ({ inView }) => {
                   src="https://images5.alphacoders.com/110/thumb-1920-1107096.jpg"
                 />
                 <Card.Body>
-                  <Card.Title>Card title</Card.Title>
-                  <Card.Text>
-                    This is a longer card with supporting text below as a
-                    natural lead-in to additional content. This content is a
-                    little bit longer.
-                  </Card.Text>
+                  <Card.Title>Dummy Blog Name</Card.Title>
+                  <Card.Text>Dummy Blog Caption</Card.Text>
                 </Card.Body>
               </Card>
             </div>

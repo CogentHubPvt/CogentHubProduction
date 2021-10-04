@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/styles'
 import InputGroup from 'react-bootstrap/InputGroup'
 import FormControl from 'react-bootstrap/FormControl'
 import Form from 'react-bootstrap/Form'
+const axios = require('axios')
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -48,6 +49,7 @@ const useStyles = makeStyles((theme) => ({
   previewButton: {
     backgroundColor: theme.background.green,
     padding: '10px',
+    margin: '1rem',
     borderRadius: '20px',
     '& a': {
       textDecoration: 'none',
@@ -62,6 +64,7 @@ const useStyles = makeStyles((theme) => ({
 const AddBlog = () => {
   const classes = useStyles()
   const [image, setImage] = useState('')
+  const [imageForm, setImageForm] = useState(null)
   const [title, setTitle] = useState('')
   const [body, setBody] = useState('')
   const [subHeadingOne, setSubHeadingOne] = useState('')
@@ -72,9 +75,36 @@ const AddBlog = () => {
   const [subContentThree, setSubContentThree] = useState('')
   const [isPreview, setPreview] = useState(false)
 
+  const handleSubmit = () => {
+    console.log('image', image)
+    let formData = new FormData()
+    formData.append('title', title)
+    formData.append('introduction', body)
+    formData.append('subHeadingOne', subHeadingOne)
+    formData.append('subHeadingTwo', subHeadingTwo)
+    formData.append('subHeadingThree', subHeadingThree)
+    formData.append('contentOne', subContentOne)
+    formData.append('contentTwo', subContentTwo)
+    formData.append('contentThree', subContentThree)
+    formData.append('file', imageForm)
+
+    const config = {
+      headers: { 'content-type': 'multipart/form-data' },
+    }
+    axios
+      .post('https://cogenthub-api.herokuapp.com/blogs', formData, config)
+      .then((response) => {
+        console.log(response)
+      })
+      .catch((error) => {
+        console.log(error.response)
+      })
+  }
+
   const imageHandler = (e) => {
     const objectUrl = URL.createObjectURL(e.target.files[0])
     setImage(objectUrl)
+    setImageForm(e.target.files[0])
   }
 
   const titleHandler = (e) => {
@@ -293,6 +323,11 @@ const AddBlog = () => {
           </a>
         </div>
       )}
+      <div className={classes.previewButton}>
+        <a href="#" onClick={handleSubmit}>
+          Submit
+        </a>
+      </div>
     </div>
   )
 }

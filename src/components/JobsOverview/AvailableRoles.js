@@ -131,7 +131,7 @@ const AvailableRoles = () => {
             <a>|</a>
             <a href="#">Most Relevant</a>
             <div className={classes.rightAlign}>
-              <Button variant="outline-dark">Filter Results</Button>{' '}
+              <Button variant="outline-success">Filter Results</Button>{' '}
             </div>
           </div>
           <Container className={classes.jobs} data-aos="zoom-in-up">

@@ -76,6 +76,41 @@ const useStyles = makeStyles((theme) => ({
       fontWeight: 'bold',
     },
   },
+  services: {
+    overflow: 'hidden',
+    fontFamily: 'Montserrat',
+    margin: '1rem 1rem 1rem 4rem',
+    [theme.breakpoints.down('md')]: {
+      marginLeft: '10px',
+    },
+    '& a': {
+      float: 'left',
+      [theme.breakpoints.down('md')]: {
+        float: 'none',
+        display: 'block',
+      },
+      color: 'white',
+      textAlign: 'center',
+      padding: '14px 16px',
+      margin: '0.5rem 1.5rem 0 1.5rem',
+      textDecoration: 'none',
+      fontSize: '15px',
+    },
+    '& p': {
+      float: 'left',
+      [theme.breakpoints.down('md')]: {
+        float: 'none',
+        display: 'block',
+      },
+      color: 'white',
+      margin: '0.5rem 0 0 0',
+      textAlign: 'center',
+      padding: '14px 16px',
+      textDecoration: 'none',
+      fontSize: '15px',
+      fontWeight: 'bold',
+    },
+  },
   rightAlign: {
     overflow: 'hidden',
     [theme.breakpoints.down('md')]: {
@@ -116,6 +151,14 @@ const Footer = ({ inView, setInView }) => {
         <Button variant="outline-light" className={classes.button}>
           Subscribe to our NewsLetter
         </Button>{' '}
+      </div>
+      <div className={classes.break}></div>
+      <div className={classes.services}>
+        <a href="/services/integratedBPO">Integrated BPO</a>
+        <a href="/services/knowledgeServices">Knowledge Services</a>
+        <a href="/services/backOfficeManagement">Back Office Services</a>
+        <a href="/services/frontOfficeManagement">Front Office Services</a>
+        <a href="/services/bureauServices">Bureau Services</a>
       </div>
       <div className={classes.break}></div>
       <div className={classes.contact}>

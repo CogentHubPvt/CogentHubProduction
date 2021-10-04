@@ -8,27 +8,30 @@ import AOS from 'aos'
 const useStyles = makeStyles((theme) => ({
   highlights: {
     padding: '1rem',
+    margin: '3rem',
     [theme.breakpoints.down('md')]: {
       margin: '1rem',
     },
-    boxShadow:
-      'rgb(50 50 93 / 25%) 0px 50px 100px -20px, rgb(0 0 0 / 30%) 0px 30px 60px -30px, rgb(10 37 64 / 35%) 0px -2px 6px 0px inset',
   },
   highlightsHeader: {
     textAlign: 'center',
     margin: '20px',
     fontFamily: 'Montserrat',
+    color: theme.text.secondary,
     '& h2': {
       fontWeight: 'bold',
     },
   },
   highlightsContent: {
     textAlign: 'center',
+    borderRadius: '20px',
+    backgroundColor: theme.background.lightGreen,
   },
   data: {
     fontSize: '5rem',
     fontFamily: 'Montserrat',
-    color: 'green',
+    color: theme.text.primary,
+    marginBottom: '0',
   },
 }))
 

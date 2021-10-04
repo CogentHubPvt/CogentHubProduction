@@ -102,7 +102,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-function CareerInfo() {
+function Advantages() {
   const classes = useStyles()
   const [phoneView, setPhoneView] = useState(false)
   const { height, width } = useWindowDimensions()
@@ -121,109 +121,6 @@ function CareerInfo() {
   return (
     <>
       <div className={classes.container}>
-        <Container>
-          <div className={classes.career}>
-            <Row data-aos="fade-right">
-              <Col sm={6} className={classes.careerImg}>
-                <img
-                  className={classes.image}
-                  src="https://images.pexels.com/photos/927451/pexels-photo-927451.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                />
-              </Col>
-              <Col sm={6} className={classes.careerInfo}>
-                <h3>Working At CogentHub</h3>
-                <p>{content.CareerInfo}</p>
-              </Col>
-            </Row>
-          </div>
-          <div className={classes.about}>
-            <Row data-aos="fade-left">
-              <Col sm={6} className={classes.aboutInfo}>
-                <h3>About Us</h3>
-                <p>{content.CareerInfo}</p>
-              </Col>
-              <Col sm={6} className={classes.aboutImage}>
-                <img
-                  className={classes.image}
-                  src="https://c0.wallpaperflare.com/preview/764/602/552/business-professional-sign.jpg"
-                />
-              </Col>
-            </Row>
-          </div>
-        </Container>
-        <div className={classes.benefitsName} data-aos="fade-down">
-          <h1>We Care About Our Employees</h1>
-        </div>
-        <div className={classes.benefitsSubtext} data-aos="fade-down">
-          <p>Lorum Ipsum Lorum Ipsum Lorum Ipsum</p>
-        </div>
-        <Container>
-          <Row data-aos="fade-up-right">
-            <Col sm={3} className={classes.iconContainer}>
-              <AccountCircleIcon className={classes.icon} />
-            </Col>
-            <Col sm={9}>
-              <div className={classes.benefitsInfoTitle}>
-                <h2>Company Profile</h2>
-              </div>
-              <div className={classes.benefitsInfoSubtext}>
-                <p>{content.BenefitOne}</p>
-              </div>
-            </Col>
-          </Row>
-          <Row data-aos="fade-up-right">
-            <Col sm={3} className={classes.iconContainer}>
-              <PeopleIcon className={classes.icon} />
-            </Col>
-            <Col sm={9}>
-              <div className={classes.benefitsInfoTitle}>
-                <h2>Leadership Team</h2>
-              </div>
-              <div className={classes.benefitsInfoSubtext}>
-                <p>{content.BenefitOne}</p>
-              </div>
-            </Col>
-          </Row>
-          <Row data-aos="fade-up-right">
-            <Col sm={3} className={classes.iconContainer}>
-              <EventNoteIcon className={classes.icon} />
-            </Col>
-            <Col sm={9}>
-              <div className={classes.benefitsInfoTitle}>
-                <h2>Training</h2>
-              </div>
-              <div className={classes.benefitsInfoSubtext}>
-                <p>{content.BenefitOne}</p>
-              </div>
-            </Col>
-          </Row>
-          <Row data-aos="fade-up-right">
-            <Col sm={3} className={classes.iconContainer}>
-              <EmojiTransportationIcon className={classes.icon} />
-            </Col>
-            <Col sm={9}>
-              <div className={classes.benefitsInfoTitle}>
-                <h2>Transportation Facilities</h2>
-              </div>
-              <div className={classes.benefitsInfoSubtext}>
-                <p>{content.BenefitOne}</p>
-              </div>
-            </Col>
-          </Row>
-          <Row data-aos="fade-up-right">
-            <Col sm={3} className={classes.iconContainer}>
-              <LocalHospitalIcon className={classes.icon} />
-            </Col>
-            <Col sm={9}>
-              <div className={classes.benefitsInfoTitle}>
-                <h2>Medical Insurance</h2>
-              </div>
-              <div className={classes.benefitsInfoSubtext}>
-                <p>{content.BenefitOne}</p>
-              </div>
-            </Col>
-          </Row>
-        </Container>
         <div className={classes.benefitsName} data-aos="fade-down">
           <h1>Why Work With CogentHub</h1>
         </div>
@@ -289,4 +186,4 @@ function CareerInfo() {
   )
 }
 
-export default CareerInfo
+export default Advantages

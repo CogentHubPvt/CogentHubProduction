@@ -14,6 +14,12 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 'bold',
     fontSize: '2rem',
   },
+  text: {
+    color: theme.text.primary,
+    '& p': {
+      color: 'black',
+    },
+  },
 }))
 
 const JobCard = ({ job }) => {
@@ -40,17 +46,14 @@ const JobCard = ({ job }) => {
                 marginBottom: '0',
                 marginTop: '1rem',
               }}
+              className={classes.text}
             >
               Skills :{' '}
-              {job.skills.map((skill) => {
-                return (
-                  <p style={{ display: 'inline-block', fontWeight: 'lighter' }}>
-                    {skill},
-                  </p>
-                )
-              })}
+              <p style={{ display: 'inline-block', fontWeight: 'lighter' }}>
+                {job.skills},
+              </p>
             </Card.Text>
-            <Card.Text style={{ fontWeight: 'bold' }}>
+            <Card.Text style={{ fontWeight: 'bold' }} className={classes.text}>
               Years Of Experience :{' '}
               <p style={{ display: 'inline-block', fontWeight: 'lighter' }}>
                 {job.experience}

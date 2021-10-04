@@ -9,12 +9,9 @@ const useStyles = makeStyles((theme) => ({
   solutions: {
     // margin: '3rem',
     // padding: '1rem',
-    backgroundColor: theme.background.lightGreen,
     [theme.breakpoints.down('md')]: {
       margin: '1rem',
     },
-    boxShadow:
-      'rgb(0 0 0 / 7%) 0px 1px 2px, rgb(0 0 0 / 7%) 0px 2px 4px, rgb(0 0 0 / 7%) 0px 4px 8px, rgb(0 0 0 / 7%) 0px 8px 16px, rgb(0 0 0 / 7%) 0px 16px 32px, rgb(0 0 0 / 7%) 0px 32px 64px',
   },
   solutionsTitle: {
     textAlign: 'center',
@@ -30,8 +27,11 @@ const useStyles = makeStyles((theme) => ({
   },
   solutionsSubtext: {
     padding: '20px',
+    margin: '2rem 5rem',
   },
-  rowContainer: {},
+  solutionsContent: {
+    margin: '1rem 5rem',
+  },
 }))
 
 const IndustriesSolutions = ({ solutions, solutionsSubText }) => {
@@ -52,7 +52,7 @@ const IndustriesSolutions = ({ solutions, solutionsSubText }) => {
         <div className={classes.solutionsSubtext}>
           <p>{solutionsSubText}</p>
         </div>
-        <div>
+        <div className={classes.solutionsContent}>
           <Row>
             {solutions.map((solution) => {
               return (

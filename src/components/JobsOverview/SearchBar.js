@@ -23,6 +23,10 @@ const useStyles = makeStyles((theme) => ({
   searchBar: {
     marginTop: '2rem',
   },
+  search: {
+    backgroundColor: theme.background.green,
+    color: 'white',
+  },
 }))
 
 const SearchBar = () => {
@@ -45,7 +49,9 @@ const SearchBar = () => {
               aria-label="Jobs"
               aria-describedby="Jobs"
             />
-            <InputGroup.Text id="basic-addon2">Search</InputGroup.Text>
+            <InputGroup.Text id="basic-addon2" className={classes.search}>
+              Search
+            </InputGroup.Text>
           </InputGroup>
         </div>
       </div>
