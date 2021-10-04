@@ -30,7 +30,7 @@ function ServicesPage({ service }) {
         <ServiceAdvantages service={service} />
       </div>
       <div>
-        <ServicesSolutions />
+        <ServicesSolutions service={service} />
       </div>
       <Footer />
     </>

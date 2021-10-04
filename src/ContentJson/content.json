@@ -98,13 +98,103 @@
   "BackOfficeManagementSubTitle": "In today's competitive market, optimal operational performance has gained prime importance. At CogentHub, we have an excellent understanding of this subject, and we have prepared ourselves to respond to this situation. We offer Back-Office Management services to reduce your operating costs while facilitating efficiency enhancement of your system. We take pride in our extensive industry-based knowledge that empowers us to support you through your customer lifecycles.",
   "FrontOfficeManagementSubTitle": "We worked hard to accomplish this in-depth understanding of the industry domain. We offer Front Office management services designed to manage your customer lifecycle efficiently. Our solutions will help you increase your revenue, improve your customer satisfaction and working capital management. It will further help you expand your margins and reduce your churning rates. We state this boldly since our clients across various sectors have encountered better competitive differentiation using our services.",
   "BureauServicesSubTitle": "At CogentHub, we extend our services on telecommunications, front office management, call centre and live chat.We provide a world-class service line with affordable solutions for you and your business needs. We'll answer your calls, take a message, make a transfer, or provide any other service you need to ensure you do not miss a single business opportunity.",
-  "IntegratedBpoSolutions": [
-    "Solution",
-    "Solution",
-    "Solution",
-    "Solution",
-    "Solution",
-    "Solution"
+  "IntegratedBpoSolution": [
+    {
+      "Title": "Customer Retention",
+      "Caption": "We identify and resolve customer grievances with our timely quality assessment"
+    },
+    {
+      "Title": "Customer Service",
+      "Caption": "With our sales call center services, we ensure the customer gets the value for their product/service, and the business acquires the valuable insights that can help them cater to their needs better"
+    },
+    {
+      "Title": "Live Chat and Email Support",
+      "Caption": "Cater to your Gen Z clientele with customer Services such as Live Chat and Email Support."
+    },
+    {
+      "Title": "Agile Framework",
+      "Caption": "With our agile customer management framework, we ensure consumer concerns are attended to and addressed at the right time."
+    }
+  ],
+  "KnowledgeServicesSolution": [
+    {
+      "Title": "Lead Generation",
+      "Caption": "Target your most qualified audience by obtaining a high influx of quality leads with better conversion rates."
+    },
+    {
+      "Title": "Customer Data Analytics ",
+      "Caption": "We help you understand the customer lifecycle better and improve customer insight across the customer journey to provide personalized services."
+    },
+    {
+      "Title": "Data Collection",
+      "Caption": "Our email support can be deployed to gather highly target actionable marketing insights."
+    },
+    {
+      "Title": "Market and Business Research",
+      "Caption": "With social media market research, we gather insights and measure your brand’s overall reputation in the market to help you strategize better."
+    },
+    {
+      "Title": "Customer Satisfaction Analysis",
+      "Caption": "Through thorough customer data analysis, we help our clients understand the impact of a process in their business."
+    }
+  ],
+  "BackOfficeManagementSolution": [
+    {
+      "Title": "Seamless Customer Support",
+      "Caption": "With our digital tools and cutting edge solutions, we can provide faster resolutions to your customers."
+    },
+    {
+      "Title": "Complaint Management",
+      "Caption": "We take customer complaints seriously and scrutinize them thoroughly to bridge potential communication gaps."
+    },
+    {
+      "Title": "Order Support",
+      "Caption": "From product queries to order delivery, with our highly scalable email support service, you can keep the customers in sync with the latest updates related to their orders."
+    },
+    {
+      "Title": "Customer Loyalty Management",
+      "Caption": "From managing customer databases to categorizing potential customers for various benefits – we do it all by effectively keeping track of all consumer activities across touchpoints."
+    },
+    {
+      "Title": "Data Processing",
+      "Caption": "Manage your customer information seamlessly with our guaranteed data security protocols (ISO 27001)"
+    }
+  ],
+  "FrontOfficeManagementSolution": [
+    {
+      "Title": "Helpdesk Solutions",
+      "Caption": "We offer tailor-made help desk outsourcing solutions to our clients to promptly resolve issues and improve customer satisfaction ratings."
+    },
+    {
+      "Title": "Customer Service",
+      "Caption": "Manage your business the right way with our premium customer service which puts customers at the top of our priority list."
+    },
+    {
+      "Title": "Query Management",
+      "Caption": "You can effectively manage a large volume of queries when you outsource email support services, reducing the burden on other channels."
+    },
+    {
+      "Title": "Technical Support",
+      "Caption": "Our certified engineers are capable of providing 24/7 tech support services in a comprehensive manner across channels."
+    }
+  ],
+  "BureauServicesSolution": [
+    {
+      "Title": "Order Support",
+      "Caption": "Live chat support services enable your business to send text confirmation for order verification, purchase detail, tracking status, and various other queries related to the order cycle seamlessly."
+    },
+    {
+      "Title": "Customer Engagement",
+      "Caption": "Make your customers feel special with a choice of channels such as calling, email and chat support."
+    },
+    {
+      "Title": "Social Brand Engagement",
+      "Caption": "We help you make the presence of your brand visible with social media engagement activities."
+    },
+    {
+      "Title": "Customer Service Emails",
+      "Caption": "We can help you to send auto-responses, follow-ups, feedback emails, on-board your newcomers with welcome emails, and much more. That will improve your relationships with the customers and take your customer service to the next level."
+    }
   ],
   "IntegratedBpoAdvantages": [
     {

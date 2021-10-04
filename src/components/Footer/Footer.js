@@ -146,14 +146,10 @@ const Footer = ({ inView, setInView }) => {
 
   return (
     <div className={classes.container}>
-      <div className={classes.newsletter}>
-        <h1 className={classes.title}>Stay Informed With Our Newsletter</h1>
-        <Button variant="outline-light" className={classes.button}>
-          Subscribe to our NewsLetter
-        </Button>{' '}
-      </div>
-      <div className={classes.break}></div>
       <div className={classes.services}>
+        <a href="#" style={{ fontWeight: 'bold' }}>
+          Our Services :{' '}
+        </a>
         <a href="/services/integratedBPO">Integrated BPO</a>
         <a href="/services/knowledgeServices">Knowledge Services</a>
         <a href="/services/backOfficeManagement">Back Office Services</a>

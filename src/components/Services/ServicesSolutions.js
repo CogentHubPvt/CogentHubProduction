@@ -41,12 +41,24 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-function ServicesSolutions() {
+function ServicesSolutions({ service }) {
   const classes = useStyles()
+  const [solutions, setSolutions] = useState([])
   useEffect(() => {
     AOS.init({
       duration: 1000,
     })
+    if (service === 'IntegratedBpo') {
+      setSolutions(content.IntegratedBpoSolution)
+    } else if (service === 'KnowledgeServices') {
+      setSolutions(content.KnowledgeServicesSolution)
+    } else if (service === 'BackOfficeManagement') {
+      setSolutions(content.BackOfficeManagementSolution)
+    } else if (service === 'FrontOfficeManagement') {
+      setSolutions(content.FrontOfficeManagementSolution)
+    } else if (service === 'BureauServices') {
+      setSolutions(content.BureauServicesSolution)
+    }
   }, [])
 
   return (
@@ -59,17 +71,14 @@ function ServicesSolutions() {
         <div className={classes.Underline}></div>
       </div>
       <Row className={classes.solutions}>
-        {content.IntegratedBpoSolutions.map((solution) => {
+        {solutions.map((solution) => {
           return (
             <Col style={{ padding: '2px' }}>
-              <Card>
-                <Card.Header>Featured</Card.Header>
+              <Card style={{ height: '20rem' }}>
+                <Card.Header>Solution</Card.Header>
                 <Card.Body>
-                  <Card.Title>Special title treatment</Card.Title>
-                  <Card.Text>
-                    With supporting text below as a natural lead-in to
-                    additional content.
-                  </Card.Text>
+                  <Card.Title>{solution.Title}</Card.Title>
+                  <Card.Text>{solution.Caption}</Card.Text>
                 </Card.Body>
               </Card>
             </Col>
