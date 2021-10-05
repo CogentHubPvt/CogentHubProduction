@@ -9,7 +9,6 @@ const useStyles = makeStyles((theme) => ({
   carousel: {
     position: 'relative',
     marginTop: '2px',
-    fontFamily: 'Montserrat',
   },
   carouselItem: {
     height: '600px',
@@ -28,12 +27,12 @@ const useStyles = makeStyles((theme) => ({
   },
   carouselCaption: {
     '& h1': {
-      fontSize: '3rem',
+      fontSize: theme.fontSize.bannerTitle,
       textShadow:
         '1px 1px 0px  #000, -1px -1px 0px  #000, 1px -1px 0px  #000, -2px 2px 0px  #000',
     },
     '& p': {
-      fontSize: '1rem',
+      fontSize: theme.fontSize.p,
       textShadow:
         '0.5px 0.5px 0px  #000, -0.5px -0.5px 0px  #000, 0.5px -0.5px 0px  #000, -2px 2px 0px  #000',
     },

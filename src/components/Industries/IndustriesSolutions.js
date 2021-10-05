@@ -16,10 +16,9 @@ const useStyles = makeStyles((theme) => ({
   solutionsTitle: {
     textAlign: 'center',
     margin: '30px 20px 20px 20px',
-    fontFamily: 'Montserrat',
     '& h2': {
-      fontWeight: 'bold',
-      fontSize: '3rem',
+      fontWeight: theme.fontWeight.bold,
+      fontSize: theme.fontSize.h1,
     },
   },
   Top: {

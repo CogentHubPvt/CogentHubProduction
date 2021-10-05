@@ -19,8 +19,8 @@ const useStyles = makeStyles((theme) => ({
       textAlign: 'center',
     },
     '& h2': {
-      fontWeight: 'bold',
-      fontFamily: 'Montserrat',
+      fontWeight: theme.fontWeight.bold,
+      fontSize: theme.fontSize.h2,
     },
   },
   leftAlign: {
@@ -30,7 +30,6 @@ const useStyles = makeStyles((theme) => ({
       margin: '10px',
       textAlign: 'center',
     },
-    fontFamily: 'Montserrat',
     '& a': {
       textAlign: 'center',
       textDecoration: 'none',

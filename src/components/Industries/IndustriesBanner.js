@@ -19,16 +19,14 @@ const useStyles = makeStyles((theme) => ({
       top: '0',
     },
     '& h1': {
-      fontFamily: 'Montserrat',
       [theme.breakpoints.down('md')]: {
-        fontSize: '1.3rem',
+        fontSize: theme.fontSize.h1,
       },
     },
     '& p': {
-      fontWeight: 'bold',
-      fontFamily: 'Montserrat',
+      fontWeight: theme.fontWeight.bold,
       [theme.breakpoints.down('md')]: {
-        fontSize: '1rem',
+        fontSize: theme.fontSize.p,
       },
     },
   },
@@ -55,7 +53,7 @@ const IndustriesBanner = ({ bannerTitle, bannerSubText, img }) => {
           <Carousel.Item>
             <img className="d-block w-100" src={img} alt="First slide" />
             <Carousel.Caption className={classes.bannerText}>
-              <h1>{bannerTitle}</h1>
+              <h1 className={classes.title}>{bannerTitle}</h1>
               <p>{bannerSubText}</p>
             </Carousel.Caption>
           </Carousel.Item>

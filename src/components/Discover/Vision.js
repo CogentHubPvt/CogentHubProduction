@@ -11,7 +11,6 @@ const useStyles = makeStyles((theme) => ({
   bannerContent: {
     position: 'relative',
     top: '-4rem',
-    fontFamily: 'Montserrat',
   },
   logo: {
     '& img': {

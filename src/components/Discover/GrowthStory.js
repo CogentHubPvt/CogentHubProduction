@@ -8,7 +8,6 @@ const useStyles = makeStyles((theme) => ({
     marginTop: '3rem',
   },
   bannerContent: {
-    fontFamily: 'Montserrat',
     padding: '2rem',
     lineHeight: '2rem',
     boxShadow:

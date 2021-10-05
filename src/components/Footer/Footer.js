@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     color: 'white',
-    fontSize: '1.5rem',
+    fontSize: theme.fontSize.h1,
     margin: '1rem 1rem 1rem 4rem',
     paddingTop: '1rem',
     [theme.breakpoints.down('md')]: {
@@ -43,7 +43,6 @@ const useStyles = makeStyles((theme) => ({
   },
   contact: {
     overflow: 'hidden',
-    fontFamily: 'Montserrat',
     margin: '1rem 1rem 1rem 4rem',
     [theme.breakpoints.down('md')]: {
       marginLeft: '10px',
@@ -59,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
       padding: '14px 16px',
       margin: '0.5rem 1.5rem 0 1.5rem',
       textDecoration: 'none',
-      fontSize: '15px',
+      fontSize: theme.fontSize.p,
     },
     '& p': {
       float: 'left',
@@ -72,13 +71,12 @@ const useStyles = makeStyles((theme) => ({
       textAlign: 'center',
       padding: '14px 16px',
       textDecoration: 'none',
-      fontSize: '15px',
-      fontWeight: 'bold',
+      fontSize: theme.fontSize.p,
+      fontWeight: theme.fontSize.bold,
     },
   },
   services: {
     overflow: 'hidden',
-    fontFamily: 'Montserrat',
     margin: '1rem 1rem 1rem 4rem',
     [theme.breakpoints.down('md')]: {
       marginLeft: '10px',
@@ -94,7 +92,7 @@ const useStyles = makeStyles((theme) => ({
       padding: '14px 16px',
       margin: '0.5rem 1.5rem 0 1.5rem',
       textDecoration: 'none',
-      fontSize: '15px',
+      fontSize: theme.fontSize.p,
     },
     '& p': {
       float: 'left',
@@ -107,8 +105,8 @@ const useStyles = makeStyles((theme) => ({
       textAlign: 'center',
       padding: '14px 16px',
       textDecoration: 'none',
-      fontSize: '15px',
-      fontWeight: 'bold',
+      fontSize: theme.fontSize.p,
+      fontWeight: theme.fontWeight.bold,
     },
   },
   rightAlign: {
@@ -125,7 +123,7 @@ const useStyles = makeStyles((theme) => ({
       padding: '10px',
       margin: '0.5rem 1.5rem 1rem 1.5rem',
       textDecoration: 'none',
-      fontSize: '15px',
+      fontSize: theme.fontSize.p,
       border: '1px solid white',
       borderRadius: '50%',
       '&:hover': {

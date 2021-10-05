@@ -224,66 +224,6 @@ function CareerInfo() {
             </Col>
           </Row>
         </Container>
-        <div className={classes.benefitsName} data-aos="fade-down">
-          <h1>Why Work With CogentHub</h1>
-        </div>
-        <div className={classes.benefitsSubtext} data-aos="fade-down">
-          <p>Lorum Ipsum Lorum Ipsum Lorum Ipsum</p>
-        </div>
-        <div>
-          <Container className={classes.whyContainer}>
-            <Row>
-              <Col sm className={classes.card}>
-                <Card data-aos="fade-down-right" className={classes.cardBody}>
-                  <Card.Img
-                    variant="top"
-                    src="https://images.pexels.com/photos/1136465/pexels-photo-1136465.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                  />
-                  <Card.Body>
-                    <Card.Title>{content.DifferenceTitleOne}</Card.Title>
-                    <Card.Text>{content.DifferenceTextOne}</Card.Text>
-                  </Card.Body>
-                </Card>
-              </Col>
-              <Col sm className={classes.card}>
-                <Card className={classes.margin1} data-aos="fade-down-right">
-                  <Card.Img
-                    variant="top"
-                    src="https://ak.picdn.net/shutterstock/videos/1069822501/thumb/9.jpg?ip=x480"
-                  />
-                  <Card.Body>
-                    <Card.Title>{content.DifferenceTitleTwo}</Card.Title>
-                    <Card.Text>{content.DifferenceTextTwo}</Card.Text>
-                  </Card.Body>
-                </Card>
-              </Col>
-              <Col sm className={classes.card}>
-                <Card className={classes.margin2} data-aos="fade-down-right">
-                  <Card.Img
-                    variant="top"
-                    src="https://videohive.img.customer.envatousercontent.com/files/93a611b7-50c9-4a98-abfd-14062cf480e9/inline_image_preview.jpg?auto=compress%2Cformat&fit=crop&crop=top&max-h=8000&max-w=590&s=1386b1f085d989c2fd60e048aaaf22db"
-                  />
-                  <Card.Body>
-                    <Card.Title>{content.DifferenceTitleThree}</Card.Title>
-                    <Card.Text>{content.DifferenceTextThree}</Card.Text>
-                  </Card.Body>
-                </Card>
-              </Col>
-              <Col sm className={classes.card}>
-                <Card className={classes.margin3} data-aos="fade-down-right">
-                  <Card.Img
-                    variant="top"
-                    src="https://ak.picdn.net/shutterstock/videos/21307717/thumb/11.jpg?ip=x480"
-                  />
-                  <Card.Body>
-                    <Card.Title>{content.DifferenceTitleFour}</Card.Title>
-                    <Card.Text>{content.DifferenceTextFour}</Card.Text>
-                  </Card.Body>
-                </Card>
-              </Col>
-            </Row>
-          </Container>
-        </div>
       </div>
     </>
   )

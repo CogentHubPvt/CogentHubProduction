@@ -12,9 +12,8 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     boxShadow: 'rgb(0 0 0 / 24%) 0px 3px 8px',
     paddingTop: '2rem',
-    fontFamily: 'Montserrat',
     '& h1': {
-      fontWeight: 'bold',
+      fontWeight: theme.fontWeight.bold,
     },
     marginBottom: '6rem',
     marginTop: '6rem',

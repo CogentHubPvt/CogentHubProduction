@@ -16,10 +16,9 @@ const useStyles = makeStyles((theme) => ({
   highlightsHeader: {
     textAlign: 'center',
     margin: '20px',
-    fontFamily: 'Montserrat',
     color: theme.text.secondary,
     '& h2': {
-      fontWeight: 'bold',
+      fontWeight: theme.fontWeight.bold,
     },
   },
   highlightsContent: {
@@ -29,7 +28,6 @@ const useStyles = makeStyles((theme) => ({
   },
   data: {
     fontSize: '5rem',
-    fontFamily: 'Montserrat',
     color: theme.text.primary,
     marginBottom: '0',
   },

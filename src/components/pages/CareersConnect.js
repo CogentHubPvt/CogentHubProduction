@@ -13,10 +13,9 @@ const useStyles = makeStyles((theme) => ({
   subHead: {
     margin: '1rem 5rem',
     '& h1': {
-      fontWeight: 'bold',
-      fontFamily: 'Montserrat',
+      fontWeight: theme.fontWeight.bold,
       [theme.breakpoints.down('md')]: {
-        fontSize: '2rem',
+        fontSize: theme.fontSize.h1,
         marginTop: '0',
       },
     },
@@ -51,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
   stayConnectedLinks: {
     '& a': {
       textDecoration: 'none',
-      fontSize: '1.5rem',
+      fontSize: theme.fontSize.p,
       color: theme.text.primary,
     },
   },

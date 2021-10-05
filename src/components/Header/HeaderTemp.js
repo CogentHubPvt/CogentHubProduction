@@ -35,8 +35,7 @@ const useStyles = makeStyles((theme) => ({
     },
     boxShadow: 'rgb(0 0 0 / 35%) 0px 5px 15px',
     overflow: 'hidden',
-    fontWeight: 'light',
-    fontFamily: 'Poppins',
+    fontWeight: theme.fontWeight.light,
     backgroundColor: 'white',
     '& a': {
       float: 'left',
@@ -45,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
       padding: '14px 16px',
       margin: '0.5rem 1.5rem 0 1.5rem',
       textDecoration: 'none',
-      fontSize: '15px',
+      fontSize: theme.fontSize.p,
     },
     '& p': {
       float: 'left',
@@ -54,8 +53,8 @@ const useStyles = makeStyles((theme) => ({
       textAlign: 'center',
       padding: '14px 16px',
       textDecoration: 'none',
-      fontSize: '15px',
-      fontWeight: 'bold',
+      fontSize: theme.fontSize.p,
+      fontWeight: theme.fontWeight.bold,
     },
   },
   rightAlign: {
@@ -67,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
       padding: '10px 16px',
       margin: '0.7rem 1.5rem 0 1.5rem',
       textDecoration: 'none',
-      fontSize: '15px',
+      fontSize: theme.fontSize.p,
       width: '100px',
       height: '40px',
     },
@@ -78,8 +77,8 @@ const useStyles = makeStyles((theme) => ({
       textAlign: 'center',
       padding: '14px 16px',
       textDecoration: 'none',
-      fontSize: '15px',
-      fontWeight: 'bold',
+      fontSize: theme.fontSize.p,
+      fontWeight: theme.fontWeight.bold,
     },
   },
   sideBarBody: {
@@ -88,15 +87,14 @@ const useStyles = makeStyles((theme) => ({
       display: 'block',
       padding: '10px',
       color: 'black',
-      fontSize: '1.2rem',
-      fontFamily: 'Montserrat',
+      fontSize: theme.fontSize.p,
     },
   },
   sideBarTitle: {
     '& a': {
       textDecoration: 'none',
       color: 'black',
-      fontSize: '1.5rem',
+      fontSize: theme.fontSize.p,
       marginLeft: '10px',
     },
   },
@@ -399,7 +397,7 @@ const HeaderTemp = ({ logo }) => {
       )}
       <div className={classes.leftAlign}>
         <a href="/" className={classes.logoLink}>
-          <img src="/cogentHub.png" className={classes.logo} />
+          <img src="/cogentLogo.jpg" className={classes.logo} />
         </a>
         <a href="#home" onClick={onInsights} className={classes.headerItem}>
           Insights

@@ -12,11 +12,10 @@ const useStyles = makeStyles((theme) => ({
       textAlign: 'center',
     },
     '& h1': {
-      fontWeight: 'bold',
-      fontSize: '4rem',
-      fontFamily: 'Montserrat',
+      fontWeight: theme.fontWeight.bold,
+      fontSize: theme.fontSize.h1,
       [theme.breakpoints.down('md')]: {
-        fontSize: '3rem',
+        fontSize: theme.fontSize.h1,
       },
     },
   },
