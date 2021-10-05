@@ -4,7 +4,10 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
 import content from '../../ContentJson/content.json'
-import StoreOutlinedIcon from '@material-ui/icons/StoreOutlined'
+import DoneAllOutlinedIcon from '@material-ui/icons/DoneAllOutlined'
+import SecurityOutlinedIcon from '@material-ui/icons/SecurityOutlined'
+import SupervisedUserCircleOutlinedIcon from '@material-ui/icons/SupervisedUserCircleOutlined'
+import MonetizationOnOutlinedIcon from '@material-ui/icons/MonetizationOnOutlined'
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -67,23 +70,23 @@ const Benefits = () => {
       <div className={classes.container}>
         <Row className={classes.row}>
           <Col sm className={classes.card} data-aos="fade-down">
-            <StoreOutlinedIcon className={classes.icon} />
-            <h3>Benefit</h3>
+            <DoneAllOutlinedIcon className={classes.icon} />
+            <h3>{content.BenefitTitleOne}</h3>
             <p>{content.BenefitTextOne}</p>
           </Col>
           <Col sm className={classes.card} data-aos="fade-down">
-            <StoreOutlinedIcon className={classes.icon} />
-            <h3>Benefit</h3>
+            <SecurityOutlinedIcon className={classes.icon} />
+            <h3>{content.BenefitTitleTwo}</h3>
             <p>{content.BenefitTextOne}</p>
           </Col>
           <Col sm className={classes.card} data-aos="fade-down">
-            <StoreOutlinedIcon className={classes.icon} />
-            <h3>Benefit</h3>
+            <SupervisedUserCircleOutlinedIcon className={classes.icon} />
+            <h3>{content.BenefitTitleThree}</h3>
             <p>{content.BenefitTextOne}</p>
           </Col>
           <Col sm className={classes.card} data-aos="fade-down">
-            <StoreOutlinedIcon className={classes.icon} />
-            <h3>Benefit</h3>
+            <MonetizationOnOutlinedIcon className={classes.icon} />
+            <h3>{content.BenefitTitleFour}</h3>
             <p>{content.BenefitTextOne}</p>
           </Col>
         </Row>
