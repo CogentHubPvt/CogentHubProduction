@@ -27,6 +27,8 @@ const useStyles = makeStyles((theme) => ({
   },
   blogImage: {
     margin: '2rem',
+    width: '80%',
+    height: '400px',
   },
   imageContainer: {
     textAlign: 'center',
@@ -45,19 +47,38 @@ const Blogs = ({ inView, setInView }) => {
   const [currentBlog, setCurrentBlog] = useState({})
   const [showBlogCheck, setShowBlogCheck] = useState(false)
   const [loading, setLoading] = useState(true)
+  const [imageOne, setImageOne] = useState('')
+  const [imageTwo, setImageTwo] = useState('')
+  const [imageThree, setImageThree] = useState('')
+  const [imageFour, setImageFour] = useState('')
+  const [imageFive, setImageFive] = useState('')
+  const [isAdmin, setAdmin] = useState(false)
 
   useEffect(() => {
     axios
       .get('https://cogenthub-api.herokuapp.com/blogs/getBlogs')
       .then((response) => {
-        console.log(response.data)
+        console.log('BLOGSSSSS')
+        console.log(response.data.blogs)
         setBlog(response.data.blogs)
         setLoading(false)
       })
       .catch((error) => {
         console.log(error.response)
       })
-  }, [])
+    let token = localStorage.getItem('token')
+    axios
+      .post('https://cogenthub-api.herokuapp.com/authorize', {
+        token: token,
+      })
+      .then(function (response) {
+        setAdmin(true)
+        console.log(response)
+      })
+      .catch((error) => {
+        console.log(error.message)
+      })
+  }, [blogs])
 
   const showBlog = (id) => {
     setLoading(true)
@@ -67,6 +88,36 @@ const Blogs = ({ inView, setInView }) => {
         console.log('blogs', response.data.blog[0])
         setCurrentBlog(response.data.blog[0])
         setShowBlogCheck(true)
+        if (response.data.blog[0].images[0] != undefined) {
+          setImageOne(response.data.blog[0].images[0])
+        }
+        if (response.data.blog[0].images[1] != undefined) {
+          setImageTwo(response.data.blog[0].images[1])
+        }
+        if (response.data.blog[0].images[2] != undefined) {
+          setImageThree(response.data.blog[0].images[2])
+        }
+        if (response.data.blog[0].images[3] != undefined) {
+          setImageFour(response.data.blog[0].images[3])
+        }
+        if (response.data.blog[0].images[4] != undefined) {
+          setImageFive(response.data.blog[0].images[4])
+        }
+        setLoading(false)
+      })
+      .catch((error) => {
+        console.log(error.response)
+      })
+  }
+
+  const deleteBlog = (id) => {
+    setLoading(true)
+    axios
+      .post('https://cogenthub-api.herokuapp.com/blogs/deleteBlogById', {
+        id: id,
+      })
+      .then((response) => {
+        console.log('blogs', response.data.blog[0])
         setLoading(false)
       })
       .catch((error) => {
@@ -107,6 +158,17 @@ const Blogs = ({ inView, setInView }) => {
                     >
                       Read More
                     </Button>{' '}
+                    {isAdmin && (
+                      <Button
+                        variant="outline-danger"
+                        style={{ float: 'right', marginRight: '1rem' }}
+                        onClick={() => {
+                          deleteBlog(blog._id)
+                        }}
+                      >
+                        Delete
+                      </Button>
+                    )}
                   </Card.Footer>
                 </Card>
               )
@@ -116,13 +178,16 @@ const Blogs = ({ inView, setInView }) => {
       {showBlogCheck && (
         <div className={classes.currentBlogContainer}>
           <div className={classes.imageContainer}>
-            <img src={currentBlog.image} className={classes.blogImage} />
+            <img src={imageOne} className={classes.blogImage} />
           </div>
           <div>
             <h1>{currentBlog.title}</h1>
           </div>
           <div>
             <p>{currentBlog.introduction}</p>
+          </div>
+          <div className={classes.imageContainer}>
+            <img src={imageTwo} className={classes.blogImage} />
           </div>
           <div>
             <h2>{currentBlog.subHeadingOne}</h2>
@@ -131,16 +196,31 @@ const Blogs = ({ inView, setInView }) => {
             <p>{currentBlog.contentOne}</p>
           </div>
           <div>
+            <div className={classes.imageContainer}>
+              <img src={imageThree} className={classes.blogImage} />
+            </div>
             <h2>{currentBlog.subHeadingTwo}</h2>
           </div>
           <div>
             <p>{currentBlog.contentTwo}</p>
+          </div>
+          <div className={classes.imageContainer}>
+            <img src={imageFour} className={classes.blogImage} />
           </div>
           <div>
             <h2>{currentBlog.subHeadingThree}</h2>
           </div>
           <div>
             <p>{currentBlog.contentThree}</p>
+          </div>
+          <div className={classes.imageContainer}>
+            <img src={imageFive} className={classes.blogImage} />
+          </div>
+          <div>
+            <h2>{currentBlog.subHeadingFour}</h2>
+          </div>
+          <div>
+            <p>{currentBlog.contentFour}</p>
           </div>
           <div style={{ textAlign: 'right' }}>
             <Button

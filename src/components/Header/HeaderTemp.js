@@ -121,7 +121,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const HeaderTemp = ({ logo }) => {
+const HeaderTemp = ({}) => {
   const classes = useStyles()
   const [add, setAdd] = useState(null)
   const [insights, setInsights] = useState(null)
