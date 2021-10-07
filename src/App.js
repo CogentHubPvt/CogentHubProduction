@@ -10,6 +10,7 @@ import Login from './components/Login/Login'
 import AddBlogPage from './components/pages/AddBlogPage'
 import AddJobsPage from './components/pages/AddJobsPage'
 import BlogsPage from './components/pages/BlogsPage'
+import ContactUsPage from './components/pages/ContactUsPage'
 import theme from './Theme/theme'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import content from './ContentJson/content.json'
@@ -134,6 +135,9 @@ function App() {
           </Route>
           <Route path="/addJobs" exact>
             <AddJobsPage />
+          </Route>
+          <Route path="/contactUs" exact>
+            <ContactUsPage />
           </Route>
         </ThemeProvider>
       </Router>

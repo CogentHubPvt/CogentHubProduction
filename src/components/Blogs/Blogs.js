@@ -27,8 +27,8 @@ const useStyles = makeStyles((theme) => ({
   },
   blogImage: {
     margin: '2rem',
-    width: '80%',
-    height: '400px',
+    width: '640px',
+    height: '426px',
   },
   imageContainer: {
     textAlign: 'center',

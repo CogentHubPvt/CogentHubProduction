@@ -5,6 +5,9 @@ import Button from 'react-bootstrap/Button'
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import TwitterIcon from '@material-ui/icons/Twitter'
 import FacebookIcon from '@material-ui/icons/Facebook'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -76,37 +79,33 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   services: {
+    marginTop: '2rem',
     overflow: 'hidden',
-    margin: '1rem 1rem 1rem 4rem',
+    marginLeft: '4rem',
+    marginBottom: '1rem',
     [theme.breakpoints.down('md')]: {
       marginLeft: '10px',
     },
     '& a': {
-      float: 'left',
       [theme.breakpoints.down('md')]: {
         float: 'none',
         display: 'block',
       },
       color: 'white',
-      textAlign: 'center',
       padding: '14px 16px',
-      margin: '0.5rem 1.5rem 0 1.5rem',
+      margin: '0.5rem',
       textDecoration: 'none',
       fontSize: theme.fontSize.p,
     },
     '& p': {
-      float: 'left',
       [theme.breakpoints.down('md')]: {
         float: 'none',
         display: 'block',
       },
       color: 'white',
-      margin: '0.5rem 0 0 0',
-      textAlign: 'center',
-      padding: '14px 16px',
+      padding: '0',
       textDecoration: 'none',
       fontSize: theme.fontSize.p,
-      fontWeight: theme.fontWeight.bold,
     },
   },
   rightAlign: {
@@ -117,7 +116,6 @@ const useStyles = makeStyles((theme) => ({
       margin: '10px',
     },
     '& a': {
-      float: 'right',
       color: 'white',
       textAlign: 'center',
       padding: '10px',
@@ -137,6 +135,19 @@ const useStyles = makeStyles((theme) => ({
     float: 'left',
     marginTop: '1rem',
   },
+  contactUsButton: {
+    float: 'left',
+    margin: '0.5rem 1.5rem 1rem 1.5rem',
+  },
+  copyright: {
+    display: 'flex',
+    justifyContent: 'center',
+    marginTop: '10px',
+  },
+  cogentLogo: {
+    position: 'absolute',
+    left: '70%',
+  },
 }))
 
 const Footer = ({ inView, setInView }) => {
@@ -144,35 +155,66 @@ const Footer = ({ inView, setInView }) => {
 
   return (
     <div className={classes.container}>
-      <div className={classes.services}>
-        <a href="#" style={{ fontWeight: 'bold' }}>
-          Our Services :{' '}
-        </a>
-        <a href="/services/integratedBPO">Integrated BPO</a>
-        <a href="/services/knowledgeServices">Knowledge Services</a>
-        <a href="/services/backOfficeManagement">Back Office Services</a>
-        <a href="/services/frontOfficeManagement">Front Office Services</a>
-        <a href="/services/bureauServices">Bureau Services</a>
-      </div>
+      <Row>
+        <Col md={true} className={classes.services}>
+          <p style={{ fontSize: '19px', fontWeight: 'bold' }}>Our Services</p>
+          <p>Integrated BPO</p>
+          <p>Knowledge Services</p>
+          <p>Front Office Management</p>
+          <p>Back Office Management</p>
+          <p>Bureau Services</p>
+        </Col>
+        <Col md={true} className={classes.services}>
+          <p style={{ fontSize: '19px', fontWeight: 'bold' }}>Our Industries</p>
+          <p>Ecommerce</p>
+          <p>Fashion & Retail</p>
+          <p>Food Tech</p>
+          <p>Ed Tech</p>
+          <p>Travel Tech</p>
+        </Col>
+        <Col md={true} className={classes.services}>
+          <p style={{ fontSize: '19px', fontWeight: 'bold' }}>Insights</p>
+          <p>Blogs</p>
+          <p>Case Studies</p>
+        </Col>
+        <Col md={true} className={classes.services}>
+          <p style={{ fontSize: '19px', fontWeight: 'bold' }}>About Us</p>
+          <p>Join Our Family</p>
+        </Col>
+        <Col md={true} className={classes.services}>
+          <p style={{ fontSize: '19px', fontWeight: 'bold' }}>
+            Get In Touch With Us At
+          </p>
+          <p>info@cogenthub.com</p>
+        </Col>
+        {/* <img
+          src="/CogenthubFooter.png"
+          className={classes.cogentLogo}
+          style={{ width: '400px', height: '100px' }}
+        /> */}
+      </Row>
       <div className={classes.break}></div>
-      <div className={classes.contact}>
-        <img src="/cogentHub.png" className={classes.footerLogo} />
-        <a href="#">About Us</a>
-        <a href="#">Contact Us</a>
-        <a href="#">Career</a>
-        <a href="#">Locations</a>
-        <div className={classes.rightAlign}>
-          <a href="#">
+      <Row className={classes.contact}>
+        <Col style={{ margin: 'inherit' }}>
+          <Button variant="outline-light" className={classes.contactUsButton}>
+            Contact Us
+          </Button>{' '}
+        </Col>
+        <Col className={classes.rightAlign} style={{ margin: 'auto' }}>
+          <a href="https://twitter.com/hubcogent">
             <TwitterIcon />
           </a>
-          <a href="#">
+          <a href="https://www.linkedin.com/company/cogenthub/">
             <LinkedInIcon />
           </a>
-          <a href="#">
+          <a href="https://www.facebook.com/CogentHubOutsourcing/">
             <FacebookIcon />
           </a>
-        </div>
-      </div>
+        </Col>
+        <Col className={classes.copyright}>
+          <p>Copyright</p>
+        </Col>
+      </Row>
       <div className={classes.break}></div>
     </div>
   )

@@ -7,6 +7,7 @@ import Studies from '../HomeSectionThree/Studies'
 import Footer from '../Footer/Footer'
 import Benefits from '../HomeSectionFour/Benefits'
 import Advantages from '../HomePageSectionFive/Advantages'
+import Reviews from '../ReviewsSection/Reviews'
 import { makeStyles } from '@material-ui/styles'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
@@ -53,15 +54,16 @@ function HomePage() {
         data-aos-offset="300"
         data-aos-easing="ease-in-sine"
       >
-        <Advantages />
+        <Reviews />
       </div>
       <div
         data-aos="fade-right"
         data-aos-offset="300"
         data-aos-easing="ease-in-sine"
       >
-        <Studies />
+        <Advantages />
       </div>
+
       <Footer />
     </div>
   )
