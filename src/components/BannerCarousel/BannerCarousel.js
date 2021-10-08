@@ -98,7 +98,7 @@ export default function BannerCaraousel({}) {
     <div className={classes.container}>
       <div>
         <video
-          src="/bannerVideo.mp4"
+          src="https://cogent-images-and-files.s3.ap-south-1.amazonaws.com/bannerVideo.mp4"
           loop
           muted
           autoPlay
