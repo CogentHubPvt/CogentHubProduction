@@ -91,7 +91,11 @@
   "FoodTechImg": "/foodTech.jpg",
   "TravelTechImg": "/travel.jpg",
   "EdTechImg": "/edTech.jpg",
-  "IntegratedBpoImage": "https://images.unsplash.com/photo-1462180744199-87947354c7fe?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=874&q=80",
+  "IntegratedBpoImage": "https://images.pexels.com/photos/3184357/pexels-photo-3184357.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "KnowledgeServicesImage": "https://images.pexels.com/photos/3182773/pexels-photo-3182773.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "BackOfficeImage": "https://images.pexels.com/photos/8867429/pexels-photo-8867429.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "FrontOfficeImage": "https://images.pexels.com/photos/3182822/pexels-photo-3182822.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  "BureauServicesImage": "https://images.pexels.com/photos/3182827/pexels-photo-3182827.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
   "IntegratedBpoTitle": "Integrated BPO",
   "KnowledgeServicesTitle": "Knowledge Services",
   "BackOfficeManagementTitle": "Back Office Management",
@@ -301,5 +305,35 @@
       "Title": "Resolve Customer Queries with Live Chat",
       "SubText": "Offer round the clock live chat service to your clients worldwide. We will provide instant replies to customers, effective timely solutions over email, manage social media profiles for customer support and even transfer calls to relevant departments."
     }
-  ]
+  ],
+  "Vivek": {
+    "Name": "Vivek Sharma",
+    "Designation": "Head of Global Marketing",
+    "Bio": "Vivek brings multi-industry exposure on board for CogentHub. His enthusiasm for creativity and informative writing makes him the ideal candidate to have as our Head of Strategic Communications. Vivek has worked with Multinational Corporations where he understood the value of process-oriented operations and optimisation of resources."
+  },
+  "Avinash": {
+    "Name": "Avinash Vasa",
+    "Designation": "Director & Chief Executive Officer",
+    "Bio": "Avinash holds Bachelor’s Degree from University of Calcutta, Avinash started his BPO career with Wipro and has close to 10 years of industry experience into business modelling, strategy, operations and business development."
+  },
+  "Habinder": {
+    "Name": "Habinder Singh Ubhi",
+    "Designation": "Head – Quality, Training, Transition & Reporting",
+    "Bio": "Harbinder started his BPO career at Wipro. He has 8 years of Industry experience in Operations management and is a very resilient individual having knowledge of quality basics on 6 sigma approach to ensure delivery of high quality engagement work for both self and others is on time and ready for client/management review. "
+  },
+  "Dhiren": {
+    "Name": " Dhiren Vasa",
+    "Designation": "Director",
+    "Bio": "Dhiren Vasa is a seasoned business professional with 4 decades of Sales and Marketing Experience. He is an expert in International utility tendering of Heavy duly electrical components and Smart Energy Meters. Over the years he has been working closely with global companies for fulfilling International Tenders."
+  },
+  "Sunny": {
+    "Name": " Sunny Singh",
+    "Designation": "Head - Operations",
+    "Bio": " A budding professional with 15 years of rich and extensive experience in International BPO domain, Sunny has successfully covered diverse business functions in managing business profiles as a General Manager."
+  },
+  "Nikole": {
+    "Name": " Nikole Gilstorf",
+    "Designation": "Chief Business Development Officer - USA",
+    "Bio": " Nikole started her remarkable Twenty Four Year Career with one of the largest marketing companies in The U.S. Her passion for Recruitment, Training, and Leadership are some of the mainstays for the success she experienced over these years."
+  }
 }

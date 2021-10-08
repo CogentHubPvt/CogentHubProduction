@@ -7,8 +7,30 @@ import 'bootstrap/dist/css/bootstrap.css'
 
 const useStyles = makeStyles((theme) => ({
   carousel: {
+    position: 'absolute',
+    zIndex: 99,
+    top: '200px',
+    left: '200px',
+    width: '75%',
+    height: '100%',
+  },
+  bannerVideo: {
     position: 'relative',
-    marginTop: '2px',
+    zIndex: 0,
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100vh',
+    objectFit: 'cover',
+  },
+  overlay: {
+    position: 'absolute',
+    zIndex: 1,
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
   },
   container: {
     '& div': {
@@ -74,17 +96,29 @@ export default function BannerCaraousel({}) {
 
   return (
     <div className={classes.container}>
+      <div>
+        <video
+          src="/bannerVideo.mp4"
+          loop
+          muted
+          autoPlay
+          className={classes.bannerVideo}
+        ></video>
+      </div>
+      {/* <div className={classes.overlay}>
+        <img src="https://www.agpaytech.co.uk/assets/img/dotted-bg.png" />
+      </div> */}
       <Carousel
         className={classes.carousel}
         controls={false}
         onSlide={handleActive}
       >
         <Carousel.Item className={classes.carouselItem} interval={4000}>
-          <img
+          {/* <img
             className={classes.carouselSlide}
             src="/banner.gif"
             alt="Second slide"
-          />
+          /> */}
           <Carousel.Caption className={classes.carouselCaption}>
             <animated.div style={fadeUp}>
               <h1 className={classes.title}>{content.SliderOne}</h1>
@@ -93,11 +127,11 @@ export default function BannerCaraousel({}) {
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item className={classes.carouselItem} interval={4000}>
-          <img
+          {/* <img
             className={classes.carouselSlide}
             src="/banner.gif"
             alt="Second slide"
-          />
+          /> */}
 
           <Carousel.Caption className={classes.carouselCaption}>
             <animated.div style={fadeUp}>
@@ -107,11 +141,11 @@ export default function BannerCaraousel({}) {
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item className={classes.carouselItem} interval={4000}>
-          <img
+          {/* <img
             className={classes.carouselSlide}
             src="/banner.gif"
             alt="Second slide"
-          />
+          /> */}
 
           <Carousel.Caption className={classes.carouselCaption}>
             <animated.div style={fadeUp}>

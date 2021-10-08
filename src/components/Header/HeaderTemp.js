@@ -42,9 +42,9 @@ const useStyles = makeStyles((theme) => ({
       color: 'black',
       textAlign: 'center',
       padding: '14px 16px',
-      margin: '0.5rem 1.5rem 0 1.5rem',
+      margin: '1.7rem 1.5rem 0 1.5rem',
       textDecoration: 'none',
-      fontSize: theme.fontSize.p,
+      fontSize: '20px',
     },
     '& p': {
       float: 'left',
@@ -64,7 +64,7 @@ const useStyles = makeStyles((theme) => ({
       color: 'white',
       textAlign: 'center',
       padding: '10px 16px',
-      margin: '0.7rem 1.5rem 0 1.5rem',
+      margin: '2rem 1.5rem 0 1.5rem',
       textDecoration: 'none',
       fontSize: theme.fontSize.p,
       width: '100px',
@@ -73,7 +73,7 @@ const useStyles = makeStyles((theme) => ({
     '& p': {
       float: 'right',
       color: 'black',
-      margin: '0.5rem 0 0 0',
+      margin: '2.5rem 0 0 0',
       textAlign: 'center',
       padding: '14px 16px',
       textDecoration: 'none',
@@ -105,7 +105,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   logo: {
-    width: '120px',
+    width: '250px',
+    height: '75px',
   },
   logoLink: {
     marginTop: '0.25rem !important',
@@ -118,6 +119,10 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.background.green,
     borderRadius: '20px',
     color: 'white',
+  },
+  dropdown: {
+    position: 'relative',
+    zIndex: 1111,
   },
 }))
 
@@ -397,7 +402,7 @@ const HeaderTemp = ({}) => {
       )}
       <div className={classes.leftAlign}>
         <a href="/" className={classes.logoLink}>
-          <img src="/cogentLogo.jpg" className={classes.logo} />
+          <img src="/Logo.png" className={classes.logo} />
         </a>
         <a href="#home" onClick={onInsights} className={classes.headerItem}>
           Insights
@@ -440,25 +445,29 @@ const HeaderTemp = ({}) => {
               Log Out
             </a>
           )}
-          <p>
+          {/* <p>
             <SearchIcon />
-          </p>
+          </p> */}
         </div>
       </div>
-      {insights === true && !phoneView && <Test boolean={true} />}
-      {insights === false && !phoneView && <Test boolean={false} />}
-      {services === true && !phoneView && <Services boolean={true} />}
-      {services === false && !phoneView && <Services boolean={false} />}
-      {industries === true && !phoneView && <Industries boolean={true} />}
-      {industries === false && !phoneView && <Industries boolean={false} />}
-      {achievements === true && !phoneView && <Achievements boolean={true} />}
-      {achievements === false && !phoneView && <Achievements boolean={false} />}
-      {career === true && !phoneView && <Career boolean={true} />}
-      {career === false && !phoneView && <Career boolean={false} />}
-      {discover === true && !phoneView && <Discover boolean={true} />}
-      {discover === false && !phoneView && <Discover boolean={false} />}
-      {add === true && !phoneView && <Add boolean={true} />}
-      {add === false && !phoneView && <Add boolean={false} />}
+      <div className={classes.dropdown}>
+        {insights === true && !phoneView && <Test boolean={true} />}
+        {insights === false && !phoneView && <Test boolean={false} />}
+        {services === true && !phoneView && <Services boolean={true} />}
+        {services === false && !phoneView && <Services boolean={false} />}
+        {industries === true && !phoneView && <Industries boolean={true} />}
+        {industries === false && !phoneView && <Industries boolean={false} />}
+        {achievements === true && !phoneView && <Achievements boolean={true} />}
+        {achievements === false && !phoneView && (
+          <Achievements boolean={false} />
+        )}
+        {career === true && !phoneView && <Career boolean={true} />}
+        {career === false && !phoneView && <Career boolean={false} />}
+        {discover === true && !phoneView && <Discover boolean={true} />}
+        {discover === false && !phoneView && <Discover boolean={false} />}
+        {add === true && !phoneView && <Add boolean={true} />}
+        {add === false && !phoneView && <Add boolean={false} />}
+      </div>
     </>
   )
 }

@@ -35,11 +35,13 @@ const useStyles = makeStyles((theme) => ({
 
 const IndustriesSolutions = ({ solutions, solutionsSubText }) => {
   const classes = useStyles()
+  // const [solutions, setSolutions] = useState([])
 
   useEffect(() => {
     AOS.init({
       duration: 1000,
     })
+    console.log(solutions)
   }, [])
 
   return (

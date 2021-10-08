@@ -61,7 +61,12 @@ const JobCard = ({ job }) => {
             </Card.Text>
           </Card.Body>
           <Card.Footer>
-            <small className="text-muted">Last updated 3 mins ago</small>
+            <Button
+              variant="success"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfjoni4EQBU-sNaGaM73XHxmUrGTPLvm6aUPz_QEZMWEfUyoA/viewform?usp=pp_url"
+            >
+              Apply
+            </Button>{' '}
           </Card.Footer>
         </Card>
       </div>

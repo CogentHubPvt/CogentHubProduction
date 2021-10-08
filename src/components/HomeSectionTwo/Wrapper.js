@@ -8,10 +8,11 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('md')]: {
       width: '90%',
     },
+
     minHeight: '250px',
     textAlign: 'center',
     boxShadow: 'rgb(0 0 0 / 24%) 0px 3px 8px',
-    paddingTop: '2rem',
+    padding: '2rem',
     '& h1': {
       fontWeight: theme.fontWeight.bold,
     },
@@ -52,15 +53,28 @@ const Wrapper = ({ inView, setInView }) => {
   return (
     <div className={classes.container}>
       <div className={classes.informationBox}>
-        <h1>Podcast Plug-In</h1>
-        <p>
-          Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum
-          <br /> Ipsum Lorum Ipsum
+        <h1>Why CogentHub</h1>
+        <p style={{ fontSize: '19px' }}>
+          Businesses encounter several challenges during their lifecycle. At
+          CogentHub, we help to address these hurdles by contributing
+          unparalleled services in management consulting. We harness the most
+          advanced technology towards delivering a delightful experience for
+          your customers. CogentHub achieves excellence by deploying
+          immaculately planned operations without any compromise.
         </p>
-
+        <p style={{ fontSize: '19px' }}>
+          CogentHub presents a wide array of services ranging from front-office
+          management, knowledge services, integrated BPO and back-office
+          management. We continue to service clients in the Retail, Telecom,
+          Finance, Utilities, Healthcare and Travel industries. We have
+          thoughtfully created a passionate group of professionals that prides
+          itself in delivering objectives set out by you. This team subscribes
+          itself to your thought process and goals and endeavours to effectively
+          fuel your business growth.
+        </p>
         <div className={classes.buttonContainer} data-aos="zoom-in">
           <div className={classes.button}>
-            <a href="#">Button Text</a>
+            <a href="/discover">Learn More</a>
           </div>
         </div>
       </div>

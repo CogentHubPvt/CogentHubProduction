@@ -92,10 +92,11 @@ const useStyles = makeStyles((theme) => ({
         display: 'block',
       },
       color: 'white',
-      padding: '14px 16px',
-      margin: '0.5rem',
+      padding: '0',
       textDecoration: 'none',
       fontSize: theme.fontSize.p,
+      display: 'block',
+      lineHeight: '2.5rem',
     },
     '& p': {
       [theme.breakpoints.down('md')]: {
@@ -158,33 +159,32 @@ const Footer = ({ inView, setInView }) => {
       <Row>
         <Col md={true} className={classes.services}>
           <p style={{ fontSize: '19px', fontWeight: 'bold' }}>Our Services</p>
-          <p>Integrated BPO</p>
-          <p>Knowledge Services</p>
-          <p>Front Office Management</p>
-          <p>Back Office Management</p>
-          <p>Bureau Services</p>
+          <a href="/services/frontOfficeManagement">Front Office Management</a>
+          <a href="/services/backOfficeManagement">Back Office Management</a>
+          <a href="/services/knowledgeServices">Knowledge Services</a>
+          <a href="/services/integratedBpo">Integrated BPO</a>
+          <a href="/services/bureauServices">Bureau Services</a>
         </Col>
         <Col md={true} className={classes.services}>
           <p style={{ fontSize: '19px', fontWeight: 'bold' }}>Our Industries</p>
-          <p>Ecommerce</p>
-          <p>Fashion & Retail</p>
-          <p>Food Tech</p>
-          <p>Ed Tech</p>
-          <p>Travel Tech</p>
+          <a href="/industries/retail">Fashion & Retail</a>
+          <a href="/industries/travelTech">Travel Tech</a>
+          <a href="/industries/ecommerce">Ecommerce</a>
+          <a href="/industries/foodTech">Food Tech</a>
+          <a href="/industries/edTech">Ed Tech</a>
         </Col>
         <Col md={true} className={classes.services}>
           <p style={{ fontSize: '19px', fontWeight: 'bold' }}>Insights</p>
-          <p>Blogs</p>
-          <p>Case Studies</p>
+          <a href="#">Case Studies</a>
+          <a href="#">Blogs</a>
         </Col>
         <Col md={true} className={classes.services}>
           <p style={{ fontSize: '19px', fontWeight: 'bold' }}>About Us</p>
-          <p>Join Our Family</p>
+          <a href="/career">Join Our Family</a>
+          <a href="/contactUs">Contact Us</a>
         </Col>
         <Col md={true} className={classes.services}>
-          <p style={{ fontSize: '19px', fontWeight: 'bold' }}>
-            Get In Touch With Us At
-          </p>
+          <p style={{ fontSize: '19px', fontWeight: 'bold' }}>Get In Touch</p>
           <p>info@cogenthub.com</p>
         </Col>
         {/* <img
@@ -195,12 +195,16 @@ const Footer = ({ inView, setInView }) => {
       </Row>
       <div className={classes.break}></div>
       <Row className={classes.contact}>
-        <Col style={{ margin: 'inherit' }}>
-          <Button variant="outline-light" className={classes.contactUsButton}>
-            Contact Us
-          </Button>{' '}
+        <Col style={{ margin: 'inherit', marginLeft: '0' }}>
+          <img
+            src="/CogenthubFooter.png"
+            style={{ width: '350px', height: '100px' }}
+          />
         </Col>
-        <Col className={classes.rightAlign} style={{ margin: 'auto' }}>
+        <Col
+          className={classes.rightAlign}
+          style={{ margin: 'auto', marginLeft: '65px' }}
+        >
           <a href="https://twitter.com/hubcogent">
             <TwitterIcon />
           </a>

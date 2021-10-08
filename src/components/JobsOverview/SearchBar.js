@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { makeStyles } from '@material-ui/styles'
 import InputGroup from 'react-bootstrap/InputGroup'
 import FormControl from 'react-bootstrap/FormControl'
+import Button from 'react-bootstrap/Button'
 import AOS from 'aos'
 
 const useStyles = makeStyles((theme) => ({
@@ -48,9 +49,9 @@ const SearchBar = () => {
               aria-label="Jobs"
               aria-describedby="Jobs"
             />
-            <InputGroup.Text id="basic-addon2" className={classes.search}>
+            <Button variant="success" id="button-addon1">
               Search
-            </InputGroup.Text>
+            </Button>
           </InputGroup>
         </div>
       </div>

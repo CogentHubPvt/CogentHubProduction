@@ -5,6 +5,7 @@ import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
 import AOS from 'aos'
 import StoreOutlinedIcon from '@material-ui/icons/StoreOutlined'
+import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer'
 import 'aos/dist/aos.css'
 
 const useStyles = makeStyles((theme) => ({
@@ -33,9 +34,9 @@ const SolutionCard = ({ solution }) => {
     <>
       <div data-aos="flip-left">
         <div className={classes.iconContainer}>
-          <StoreOutlinedIcon className={classes.icon} />
+          <QuestionAnswerIcon className={classes.icon} />
         </div>
-        <div className={classes.solutionName}>Dummy Solution</div>
+        <div className={classes.solutionName}>{solution}</div>
       </div>
     </>
   )
