@@ -12,6 +12,9 @@ import useWindowDimensions from '../../useWindowDimensions'
 const useStyles = makeStyles((theme) => ({
   container: {
     margin: '6rem',
+    [theme.breakpoints.down('md')]: {
+      margin: '3rem',
+    },
   },
 }))
 
