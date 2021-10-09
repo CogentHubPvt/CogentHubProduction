@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useSpring, animated } from 'react-spring'
 import { makeStyles } from '@material-ui/styles'
+import content from '../../ContentJson/content.json'
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import Row from 'react-bootstrap/Row'
@@ -107,7 +108,7 @@ const Studies = ({ inView }) => {
                   <Card.Title>
                     Farm To Table Business Model Affecting the Food-Tech Sector
                   </Card.Title>
-                  <Card.Text>Dummy Blog Caption</Card.Text>
+                  <Card.Text>{content.ReportTwo}</Card.Text>
                 </Card.Body>
                 <Card.Footer>
                   <small>
@@ -133,7 +134,7 @@ const Studies = ({ inView }) => {
                 />
                 <Card.Body>
                   <Card.Title>Global Fashion & Retail Market</Card.Title>
-                  <Card.Text>Dummy Blog Caption</Card.Text>
+                  <Card.Text>{content.ReportThree}</Card.Text>
                 </Card.Body>
                 <Card.Footer>
                   <small>

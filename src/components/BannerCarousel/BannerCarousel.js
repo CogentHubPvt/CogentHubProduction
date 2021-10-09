@@ -9,8 +9,12 @@ const useStyles = makeStyles((theme) => ({
   carousel: {
     position: 'absolute',
     zIndex: 99,
-    top: '200px',
-    left: '200px',
+    [theme.breakpoints.down('md')]: {
+      top: '250px',
+      left: '70px',
+    },
+    top: '500px',
+    left: '150px',
     width: '75%',
     height: '100%',
   },
@@ -42,7 +46,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   carouselItem: {
-    height: '600px',
+    height: '300px',
+    top: 100,
     '& img': {
       [theme.breakpoints.down('md')]: {
         height: '100vh',
@@ -59,18 +64,21 @@ const useStyles = makeStyles((theme) => ({
   carouselCaption: {
     // position: 'relative',
     display: 'flex',
-    justifyContent: 'left',
-    alignItem: 'left',
-    textAlign: 'left',
+    justifyContent: 'center',
+    alignItem: 'center',
+    textAlign: 'center',
     '$ h1': {
-      fontSize: theme.fontSize.h1,
+      fontSize: theme.fontSize.h2,
       fontWeight: 'bold',
       textShadow:
         '2px 2px 0px  #000, -2px -2px 0px  #000, 2px -2px 0px  #000, -2px 2px 0px  #000',
     },
   },
   title: {
-    fontSize: theme.fontSize.bannerTitle,
+    fontSize: '35px',
+    [theme.breakpoints.down('md')]: {
+      fontSize: '20px',
+    },
     fontWeight: 'bold',
     textShadow:
       '1px 1px 0px  #000, -1px -1px 0px  #000, 1px -1px 0px  #000, -2px 2px 0px  #000',
@@ -121,7 +129,7 @@ export default function BannerCaraousel({}) {
           /> */}
           <Carousel.Caption className={classes.carouselCaption}>
             <animated.div style={fadeUp}>
-              <h1 className={classes.title}>{content.SliderOne}</h1>
+              <h2 className={classes.title}>{content.SliderOne}</h2>
               <p>{content.SliderOneText}</p>
             </animated.div>
           </Carousel.Caption>
