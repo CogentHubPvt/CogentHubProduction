@@ -175,7 +175,7 @@ export default function BannerCaraousel({}) {
           <Carousel.Caption className={classes.carouselCaption}>
             <animated.div style={fadeUp}>
               <h1 className={classes.title}>{content.SliderTwo}</h1>
-              <p>{content.SliderTwoText}</p>
+              <p className={classes.caption}>{content.SliderTwoText}</p>
             </animated.div>
           </Carousel.Caption>
         </Carousel.Item>
@@ -189,7 +189,7 @@ export default function BannerCaraousel({}) {
           <Carousel.Caption className={classes.carouselCaption}>
             <animated.div style={fadeUp}>
               <h1 className={classes.title}>{content.SliderThird}</h1>
-              <p>{content.SliderThirdText}</p>
+              <p className={classes.caption}>{content.SliderThirdText}</p>
             </animated.div>
           </Carousel.Caption>
         </Carousel.Item>
