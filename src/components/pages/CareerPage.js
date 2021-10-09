@@ -5,7 +5,7 @@ import Footer from '../Footer/Footer'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
-function CareerPage() {
+function CareerPage(isHeader, setIsHeader) {
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -19,7 +19,7 @@ function CareerPage() {
         data-aos-offset="300"
         data-aos-easing="ease-in-sine"
       >
-        <HeaderTemp />
+        <HeaderTemp setIsHeader={setIsHeader} isHeader={isHeader} />
       </div>
       <CareerInfo />
       <Footer />

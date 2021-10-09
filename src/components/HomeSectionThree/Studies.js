@@ -78,16 +78,16 @@ const Studies = ({ inView }) => {
                 />
                 <Card.Body>
                   <Card.Title>
-                    Rise Of Ed-Tech Business During The Pandemic
+                    M-Commerce: The Drastic Evolution of Retail
                   </Card.Title>
-                  <Card.Text>Dummy Blog Caption</Card.Text>
+                  <Card.Text>{content.ReportOne}</Card.Text>
                 </Card.Body>
                 <Card.Footer>
                   <small>
                     <Button
                       variant="success"
                       target="_blank"
-                      href="https://cogent-images-and-files.s3.ap-south-1.amazonaws.com/Final+Report+Ed-Tech.pdf"
+                      href="https://cogent-images-and-files.s3.ap-south-1.amazonaws.com/M+Commerce+ultimate.pdf"
                     >
                       Download PDF
                     </Button>{' '}
@@ -98,7 +98,7 @@ const Studies = ({ inView }) => {
           </Col>
           <Col>
             <div data-aos="flip-up">
-              <Card style={{ minHeight: '35rem' }}>
+              <Card style={{ minHeight: '51.2rem' }}>
                 <Card.Img
                   variant="top"
                   className={classes.image}
@@ -152,7 +152,7 @@ const Studies = ({ inView }) => {
           </Col>
           <Col>
             <div data-aos="flip-right">
-              <Card style={{ minHeight: '35rem' }}>
+              <Card style={{ minHeight: '46.8rem' }}>
                 <Card.Img
                   variant="top"
                   className={classes.image}
@@ -163,7 +163,7 @@ const Studies = ({ inView }) => {
                     Customer Retention: Grow Your Business and Explode Return on
                     investment (ROI) by Selling More to Current Customers
                   </Card.Title>
-                  <Card.Text>Dummy Blog Caption</Card.Text>
+                  <Card.Text>{content.ReportFour}</Card.Text>
                 </Card.Body>
                 <Card.Footer>
                   <small>
@@ -191,7 +191,7 @@ const Studies = ({ inView }) => {
                   <Card.Title>
                     How To Save Sales And Solve Customer Problems With Live Chat
                   </Card.Title>
-                  <Card.Text>Dummy Blog Caption</Card.Text>
+                  <Card.Text>{content.ReportFive}</Card.Text>
                 </Card.Body>
                 <Card.Footer>
                   <small>
@@ -209,7 +209,7 @@ const Studies = ({ inView }) => {
           </Col>
           <Col>
             <div data-aos="flip-right">
-              <Card style={{ minHeight: '35rem' }}>
+              <Card style={{ minHeight: '48.2rem' }}>
                 <Card.Img
                   variant="top"
                   className={classes.image}
@@ -217,7 +217,7 @@ const Studies = ({ inView }) => {
                 />
                 <Card.Body>
                   <Card.Title>Dummy Blog Name</Card.Title>
-                  <Card.Text>Dummy Blog Caption</Card.Text>
+                  <Card.Text>{content.ReportSix}</Card.Text>
                 </Card.Body>
                 <Card.Footer>
                   <small>

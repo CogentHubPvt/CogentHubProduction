@@ -7,17 +7,20 @@ import 'bootstrap/dist/css/bootstrap.css'
 let Background = 'https://www.agpaytech.co.uk/assets/img/dotted-bg.png'
 
 const useStyles = makeStyles((theme) => ({
+  container: {
+    overflow: 'hidden',
+  },
   carousel: {
     position: 'relative',
   },
   overlay: {
     backgroundImage: `url(${Background})`,
     width: '100%',
-    height: '83vh',
-    top: 100,
+    height: '100%',
+    top: 0,
     left: 0,
     position: 'absolute',
-    zIndex: 2,
+    zIndex: -2,
   },
   carouselItem: {
     height: '600px',
@@ -33,10 +36,11 @@ const useStyles = makeStyles((theme) => ({
     top: '0',
     left: '0',
     minHeight: '300px',
-    zIndex: 0,
+    zIndex: -3,
   },
   carouselCaption: {
     position: 'relative',
+    // backgroundColor: 'rgba(194, 183, 189, 0.7)',
     zIndex: '3',
     '& h1': {
       fontSize: theme.fontSize.bannerTitle,
@@ -51,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-export default function ServiceBanner({ service }) {
+export default function ServiceBanner({ service, isHeader }) {
   const classes = useStyles()
   const [title, setTitle] = useState('')
   const [subTitle, setSubTitle] = useState('')
@@ -82,10 +86,10 @@ export default function ServiceBanner({ service }) {
   }, [])
 
   return (
-    <div style={{ display: 'block' }}>
-      {/* <div className={classes.overlay}></div> */}
+    <div style={{ display: 'block' }} className={classes.container}>
       <Carousel className={classes.carousel} controls={false}>
         <Carousel.Item className={classes.carouselItem} interval={2000}>
+          <div className={classes.overlay}></div>
           <img
             className={classes.carouselSlide}
             src={image}

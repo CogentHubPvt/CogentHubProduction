@@ -18,18 +18,19 @@ import logo from './logo.svg'
 
 function App() {
   const [service, setService] = useState('')
+  const [isHeader, setIsHeader] = useState(false)
   return (
-    <div style={{ fontFamily: 'Roboto' }}>
+    <div style={{ fontFamily: 'Roboto', overflowX: 'hidden', width: 'auto' }}>
       <Router>
         <ThemeProvider theme={theme}>
           <Route path="/" exact>
             <HomePage logo={logo} />
           </Route>
           <Route path="/career" exact>
-            <CareerPage />
+            <CareerPage setIsHeader={setIsHeader} isHeader={isHeader} />
           </Route>
           <Route path="/jobs" exact>
-            <JobsPage />
+            <JobsPage setIsHeader={setIsHeader} isHeader={isHeader} />
           </Route>
           <Route path="/industries/retail" exact>
             <IndustriesPage
@@ -44,6 +45,8 @@ function App() {
               solutions={content.RetailSolutions}
               solutionsSubText={content.RetailSolutionsSubText}
               img={content.RetailImg}
+              setIsHeader={setIsHeader}
+              isHeader={isHeader}
             />
           </Route>
           <Route path="/industries/ecommerce" exact>
@@ -59,6 +62,8 @@ function App() {
               solutions={content.EcommerceSolutions}
               solutionsSubText={content.EcommerceSolutionsSubText}
               img={content.EcommerceImg}
+              setIsHeader={setIsHeader}
+              isHeader={isHeader}
             />
           </Route>
           <Route path="/industries/foodTech" exact>
@@ -74,6 +79,8 @@ function App() {
               solutions={content.FoodTechSolutions}
               solutionsSubText={content.FoodTechSolutionsSubText}
               img={content.FoodTechImg}
+              setIsHeader={setIsHeader}
+              isHeader={isHeader}
             />
           </Route>
           <Route path="/industries/travelTech" exact>
@@ -89,6 +96,8 @@ function App() {
               solutions={content.TravelTechSolutions}
               solutionsSubText={content.TravelTechSolutionsSubText}
               img={content.TravelTechImg}
+              setIsHeader={setIsHeader}
+              isHeader={isHeader}
             />
           </Route>
           <Route path="/industries/edTech" exact>
@@ -104,40 +113,62 @@ function App() {
               solutions={content.EdTechSolutions}
               solutionsSubText={content.EdTechSolutionsSubText}
               img={content.EdTechImg}
+              setIsHeader={setIsHeader}
+              isHeader={isHeader}
             />
           </Route>
           <Route path="/services/integratedBPO" exact>
-            <ServicesPage service="IntegratedBpo" />
+            <ServicesPage
+              service="IntegratedBpo"
+              setIsHeader={setIsHeader}
+              isHeader={isHeader}
+            />
           </Route>
           <Route path="/services/knowledgeServices" exact>
-            <ServicesPage service="KnowledgeServices" />
+            <ServicesPage
+              service="KnowledgeServices"
+              setIsHeader={setIsHeader}
+              isHeader={isHeader}
+            />
           </Route>
           <Route path="/services/backOfficeManagement" exact>
-            <ServicesPage service="BackOfficeManagement" />
+            <ServicesPage
+              service="BackOfficeManagement"
+              setIsHeader={setIsHeader}
+              isHeader={isHeader}
+            />
           </Route>
           <Route path="/services/frontOfficeManagement" exact>
-            <ServicesPage service="FrontOfficeManagement" />
+            <ServicesPage
+              service="FrontOfficeManagement"
+              setIsHeader={setIsHeader}
+              isHeader={isHeader}
+            />
           </Route>
           <Route path="/services/bureauServices" exact>
-            <ServicesPage service="BureauServices" />
+            <ServicesPage
+              service="BureauServices"
+              setIsHeader={setIsHeader}
+              isHeader={isHeader}
+            />
           </Route>
           <Route path="/discover" exact>
-            <Discover />
+            <Discover setIsHeader={setIsHeader} isHeader={isHeader} />
           </Route>
           <Route path="/login" exact>
-            <Login />
+            <Login setIsHeader={setIsHeader} isHeader={isHeader} />
           </Route>
           <Route path="/addBlog" exact>
-            <AddBlogPage />
+            <AddBlogPage setIsHeader={setIsHeader} isHeader={isHeader} />
           </Route>
           <Route path="/blogs" exact>
-            <BlogsPage />
+            <BlogsPage setIsHeader={setIsHeader} isHeader={isHeader} />
           </Route>
           <Route path="/addJobs" exact>
-            <AddJobsPage />
+            <AddJobsPage setIsHeader={setIsHeader} isHeader={isHeader} />
           </Route>
           <Route path="/contactUs" exact>
-            <ContactUsPage />
+            <ContactUsPage setIsHeader={setIsHeader} isHeader={isHeader} />
           </Route>
         </ThemeProvider>
       </Router>

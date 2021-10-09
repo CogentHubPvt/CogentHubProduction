@@ -12,12 +12,13 @@ import useWindowDimensions from '../../useWindowDimensions'
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    width: '100%',
     backgroundColor: theme.background.green,
-    color: 'black',
     [theme.breakpoints.down('md')]: {
       textAlign: 'center',
     },
+  },
+  contactContainer: {
+    backgroundColor: 'black',
   },
   newsletter: {
     margin: '1rem',
@@ -43,14 +44,15 @@ const useStyles = makeStyles((theme) => ({
   },
   break: {
     border: '1px solid white',
-    marginLeft: '4rem',
+    // marginLeft: '4rem',
     [theme.breakpoints.down('md')]: {
       margin: '0',
     },
   },
   contact: {
     overflow: 'hidden',
-    margin: '1rem 1rem 1rem 4rem',
+    margin: '1rem 1rem 0 4rem',
+    paddingBottom: '1rem',
     [theme.breakpoints.down('md')]: {
       marginLeft: '10px',
     },
@@ -132,7 +134,7 @@ const useStyles = makeStyles((theme) => ({
       color: 'white',
       textAlign: 'center',
       padding: '10px',
-      margin: '0.5rem 1.5rem 1rem 1.5rem',
+      margin: '2.5rem 1.5rem 1rem 1.5rem',
       textDecoration: 'none',
       fontSize: theme.fontSize.p,
       border: '1px solid white',
@@ -155,7 +157,10 @@ const useStyles = makeStyles((theme) => ({
   copyright: {
     display: 'flex',
     justifyContent: 'center',
-    marginTop: '10px',
+    marginTop: '2.5rem',
+    '& p': {
+      fontSize: '0.8rem',
+    },
   },
   footerLogo: {
     [theme.breakpoints.down('md')]: {
@@ -220,50 +225,55 @@ const Footer = ({ inView, setInView }) => {
           style={{ width: '400px', height: '100px' }}
         /> */}
       </Row>
-      <div className={classes.break}></div>
-      {!phoneView && (
-        <Row className={classes.contact}>
-          <Col style={{ margin: 'inherit', marginLeft: '0' }}>
-            <img src="/CogenthubFooter.png" className={classes.footerLogo} />
-          </Col>
-          <Col className={classes.rightAlign}>
-            <a href="https://twitter.com/hubcogent">
-              <TwitterIcon />
-            </a>
-            <a href="https://www.linkedin.com/company/cogenthub/">
-              <LinkedInIcon />
-            </a>
-            <a href="https://www.facebook.com/CogentHubOutsourcing/">
-              <FacebookIcon />
-            </a>
-          </Col>
-          <Col className={classes.copyright}>
-            <p>Copyright</p>
-          </Col>
-        </Row>
-      )}
-      {phoneView && (
-        <Row className={classes.contact}>
-          <Row style={{ marginLeft: 'auto' }}>
-            <img src="/CogenthubFooter.png" className={classes.footerLogo} />
+      <div className={classes.contactContainer}>
+        {!phoneView && (
+          <Row className={classes.contact}>
+            <Col style={{ margin: 'inherit', marginLeft: '0' }}>
+              <img src="/Logo.png" className={classes.footerLogo} />
+            </Col>
+            <Col className={classes.rightAlign}>
+              <a href="https://twitter.com/hubcogent">
+                <TwitterIcon />
+              </a>
+              <a href="https://www.linkedin.com/company/cogenthub/">
+                <LinkedInIcon />
+              </a>
+              <a href="https://www.facebook.com/CogentHubOutsourcing/">
+                <FacebookIcon />
+              </a>
+            </Col>
+            <Col className={classes.copyright}>
+              <p>
+                ©2021 CogentHub Private Limited Limited. All Rights Reserved.
+              </p>
+            </Col>
           </Row>
-          <Row>
-            <a href="https://twitter.com/hubcogent">
-              <TwitterIcon className={classes.socialIcons} />
-            </a>
-            <a href="https://www.linkedin.com/company/cogenthub/">
-              <LinkedInIcon className={classes.socialIcons} />
-            </a>
-            <a href="https://www.facebook.com/CogentHubOutsourcing/">
-              <FacebookIcon className={classes.socialIcons} />
-            </a>
+        )}
+        {phoneView && (
+          <Row className={classes.contact}>
+            <Row style={{ marginLeft: 'auto' }}>
+              <img src="/Logo.png" className={classes.footerLogo} />
+            </Row>
+            <Row>
+              <a href="https://twitter.com/hubcogent">
+                <TwitterIcon className={classes.socialIcons} />
+              </a>
+              <a href="https://www.linkedin.com/company/cogenthub/">
+                <LinkedInIcon className={classes.socialIcons} />
+              </a>
+              <a href="https://www.facebook.com/CogentHubOutsourcing/">
+                <FacebookIcon className={classes.socialIcons} />
+              </a>
+            </Row>
+            <Row className={classes.copyright}>
+              <p>
+                ©2021 CogentHub Private Limited Limited. All Rights Reserved.
+              </p>
+            </Row>
           </Row>
-          {/* <Row>
-            <p>Copyright</p>
-          </Row> */}
-        </Row>
-      )}
-      <div className={classes.break}></div>
+        )}
+      </div>
+      {/* <div className={classes.break}></div> */}
     </div>
   )
 }

@@ -7,7 +7,7 @@ import ServicesSolutions from '../Services/ServicesSolutions'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
-function ServicesPage({ service }) {
+function ServicesPage({ service, isHeader, setIsHeader }) {
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -21,10 +21,10 @@ function ServicesPage({ service }) {
         data-aos-offset="300"
         data-aos-easing="ease-in-sine"
       >
-        <HeaderTemp />
+        <HeaderTemp setIsHeader={setIsHeader} isHeader={isHeader} />
       </div>
       <div>
-        <ServiceBanner service={service} />
+        <ServiceBanner service={service} isHeader={isHeader} />
       </div>
       <div>
         <ServiceAdvantages service={service} />

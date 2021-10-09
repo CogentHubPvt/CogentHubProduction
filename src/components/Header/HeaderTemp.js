@@ -126,7 +126,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const HeaderTemp = ({}) => {
+const HeaderTemp = ({ setIsHeader, isHeader }) => {
   const classes = useStyles()
   const [add, setAdd] = useState(null)
   const [insights, setInsights] = useState(null)
@@ -167,6 +167,17 @@ const HeaderTemp = ({}) => {
   }, [width])
 
   const onInsights = () => {
+    // if (
+    //   services === true ||
+    //   industries === true ||
+    //   career === true ||
+    //   discover === true ||
+    //   add === true
+    // ) {
+    //   setIsHeader(true)
+    // } else {
+    //   setIsHeader(!isHeader)
+    // }
     if (insights === null) {
       setInsights(true)
     } else {
@@ -190,6 +201,17 @@ const HeaderTemp = ({}) => {
   }
 
   const onServices = () => {
+    // if (
+    //   insights === true ||
+    //   industries === true ||
+    //   career === true ||
+    //   discover === true ||
+    //   add === true
+    // ) {
+    //   setIsHeader(true)
+    // } else {
+    //   setIsHeader(!isHeader)
+    // }
     if (services === null) {
       setServices(true)
     } else {
@@ -213,6 +235,17 @@ const HeaderTemp = ({}) => {
   }
 
   const onIndustries = () => {
+    // if (
+    //   insights === true ||
+    //   services === true ||
+    //   career === true ||
+    //   discover === true ||
+    //   add === true
+    // ) {
+    //   setIsHeader(true)
+    // } else {
+    //   setIsHeader(!isHeader)
+    // }
     if (industries === null) {
       setIndustries(true)
     } else {
@@ -259,6 +292,17 @@ const HeaderTemp = ({}) => {
   }
 
   const onCareer = () => {
+    // if (
+    //   insights === true ||
+    //   industries === true ||
+    //   services === true ||
+    //   discover === true ||
+    //   add === true
+    // ) {
+    //   setIsHeader(true)
+    // } else {
+    //   setIsHeader(!isHeader)
+    // }
     if (career === null) {
       setCareer(true)
     } else {
@@ -282,6 +326,7 @@ const HeaderTemp = ({}) => {
   }
 
   const onDiscover = () => {
+    // s
     if (discover === null) {
       setDiscover(true)
     } else {
@@ -305,10 +350,23 @@ const HeaderTemp = ({}) => {
   }
 
   const onAdd = () => {
+    // if (
+    //   insights === true ||
+    //   industries === true ||
+    //   career === true ||
+    //   discover === true ||
+    //   services === true
+    // ) {
+    //   setIsHeader(true)
+    // } else {
+    //   setIsHeader(!isHeader)
+    // }
     if (add === null) {
       setAdd(true)
+      setIsHeader(true)
     } else {
       setAdd(!add)
+      setIsHeader(!isHeader)
     }
     if (insights != null) {
       setInsights(false)
@@ -363,10 +421,14 @@ const HeaderTemp = ({}) => {
               {services && (
                 <div className={classes.phoneList}>
                   <a href="/services/integratedBpo">Integrated BPO</a>
-                  <a>Knowledge Services</a>
-                  <a>Back Office Management</a>
-                  <a>Front Office Management</a>
-                  <a>Bureau Services</a>
+                  <a href="/services/knowledgeServices">Knowledge Services</a>
+                  <a href="/services/backOfficeManagement">
+                    Back Office Management
+                  </a>
+                  <a href="/services/frontOfficeManagement">
+                    Front Office Management
+                  </a>
+                  <a href="/services/bureauServices">Bureau Services</a>
                 </div>
               )}
               <a href="#contact" onClick={onIndustries}>

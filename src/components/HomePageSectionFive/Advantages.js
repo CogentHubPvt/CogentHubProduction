@@ -46,14 +46,10 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'center',
     marginTop: '5rem',
+    marginBottom: '3rem',
     [theme.breakpoints.down('md')]: {
       textAlign: 'center',
     },
-  },
-  benefitsSubtext: {
-    display: 'flex',
-    justifyContent: 'center',
-    marginTop: '1rem',
   },
   icon: {
     width: '210px',
@@ -133,9 +129,6 @@ function Advantages() {
         <div className={classes.benefitsName} data-aos="fade-down">
           <h1>Why Work With CogentHub</h1>
         </div>
-        <div className={classes.benefitsSubtext} data-aos="fade-down">
-          <p>Lorum Ipsum Lorum Ipsum Lorum Ipsum</p>
-        </div>
         <div>
           <Container className={classes.whyContainer}>
             <Row>
@@ -153,10 +146,7 @@ function Advantages() {
                 </Card>
               </Col>
               <Col sm className={classes.card}>
-                <Card
-                  className={phoneView && classes.margin1}
-                  data-aos="fade-down-right"
-                >
+                <Card className={classes.margin1} data-aos="fade-down-right">
                   <Card.Img
                     variant="top"
                     src="/advantageSecurity.jpg"
@@ -169,10 +159,7 @@ function Advantages() {
                 </Card>
               </Col>
               <Col sm className={classes.card}>
-                <Card
-                  className={phoneView && classes.margin2}
-                  data-aos="fade-down-right"
-                >
+                <Card className={classes.margin2} data-aos="fade-down-right">
                   <Card.Img
                     variant="top"
                     src="/advantageExpert.jpg"
@@ -185,10 +172,7 @@ function Advantages() {
                 </Card>
               </Col>
               <Col sm className={classes.card}>
-                <Card
-                  className={phoneView && classes.margin3}
-                  data-aos="fade-down-right"
-                >
+                <Card className={classes.margin3} data-aos="fade-down-right">
                   <Card.Img
                     variant="top"
                     src="/advantageCustomer.jpg"
