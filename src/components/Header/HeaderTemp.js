@@ -399,7 +399,7 @@ const HeaderTemp = ({ setIsHeader, isHeader }) => {
             <Offcanvas.Header closeButton>
               <Offcanvas.Title className={classes.sideBarTitle}>
                 <a href="/">
-                  <img src="/logo.svg" />
+                  <img src="https://www.cogenthub.com/img/logo.svg" />
                 </a>
               </Offcanvas.Title>
             </Offcanvas.Header>
@@ -461,7 +461,10 @@ const HeaderTemp = ({ setIsHeader, isHeader }) => {
       )}
       <div className={classes.leftAlign}>
         <a href="/" className={classes.logoLink}>
-          <img src="/Logo.png" className={classes.logo} />
+          <img
+            src="https://www.cogenthub.com/img/logo.svg"
+            className={classes.logo}
+          />
         </a>
         <a href="#home" onClick={onInsights} className={classes.headerItem}>
           Insights

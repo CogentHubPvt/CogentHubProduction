@@ -4,6 +4,7 @@ import Carousel from 'react-bootstrap/Carousel'
 import content from '../../ContentJson/content.json'
 import { makeStyles } from '@material-ui/styles'
 import 'bootstrap/dist/css/bootstrap.css'
+let Background = 'https://www.agpaytech.co.uk/assets/img/dotted-bg.png'
 
 const useStyles = makeStyles((theme) => ({
   carousel: {
@@ -20,18 +21,20 @@ const useStyles = makeStyles((theme) => ({
   },
   bannerVideo: {
     position: 'relative',
-    zIndex: 0,
+    width: '100%',
+    top: '0',
+    left: '0',
+    minHeight: '100vh',
+    zIndex: -3,
     [theme.breakpoints.down('md')]: {
       top: 20,
     },
-    top: 0,
-    left: 0,
     width: '100%',
     height: '100vh',
     objectFit: 'cover',
   },
   overlay: {
-    position: 'absolute',
+    position: 'relative',
     zIndex: 1,
     top: 0,
     left: 0,
@@ -66,6 +69,11 @@ const useStyles = makeStyles((theme) => ({
   },
   carouselCaption: {
     // position: 'relative',
+    position: 'relative',
+    padding: '2rem',
+    top: '20%',
+    left: '0',
+    zIndex: '3',
     display: 'flex',
     justifyContent: 'center',
     alignItem: 'center',
@@ -75,7 +83,7 @@ const useStyles = makeStyles((theme) => ({
     },
     margin: '2rem',
     '$ h1': {
-      fontSize: theme.fontSize.h2,
+      fontSize: '19px',
       fontWeight: 'bold',
       textShadow:
         '2px 2px 0px  #000, -2px -2px 0px  #000, 2px -2px 0px  #000, -2px 2px 0px  #000',
@@ -95,6 +103,15 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('md')]: {
       fontSize: '12px',
     },
+  },
+  overlay: {
+    backgroundImage: `url(${Background})`,
+    width: '100%',
+    height: '100vh',
+    top: 100,
+    left: 0,
+    position: 'absolute',
+    zIndex: -2,
   },
 }))
 
@@ -125,6 +142,7 @@ export default function BannerCaraousel({}) {
           autoPlay
           className={classes.bannerVideo}
         ></video>
+        <div className={classes.overlay}></div>
       </div>
       {/* <div className={classes.overlay}>
         <img src="https://www.agpaytech.co.uk/assets/img/dotted-bg.png" />

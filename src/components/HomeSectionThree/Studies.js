@@ -58,7 +58,7 @@ const Studies = ({ inView }) => {
   return (
     <div className={classes.container}>
       <div className={classes.title}>
-        <h1>Blogs And Case Studies</h1>
+        <h1>Case Studies</h1>
       </div>
       <div className={classes.subText}>
         <p>
@@ -213,15 +213,20 @@ const Studies = ({ inView }) => {
                 <Card.Img
                   variant="top"
                   className={classes.image}
-                  src="https://images5.alphacoders.com/110/thumb-1920-1107096.jpg"
+                  src="https://images.pexels.com/photos/7681077/pexels-photo-7681077.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
                 />
                 <Card.Body>
-                  <Card.Title>Dummy Blog Name</Card.Title>
+                  <Card.Title>
+                    Re-Commerce: Management of Fashion and Retail Based On Reuse
+                  </Card.Title>
                   <Card.Text>{content.ReportSix}</Card.Text>
                 </Card.Body>
                 <Card.Footer>
                   <small>
-                    <Button variant="success" href="#">
+                    <Button
+                      variant="success"
+                      href="https://cogent-images-and-files.s3.ap-south-1.amazonaws.com/Re-Commerce+new.pdf"
+                    >
                       Download PDF
                     </Button>{' '}
                   </small>
