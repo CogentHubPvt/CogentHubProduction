@@ -362,7 +362,7 @@ const HeaderTemp = ({}) => {
               </a>
               {services && (
                 <div className={classes.phoneList}>
-                  <a>Integrated BPO</a>
+                  <a href="/services/integratedBpo">Integrated BPO</a>
                   <a>Knowledge Services</a>
                   <a>Back Office Management</a>
                   <a>Front Office Management</a>
@@ -381,9 +381,6 @@ const HeaderTemp = ({}) => {
                   <a href="/industries/edTech">Ed Tech</a>
                 </div>
               )}
-              <a href="#about" onClick={onAchievements}>
-                Achievements
-              </a>
               <a href="#about" onClick={onCareer}>
                 Career
               </a>
@@ -393,7 +390,7 @@ const HeaderTemp = ({}) => {
                   <a href="/career">Join the CogentHub Family</a>
                 </div>
               )}
-              <a href="#about" onClick={onDiscover}>
+              <a href="/discover" onClick={onDiscover}>
                 Discover
               </a>
             </Offcanvas.Body>

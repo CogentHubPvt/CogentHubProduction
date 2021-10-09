@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useSpring, animated } from 'react-spring'
 import { makeStyles } from '@material-ui/styles'
 import Button from 'react-bootstrap/Button'
@@ -8,12 +8,16 @@ import FacebookIcon from '@material-ui/icons/Facebook'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import useWindowDimensions from '../../useWindowDimensions'
 
 const useStyles = makeStyles((theme) => ({
   container: {
     width: '100%',
     backgroundColor: theme.background.green,
     color: 'black',
+    [theme.breakpoints.down('md')]: {
+      textAlign: 'center',
+    },
   },
   newsletter: {
     margin: '1rem',
@@ -109,8 +113,16 @@ const useStyles = makeStyles((theme) => ({
       fontSize: theme.fontSize.p,
     },
   },
+  socialIcons: {
+    borderRadius: '30px',
+    border: '1px white solid',
+    width: 'inherit',
+    height: '40px',
+  },
   rightAlign: {
     overflow: 'hidden',
+    margin: 'auto',
+    marginLeft: '65px',
     [theme.breakpoints.down('md')]: {
       display: 'flex',
       justifyContent: 'center',
@@ -145,14 +157,29 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     marginTop: '10px',
   },
-  cogentLogo: {
-    position: 'absolute',
-    left: '70%',
+  footerLogo: {
+    [theme.breakpoints.down('md')]: {
+      width: '300px',
+      height: '100px',
+      display: 'block',
+    },
+    width: '350px',
+    height: '100px',
   },
 }))
 
 const Footer = ({ inView, setInView }) => {
   const classes = useStyles()
+  const { height, width } = useWindowDimensions()
+  const [phoneView, setPhoneView] = useState(false)
+
+  useEffect(() => {
+    if (width < 500) {
+      setPhoneView(true)
+    } else {
+      setPhoneView(false)
+    }
+  })
 
   return (
     <div className={classes.container}>
@@ -194,31 +221,48 @@ const Footer = ({ inView, setInView }) => {
         /> */}
       </Row>
       <div className={classes.break}></div>
-      <Row className={classes.contact}>
-        <Col style={{ margin: 'inherit', marginLeft: '0' }}>
-          <img
-            src="/CogenthubFooter.png"
-            style={{ width: '350px', height: '100px' }}
-          />
-        </Col>
-        <Col
-          className={classes.rightAlign}
-          style={{ margin: 'auto', marginLeft: '65px' }}
-        >
-          <a href="https://twitter.com/hubcogent">
-            <TwitterIcon />
-          </a>
-          <a href="https://www.linkedin.com/company/cogenthub/">
-            <LinkedInIcon />
-          </a>
-          <a href="https://www.facebook.com/CogentHubOutsourcing/">
-            <FacebookIcon />
-          </a>
-        </Col>
-        <Col className={classes.copyright}>
-          <p>Copyright</p>
-        </Col>
-      </Row>
+      {!phoneView && (
+        <Row className={classes.contact}>
+          <Col style={{ margin: 'inherit', marginLeft: '0' }}>
+            <img src="/CogenthubFooter.png" className={classes.footerLogo} />
+          </Col>
+          <Col className={classes.rightAlign}>
+            <a href="https://twitter.com/hubcogent">
+              <TwitterIcon />
+            </a>
+            <a href="https://www.linkedin.com/company/cogenthub/">
+              <LinkedInIcon />
+            </a>
+            <a href="https://www.facebook.com/CogentHubOutsourcing/">
+              <FacebookIcon />
+            </a>
+          </Col>
+          <Col className={classes.copyright}>
+            <p>Copyright</p>
+          </Col>
+        </Row>
+      )}
+      {phoneView && (
+        <Row className={classes.contact}>
+          <Row style={{ marginLeft: 'auto' }}>
+            <img src="/CogenthubFooter.png" className={classes.footerLogo} />
+          </Row>
+          <Row>
+            <a href="https://twitter.com/hubcogent">
+              <TwitterIcon className={classes.socialIcons} />
+            </a>
+            <a href="https://www.linkedin.com/company/cogenthub/">
+              <LinkedInIcon className={classes.socialIcons} />
+            </a>
+            <a href="https://www.facebook.com/CogentHubOutsourcing/">
+              <FacebookIcon className={classes.socialIcons} />
+            </a>
+          </Row>
+          {/* <Row>
+            <p>Copyright</p>
+          </Row> */}
+        </Row>
+      )}
       <div className={classes.break}></div>
     </div>
   )

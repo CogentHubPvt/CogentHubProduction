@@ -10,8 +10,8 @@ const useStyles = makeStyles((theme) => ({
     position: 'absolute',
     zIndex: 99,
     [theme.breakpoints.down('md')]: {
-      top: '250px',
-      left: '70px',
+      top: '200px',
+      left: '60px',
     },
     top: '500px',
     left: '150px',
@@ -21,6 +21,9 @@ const useStyles = makeStyles((theme) => ({
   bannerVideo: {
     position: 'relative',
     zIndex: 0,
+    [theme.breakpoints.down('md')]: {
+      top: 20,
+    },
     top: 0,
     left: 0,
     width: '100%',
@@ -50,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
     top: 100,
     '& img': {
       [theme.breakpoints.down('md')]: {
-        height: '100vh',
+        height: '400px',
       },
     },
   },
@@ -134,12 +137,12 @@ export default function BannerCaraousel({}) {
             </animated.div>
           </Carousel.Caption>
         </Carousel.Item>
-        <Carousel.Item className={classes.carouselItem} interval={4000}>
-          {/* <img
+        {/* <Carousel.Item className={classes.carouselItem} interval={4000}>
+          <img
             className={classes.carouselSlide}
             src="/banner.gif"
             alt="Second slide"
-          /> */}
+          />
 
           <Carousel.Caption className={classes.carouselCaption}>
             <animated.div style={fadeUp}>
@@ -147,13 +150,13 @@ export default function BannerCaraousel({}) {
               <p>{content.SliderTwoText}</p>
             </animated.div>
           </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item className={classes.carouselItem} interval={4000}>
-          {/* <img
+        </Carousel.Item> */}
+        {/* <Carousel.Item className={classes.carouselItem} interval={4000}>
+          <img
             className={classes.carouselSlide}
             src="/banner.gif"
             alt="Second slide"
-          /> */}
+          />
 
           <Carousel.Caption className={classes.carouselCaption}>
             <animated.div style={fadeUp}>
@@ -161,7 +164,7 @@ export default function BannerCaraousel({}) {
               <p>{content.SliderThirdText}</p>
             </animated.div>
           </Carousel.Caption>
-        </Carousel.Item>
+        </Carousel.Item> */}
       </Carousel>
     </div>
   )

@@ -41,17 +41,27 @@ const useStyles = makeStyles((theme) => ({
   iconContainer: {
     display: 'flex',
     justifyContent: 'right',
+    [theme.breakpoints.down('md')]: {
+      display: 'inline-block',
+    },
   },
   icon: {
     width: '120px',
     height: '120px',
     color: '#7393B3',
+    [theme.breakpoints.down('md')]: {
+      width: '60px',
+      height: '60px',
+    },
     color: theme.text.primary,
   },
   container: {
     display: 'flex',
     justifyContent: 'center',
     margin: '10px',
+    [theme.breakpoints.down('md')]: {
+      margin: '30px 0',
+    },
   },
   advantages: {
     boxShadow:

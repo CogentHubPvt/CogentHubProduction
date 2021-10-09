@@ -26,6 +26,9 @@ const useStyles = makeStyles((theme) => ({
   },
   solutionsSubtext: {
     padding: '20px',
+    [theme.breakpoints.down('md')]: {
+      margin: '1rem',
+    },
     margin: '2rem 5rem',
   },
   solutionsContent: {

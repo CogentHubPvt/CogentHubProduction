@@ -17,6 +17,10 @@ const useStyles = makeStyles((theme) => ({
   leadershipTitle: {
     textAlign: 'center',
     '& h1': {
+      [theme.breakpoints.down('md')]: {
+        margin: '0',
+        fontSize: '3rem',
+      },
       fontSize: '4rem',
       margin: '2rem',
     },

@@ -14,6 +14,10 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'center',
     marginTop: '6rem',
+    [theme.breakpoints.down('md')]: {
+      display: 'block',
+      margin: '0',
+    },
   },
   Title: {
     display: 'flex',
@@ -36,8 +40,13 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
   },
   solutions: {
-    width: '95%',
-    margin: '20px',
+    width: '100%',
+    margin: '2rem',
+    [theme.breakpoints.down('md')]: {
+      display: 'block',
+      margin: '1.2rem',
+      width: '90%',
+    },
   },
 }))
 
