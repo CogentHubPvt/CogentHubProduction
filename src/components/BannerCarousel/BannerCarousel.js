@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
     position: 'absolute',
     zIndex: 99,
     [theme.breakpoints.down('md')]: {
-      top: '200px',
+      top: '300px',
       left: '60px',
     },
     top: '500px',
@@ -70,6 +70,10 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     alignItem: 'center',
     textAlign: 'center',
+    [theme.breakpoints.down('md')]: {
+      margin: '0',
+    },
+    margin: '2rem',
     '$ h1': {
       fontSize: theme.fontSize.h2,
       fontWeight: 'bold',
@@ -80,11 +84,17 @@ const useStyles = makeStyles((theme) => ({
   title: {
     fontSize: '35px',
     [theme.breakpoints.down('md')]: {
-      fontSize: '20px',
+      fontSize: '16px',
     },
     fontWeight: 'bold',
     textShadow:
       '1px 1px 0px  #000, -1px -1px 0px  #000, 1px -1px 0px  #000, -2px 2px 0px  #000',
+  },
+  caption: {
+    fontSize: '20px',
+    [theme.breakpoints.down('md')]: {
+      fontSize: '12px',
+    },
   },
 }))
 
@@ -133,16 +143,16 @@ export default function BannerCaraousel({}) {
           <Carousel.Caption className={classes.carouselCaption}>
             <animated.div style={fadeUp}>
               <h2 className={classes.title}>{content.SliderOne}</h2>
-              <p>{content.SliderOneText}</p>
+              <p className={classes.caption}>{content.SliderOneText}</p>
             </animated.div>
           </Carousel.Caption>
         </Carousel.Item>
-        {/* <Carousel.Item className={classes.carouselItem} interval={4000}>
-          <img
+        <Carousel.Item className={classes.carouselItem} interval={4000}>
+          {/* <img
             className={classes.carouselSlide}
             src="/banner.gif"
             alt="Second slide"
-          />
+          /> */}
 
           <Carousel.Caption className={classes.carouselCaption}>
             <animated.div style={fadeUp}>
@@ -150,13 +160,13 @@ export default function BannerCaraousel({}) {
               <p>{content.SliderTwoText}</p>
             </animated.div>
           </Carousel.Caption>
-        </Carousel.Item> */}
-        {/* <Carousel.Item className={classes.carouselItem} interval={4000}>
-          <img
+        </Carousel.Item>
+        <Carousel.Item className={classes.carouselItem} interval={4000}>
+          {/* <img
             className={classes.carouselSlide}
             src="/banner.gif"
             alt="Second slide"
-          />
+          /> */}
 
           <Carousel.Caption className={classes.carouselCaption}>
             <animated.div style={fadeUp}>
@@ -164,7 +174,7 @@ export default function BannerCaraousel({}) {
               <p>{content.SliderThirdText}</p>
             </animated.div>
           </Carousel.Caption>
-        </Carousel.Item> */}
+        </Carousel.Item>
       </Carousel>
     </div>
   )
