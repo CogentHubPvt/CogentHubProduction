@@ -92,13 +92,22 @@ const useStyles = makeStyles((theme) => ({
   },
   margin1: {
     marginTop: '5rem',
+    [theme.breakpoints.down('md')]: {
+      marginTop: '1rem',
+    },
   },
   margin2: {
     marginTop: '10rem',
+    [theme.breakpoints.down('md')]: {
+      marginTop: '1rem',
+    },
   },
   margin3: {
     marginTop: '15rem',
     marginBottom: '3rem',
+    [theme.breakpoints.down('md')]: {
+      marginTop: '1rem',
+    },
   },
 }))
 
@@ -144,7 +153,10 @@ function Advantages() {
                 </Card>
               </Col>
               <Col sm className={classes.card}>
-                <Card className={classes.margin1} data-aos="fade-down-right">
+                <Card
+                  className={phoneView && classes.margin1}
+                  data-aos="fade-down-right"
+                >
                   <Card.Img
                     variant="top"
                     src="/advantageSecurity.jpg"
@@ -157,7 +169,10 @@ function Advantages() {
                 </Card>
               </Col>
               <Col sm className={classes.card}>
-                <Card className={classes.margin2} data-aos="fade-down-right">
+                <Card
+                  className={phoneView && classes.margin2}
+                  data-aos="fade-down-right"
+                >
                   <Card.Img
                     variant="top"
                     src="/advantageExpert.jpg"
@@ -170,7 +185,10 @@ function Advantages() {
                 </Card>
               </Col>
               <Col sm className={classes.card}>
-                <Card className={classes.margin3} data-aos="fade-down-right">
+                <Card
+                  className={phoneView && classes.margin3}
+                  data-aos="fade-down-right"
+                >
                   <Card.Img
                     variant="top"
                     src="/advantageCustomer.jpg"
