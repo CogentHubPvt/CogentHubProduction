@@ -12,7 +12,6 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 99,
     [theme.breakpoints.down('md')]: {
       top: '300px',
-      left: '60px',
     },
     left: 0,
     right: 0,
