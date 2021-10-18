@@ -127,7 +127,7 @@ function Advantages() {
     <>
       <div className={classes.container}>
         <div className={classes.benefitsName} data-aos="fade-down">
-          <h1>Why Work With CogentHub</h1>
+          <h1>Why Should You Choose CogentHub</h1>
         </div>
         <div>
           <Container className={classes.whyContainer}>
