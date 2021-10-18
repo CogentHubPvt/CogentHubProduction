@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '2rem',
   },
   text: {
-    color: theme.text.primary,
+    color: theme.text.yellow,
     '& p': {
       color: 'black',
     },
@@ -62,7 +62,8 @@ const JobCard = ({ job }) => {
           </Card.Body>
           <Card.Footer>
             <Button
-              variant="success"
+              variant="warning"
+              style={{ color: 'white' }}
               href="https://docs.google.com/forms/d/e/1FAIpQLSfjoni4EQBU-sNaGaM73XHxmUrGTPLvm6aUPz_QEZMWEfUyoA/viewform?usp=pp_url"
             >
               Apply

@@ -6,13 +6,14 @@ const theme = createTheme({
   },
   background: {
     white: '#F2EFC4',
-    green: '#188C4F',
+    green: '#FFCB05',
     lightGreen: '#B2F2D0',
     yellow: '#FFCB05',
   },
   text: {
     primary: '#188C4F',
     secondary: '#B8B8B8',
+    yellow: '#FFCB05',
   },
   fontSize: {
     bannerTitle: '50px',

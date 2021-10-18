@@ -51,7 +51,11 @@ const useStyles = makeStyles((theme) => ({
     '& a': {
       textDecoration: 'none',
       fontSize: theme.fontSize.p,
-      color: theme.text.primary,
+      color: theme.text.yellow,
+      '&:hover, &:focus': {
+        borderBottom: '5px solid #FFCB05',
+        fontSize: '18px',
+      },
     },
   },
   underline: {

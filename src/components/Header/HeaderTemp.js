@@ -129,7 +129,7 @@ const useStyles = makeStyles((theme) => ({
   },
   headerItem: {
     '&:hover, &:focus': {
-      borderBottom: '5px solid green',
+      borderBottom: '5px solid #FFCB05',
     },
   },
 }))

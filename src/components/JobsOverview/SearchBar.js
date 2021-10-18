@@ -49,7 +49,11 @@ const SearchBar = () => {
               aria-label="Jobs"
               aria-describedby="Jobs"
             />
-            <Button variant="success" id="button-addon1">
+            <Button
+              variant="warning"
+              id="button-addon1"
+              style={{ color: 'white' }}
+            >
               Search
             </Button>
           </InputGroup>
