@@ -23,8 +23,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: '10px',
   },
   currentBlogContainer: {
-    margin: '6rem',
-    padding: '2rem',
+    padding: '6rem 2rem',
     boxShadow:
       'rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset',
   },
@@ -46,6 +45,7 @@ const useStyles = makeStyles((theme) => ({
     boxShadow:
       'rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset',
     margin: '1rem',
+    padding: '1rem 1rem',
     borderRadius: '10px',
   },
 }))
