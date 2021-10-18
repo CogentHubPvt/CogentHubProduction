@@ -20,9 +20,7 @@ function App() {
   const [service, setService] = useState('')
   const [isHeader, setIsHeader] = useState(false)
   return (
-    <div
-      style={{ fontFamily: 'Open Sans', overflowX: 'hidden', width: 'auto' }}
-    >
+    <div style={{ fontFamily: 'Nunito', overflowX: 'hidden', width: 'auto' }}>
       <Router>
         <ThemeProvider theme={theme}>
           <Route path="/" exact>
