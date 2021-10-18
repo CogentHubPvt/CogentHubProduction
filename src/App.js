@@ -20,7 +20,7 @@ function App() {
   const [service, setService] = useState('')
   const [isHeader, setIsHeader] = useState(false)
   return (
-    <div style={{ fontFamily: 'Roboto', overflowX: 'hidden', width: 'auto' }}>
+    <div style={{ fontFamily: 'Mulish', overflowX: 'hidden', width: 'auto' }}>
       <Router>
         <ThemeProvider theme={theme}>
           <Route path="/" exact>
