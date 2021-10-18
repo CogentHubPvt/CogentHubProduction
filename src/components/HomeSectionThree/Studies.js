@@ -70,7 +70,7 @@ const Studies = ({ inView }) => {
         <Row xs={1} md={2} className="g-4">
           <Col>
             <div data-aos="flip-left">
-              <Card style={{ minHeight: '52rem' }}>
+              <Card style={{ minHeight: '56.4rem' }}>
                 <Card.Img
                   variant="top"
                   className={classes.image}
@@ -98,7 +98,7 @@ const Studies = ({ inView }) => {
           </Col>
           <Col>
             <div data-aos="flip-up">
-              <Card style={{ minHeight: '52rem' }}>
+              <Card style={{ minHeight: '56.4rem' }}>
                 <Card.Img
                   variant="top"
                   className={classes.image}
@@ -126,7 +126,7 @@ const Studies = ({ inView }) => {
           </Col>
           <Col>
             <div data-aos="flip-down">
-              <Card style={{ minHeight: '52rem' }}>
+              <Card style={{ minHeight: '56.4rem' }}>
                 <Card.Img
                   variant="top"
                   className={classes.image}
@@ -152,7 +152,7 @@ const Studies = ({ inView }) => {
           </Col>
           <Col>
             <div data-aos="flip-right">
-              <Card style={{ minHeight: '52rem' }}>
+              <Card style={{ minHeight: '56.4rem' }}>
                 <Card.Img
                   variant="top"
                   className={classes.image}
@@ -181,7 +181,7 @@ const Studies = ({ inView }) => {
           </Col>
           <Col>
             <div data-aos="flip-right">
-              <Card style={{ minHeight: '52rem' }}>
+              <Card style={{ minHeight: '56.4rem' }}>
                 <Card.Img
                   variant="top"
                   className={classes.image}
@@ -209,7 +209,7 @@ const Studies = ({ inView }) => {
           </Col>
           <Col>
             <div data-aos="flip-right">
-              <Card style={{ minHeight: '52rem' }}>
+              <Card style={{ minHeight: '56.4rem' }}>
                 <Card.Img
                   variant="top"
                   className={classes.image}
