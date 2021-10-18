@@ -14,10 +14,16 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     height: '445px',
     margin: '2rem',
+    [theme.breakpoints.down('md')]: {
+      margin: '1rem 0',
+    },
   },
   info: {
     margin: '2rem',
     padding: '2rem',
+    [theme.breakpoints.down('md')]: {
+      margin: '1rem 0',
+    },
     borderRadius: '20px',
     boxShadow:
       'rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset',
@@ -25,6 +31,9 @@ const useStyles = makeStyles((theme) => ({
   form: {
     margin: '2rem',
     padding: '2rem',
+    [theme.breakpoints.down('md')]: {
+      margin: '1rem 0',
+    },
     borderRadius: '20px',
     boxShadow:
       'rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset',
