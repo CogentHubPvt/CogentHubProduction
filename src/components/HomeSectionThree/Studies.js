@@ -85,7 +85,8 @@ const Studies = ({ inView }) => {
                 <Card.Footer>
                   <small>
                     <Button
-                      variant="success"
+                      variant="warning"
+                      style={{ color: 'white' }}
                       target="_blank"
                       href="https://cogent-images-and-files.s3.ap-south-1.amazonaws.com/M+Commerce+ultimate.pdf"
                     >
@@ -113,7 +114,8 @@ const Studies = ({ inView }) => {
                 <Card.Footer>
                   <small>
                     <Button
-                      variant="success"
+                      variant="warning"
+                      style={{ color: 'white' }}
                       target="_blank"
                       href="https://cogent-images-and-files.s3.ap-south-1.amazonaws.com/Farm+to+Table+Business+Model+Affecting+the+Food+Tech+Sector.pdf"
                     >
@@ -139,7 +141,8 @@ const Studies = ({ inView }) => {
                 <Card.Footer>
                   <small>
                     <Button
-                      variant="success"
+                      variant="warning"
+                      style={{ color: 'white' }}
                       target="_blank"
                       href="https://cogent-images-and-files.s3.ap-south-1.amazonaws.com/Global+Fashion+and+Retail+Market.pdf"
                     >
@@ -168,7 +171,8 @@ const Studies = ({ inView }) => {
                 <Card.Footer>
                   <small>
                     <Button
-                      variant="success"
+                      variant="warning"
+                      style={{ color: 'white' }}
                       target="_blank"
                       href="https://cogent-images-and-files.s3.ap-south-1.amazonaws.com/Customer+Retention.pdf"
                     >
@@ -196,7 +200,8 @@ const Studies = ({ inView }) => {
                 <Card.Footer>
                   <small>
                     <Button
-                      variant="success"
+                      variant="warning"
+                      style={{ color: 'white' }}
                       target="_blank"
                       href="https://cogent-images-and-files.s3.ap-south-1.amazonaws.com/How+to+Save+Sales+and+Solve+Customer+Problems+with+Live+Chat.pdf"
                     >
@@ -224,7 +229,8 @@ const Studies = ({ inView }) => {
                 <Card.Footer>
                   <small>
                     <Button
-                      variant="success"
+                      variant="warning"
+                      style={{ color: 'white' }}
                       href="https://cogent-images-and-files.s3.ap-south-1.amazonaws.com/Re-Commerce+new.pdf"
                     >
                       Download PDF
