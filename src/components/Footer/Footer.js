@@ -220,7 +220,7 @@ const Footer = ({ inView, setInView }) => {
         <Col md={true} className={classes.services}>
           <p style={{ fontSize: '19px', fontWeight: 'bold' }}>Insights</p>
           <a href="#">Case Studies</a>
-          <a href="#">Blogs</a>
+          <a href="/blogs">Blogs</a>
         </Col>
         <Col md={true} className={classes.services}>
           <p style={{ fontSize: '19px', fontWeight: 'bold' }}>About Us</p>

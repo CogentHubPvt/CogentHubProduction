@@ -417,7 +417,7 @@ const HeaderTemp = ({ setIsHeader, isHeader }) => {
               </a>
               {insights && (
                 <div className={classes.phoneList}>
-                  <a>Blogs</a>
+                  <a href="/blogs">Blogs</a>
                   <a>Global Trend Studies</a>
                   <a>Case Studies</a>
                   <a>Podcasts on Spotify</a>
