@@ -11,6 +11,9 @@ const useStyles = makeStyles((theme) => ({
   blogs: {
     margin: '2rem',
   },
+  blog: {
+    width: '100%',
+  },
   blogTitle: {
     margin: '2rem',
     fontSize: theme.fontSize.h1,
@@ -127,7 +130,72 @@ const Blogs = ({ inView, setInView }) => {
 
   return (
     <div className={classes.container}>
+      {showBlogCheck && (
+        <div>
+          <div style={{ textAlign: 'right', margin: '1rem' }}>
+            <Button
+              variant="outline-success"
+              onClick={() => {
+                setShowBlogCheck(false)
+              }}
+            >
+              Go Back To Blogs
+            </Button>{' '}
+          </div>
+          <img src="/combine_images.jpg" className={classes.blog} />
+          <img src="/page04_1.jpg" className={classes.blog} />
+          <img src="/page05_1.jpg" className={classes.blog} />
+          <img src="/page06_1.jpg" className={classes.blog} />
+          <img src="/page07_1.jpg" className={classes.blog} />
+          <img src="/page08_1.jpg" className={classes.blog} />
+          <img src="/page09_1.jpg" className={classes.blog} />
+          <img src="/page10_1.jpg" className={classes.blog} />
+        </div>
+      )}
       {!showBlogCheck && (
+        <div>
+          <Card className={classes.blogs}>
+            <Card.Body>
+              <Card.Title>E-Commerce Trends in the UK</Card.Title>
+              <Card.Text>
+                UK retail sales in 2019 grew 3.4%, reaching £394 billion,
+                despite the uncertainty of Brexit and contentious elections.
+                Over the past ten years, online sales have increased by an
+                impressive 324% and now account for 19% of total retail sales.
+                It makes UK the third-largest online market in the world and the
+                biggest in Europe. Keep reading to learn more about the
+                Ecommerce Trends in the UK.
+              </Card.Text>
+            </Card.Body>
+            <Card.Footer>
+              <small className="text-muted" className={classes.author}>
+                Debarpita
+              </small>
+              <Button
+                variant="outline-success"
+                style={{ float: 'right' }}
+                onClick={() => {
+                  setShowBlogCheck(true)
+                }}
+              >
+                Read More
+              </Button>{' '}
+              {isAdmin && (
+                <Button
+                  variant="outline-danger"
+                  style={{ float: 'right', marginRight: '1rem' }}
+                  onClick={() => {
+                    deleteBlog(1)
+                  }}
+                >
+                  Delete
+                </Button>
+              )}
+            </Card.Footer>
+          </Card>
+        </div>
+      )}
+      {/* {!showBlogCheck && (
         <div>
           <h1 className={classes.blogTitle}>Latest Blogs</h1>
           {loading && (
@@ -233,7 +301,7 @@ const Blogs = ({ inView, setInView }) => {
             </Button>{' '}
           </div>
         </div>
-      )}
+      )} */}
     </div>
   )
 }
