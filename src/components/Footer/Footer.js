@@ -12,7 +12,7 @@ import useWindowDimensions from '../../useWindowDimensions'
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    marginTop: '5rem',
+    marginTop: '10rem',
     backgroundColor: theme.background.yellow,
     [theme.breakpoints.down('md')]: {
       textAlign: 'center',
