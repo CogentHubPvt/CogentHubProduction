@@ -107,8 +107,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   logo: {
-    width: '250px',
-    height: '75px',
+    width: '210px',
+    height: '70px',
   },
   logoLink: {
     marginTop: '0.25rem !important',

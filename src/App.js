@@ -15,12 +15,16 @@ import theme from './Theme/theme'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import content from './ContentJson/content.json'
 import logo from './logo.svg'
+import './App.css'
+import './fonts/GraphikLight.otf'
+import './fonts/GraphikMedium.otf'
+import './fonts/GraphikBold.otf'
 
 function App() {
   const [service, setService] = useState('')
   const [isHeader, setIsHeader] = useState(false)
   return (
-    <div style={{ fontFamily: 'Nunito', overflowX: 'hidden', width: 'auto' }}>
+    <div style={{ fontFamily: 'Light', overflowX: 'hidden', width: 'auto' }}>
       <Router>
         <ThemeProvider theme={theme}>
           <Route path="/" exact>

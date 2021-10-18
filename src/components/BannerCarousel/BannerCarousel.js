@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     },
     left: 0,
     right: 0,
-    top: '500px',
+    top: '300px',
     marginTop: 'auto',
     marginLeft: 'auto',
     marginRight: 'auto',
@@ -32,13 +32,11 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     top: '0',
     left: '0',
-    minHeight: '100vh',
+    height: '80vh',
     zIndex: -3,
     [theme.breakpoints.down('md')]: {
       top: 20,
     },
-    width: '100%',
-    height: '100vh',
     objectFit: 'cover',
   },
   overlay: {
@@ -100,7 +98,7 @@ const useStyles = makeStyles((theme) => ({
   title: {
     fontSize: '35px',
     [theme.breakpoints.down('md')]: {
-      fontSize: '16px',
+      fontSize: '22px',
     },
     fontWeight: 'bold',
     // textShadow:
@@ -109,15 +107,15 @@ const useStyles = makeStyles((theme) => ({
   caption: {
     fontSize: '20px',
     [theme.breakpoints.down('md')]: {
-      fontSize: '12px',
+      fontSize: '16px',
     },
   },
   overlay: {
     backgroundImage: `url(${Background})`,
     width: '100%',
-    height: '100vh',
+    height: '80vh',
     [theme.breakpoints.down('md')]: {
-      height: '100vh',
+      height: '80vh',
       top: 20,
     },
     top: 0,
