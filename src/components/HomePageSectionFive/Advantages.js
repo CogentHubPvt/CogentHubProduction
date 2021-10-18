@@ -140,7 +140,9 @@ function Advantages() {
                     style={{ height: '250px' }}
                   />
                   <Card.Body>
-                    <Card.Title>{content.DifferenceTitleOne}</Card.Title>
+                    <Card.Title className={classes.title}>
+                      {content.DifferenceTitleOne}
+                    </Card.Title>
                     <Card.Text>{content.DifferenceTextOne}</Card.Text>
                   </Card.Body>
                 </Card>
@@ -153,7 +155,9 @@ function Advantages() {
                     style={{ height: '250px' }}
                   />
                   <Card.Body>
-                    <Card.Title>{content.DifferenceTitleTwo}</Card.Title>
+                    <Card.Title className={classes.title}>
+                      {content.DifferenceTitleTwo}
+                    </Card.Title>
                     <Card.Text>{content.DifferenceTextTwo}</Card.Text>
                   </Card.Body>
                 </Card>
@@ -166,7 +170,9 @@ function Advantages() {
                     style={{ height: '250px' }}
                   />
                   <Card.Body>
-                    <Card.Title>{content.DifferenceTitleThree}</Card.Title>
+                    <Card.Title className={classes.title}>
+                      {content.DifferenceTitleThree}
+                    </Card.Title>
                     <Card.Text>{content.DifferenceTextThree}</Card.Text>
                   </Card.Body>
                 </Card>
@@ -179,7 +185,9 @@ function Advantages() {
                     style={{ height: '250px' }}
                   />
                   <Card.Body>
-                    <Card.Title>{content.DifferenceTitleFour}</Card.Title>
+                    <Card.Title className={classes.title}>
+                      {content.DifferenceTitleFour}
+                    </Card.Title>
                     <Card.Text>{content.DifferenceTextFour}</Card.Text>
                   </Card.Body>
                 </Card>

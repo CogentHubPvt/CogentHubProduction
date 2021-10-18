@@ -118,7 +118,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
   },
   button: {
-    backgroundColor: theme.background.green,
+    backgroundColor: theme.background.yellow,
     borderRadius: '20px',
     color: 'white',
     marginTop: '10px',

@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: 'rgb(0 0 0 / 24%) 0px 3px 8px',
     padding: '10px 10px 10px 10px',
     borderRadius: '30px',
-    backgroundColor: theme.background.green,
+    backgroundColor: theme.background.yellow,
     '& a': {
       textDecoration: 'none',
       color: 'white',

@@ -12,6 +12,7 @@ import useWindowDimensions from '../../useWindowDimensions'
 
 const useStyles = makeStyles((theme) => ({
   container: {
+    marginTop: '5rem',
     backgroundColor: theme.background.yellow,
     [theme.breakpoints.down('md')]: {
       textAlign: 'center',
@@ -98,6 +99,10 @@ const useStyles = makeStyles((theme) => ({
         display: 'block',
       },
       color: 'white',
+      '&:hover, &:focus': {
+        borderBottom: '5px solid white',
+        fontSize: '18px',
+      },
       padding: '0',
       textDecoration: 'none',
       fontSize: theme.fontSize.p,
