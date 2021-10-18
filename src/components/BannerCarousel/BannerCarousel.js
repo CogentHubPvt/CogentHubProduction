@@ -76,7 +76,7 @@ const useStyles = makeStyles((theme) => ({
     // position: 'relative',
     position: 'relative',
     padding: '2rem',
-    top: '20%',
+    top: '0',
     left: '0',
     zIndex: '3',
     display: 'flex',

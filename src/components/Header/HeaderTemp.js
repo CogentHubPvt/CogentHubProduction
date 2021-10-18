@@ -68,7 +68,7 @@ const useStyles = makeStyles((theme) => ({
       textDecoration: 'none',
       fontSize: theme.fontSize.p,
       width: '100px',
-      height: '40px',
+      height: '45px',
     },
     '& p': {
       float: 'right',
@@ -120,10 +120,16 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.background.green,
     borderRadius: '20px',
     color: 'white',
+    marginTop: '10px',
   },
   dropdown: {
     position: 'relative',
     zIndex: 10000000,
+  },
+  headerItem: {
+    '&:hover, &:focus': {
+      borderBottom: '5px solid green',
+    },
   },
 }))
 
@@ -470,21 +476,27 @@ const HeaderTemp = ({ setIsHeader, isHeader }) => {
         <a href="#home" onClick={onInsights} className={classes.headerItem}>
           Insights
         </a>
-        <a href="#news" onClick={onServices}>
+        <a href="#news" onClick={onServices} className={classes.headerItem}>
           Services
         </a>
-        <a href="#contact" onClick={onIndustries}>
+        <a
+          href="#contact"
+          onClick={onIndustries}
+          className={classes.headerItem}
+        >
           Industries
         </a>
         {/* <a href="#about" onClick={onAchievements}>
           Achievements
         </a> */}
-        <a href="#about" onClick={onCareer}>
+        <a href="#about" onClick={onCareer} className={classes.headerItem}>
           Career
         </a>
-        <a href="/discover">Discover</a>
+        <a href="/discover" className={classes.headerItem}>
+          Discover
+        </a>
         {isAdmin && (
-          <a href="#" onClick={onAdd}>
+          <a href="#" onClick={onAdd} className={classes.headerItem}>
             Add
           </a>
         )}
