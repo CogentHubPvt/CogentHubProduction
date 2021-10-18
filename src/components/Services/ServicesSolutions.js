@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'center',
     marginTop: '6rem',
+    marginBottom: '4rem',
     [theme.breakpoints.down('md')]: {
       display: 'block',
       margin: '0',
@@ -32,8 +33,7 @@ const useStyles = makeStyles((theme) => ({
   },
   Underline: {
     display: 'block',
-    border: '2px green solid',
-    width: '20%',
+    border: '1px green solid',
   },
   underlineContainer: {
     display: 'flex',
@@ -47,6 +47,11 @@ const useStyles = makeStyles((theme) => ({
       margin: '1.2rem',
       width: '90%',
     },
+  },
+  header: {
+    backgroundColor: theme.background.green,
+    color: 'white',
+    minHeight: '63px',
   },
 }))
 
@@ -84,9 +89,10 @@ function ServicesSolutions({ service }) {
           return (
             <Col style={{ padding: '2px' }}>
               <Card style={{ height: '20rem' }}>
-                <Card.Header>Solution</Card.Header>
+                <Card.Header className={classes.header}>
+                  {solution.Title}
+                </Card.Header>
                 <Card.Body>
-                  <Card.Title>{solution.Title}</Card.Title>
                   <Card.Text>{solution.Caption}</Card.Text>
                 </Card.Body>
               </Card>

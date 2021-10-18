@@ -38,7 +38,10 @@ const useStyles = makeStyles((theme) => ({
       color: 'white',
       width: '100%',
     },
-    width: '30%',
+    [theme.breakpoints.down('md')]: {
+      width: '50%',
+    },
+    width: '40%',
   },
   buttonContainer: {
     width: '100%',

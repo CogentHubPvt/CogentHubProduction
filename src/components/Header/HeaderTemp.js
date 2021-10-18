@@ -23,8 +23,8 @@ import { ReactComponent as YourSvg } from '../../logo.svg'
 
 const useStyles = makeStyles((theme) => ({
   burger: {
-    padding: '14px 16px',
-    margin: '0.5rem 1.5rem 0 1.5rem',
+    padding: '15px 10px 0 10px',
+    margin: 0,
     '& a': {
       color: 'black',
     },
@@ -92,10 +92,11 @@ const useStyles = makeStyles((theme) => ({
   },
   sideBarTitle: {
     '& a': {
-      textDecoration: 'none',
-      color: 'black',
-      fontSize: theme.fontSize.p,
-      marginLeft: '10px',
+      '& img': {
+        textDecoration: 'none',
+        color: 'black',
+        width: '95%',
+      },
     },
   },
   phoneList: {
@@ -122,7 +123,7 @@ const useStyles = makeStyles((theme) => ({
   },
   dropdown: {
     position: 'relative',
-    zIndex: 1111,
+    zIndex: 10000000,
   },
 }))
 
@@ -396,7 +397,7 @@ const HeaderTemp = ({ setIsHeader, isHeader }) => {
             <MenuIcon />
           </a>
           <Offcanvas show={show} onHide={handleClose} style={{ width: '70%' }}>
-            <Offcanvas.Header closeButton>
+            <Offcanvas.Header closeButton style={{ paddingBottom: '0' }}>
               <Offcanvas.Title className={classes.sideBarTitle}>
                 <a href="/">
                   <img src="https://www.cogenthub.com/img/logo.svg" />

@@ -21,6 +21,9 @@ const useStyles = makeStyles((theme) => ({
   about: {
     margin: '1.5rem',
     boxShadow: 'rgb(0 0 0 / 35%) 0px 5px 15px',
+    [theme.breakpoints.down('md')]: {
+      margin: '1.5rem 0 0 0',
+    },
   },
   aboutInfo: {
     padding: '30px',
@@ -32,6 +35,9 @@ const useStyles = makeStyles((theme) => ({
   career: {
     margin: '1.5rem 1.5rem 0 1.5rem',
     boxShadow: 'rgb(0 0 0 / 35%) 0px 5px 15px',
+    [theme.breakpoints.down('md')]: {
+      margin: '1.5rem 0 0 0',
+    },
   },
   careerInfo: {
     padding: '30px',

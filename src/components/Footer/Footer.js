@@ -90,7 +90,7 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: '4rem',
     marginBottom: '1rem',
     [theme.breakpoints.down('md')]: {
-      marginLeft: '10px',
+      marginLeft: 0,
     },
     '& a': {
       [theme.breakpoints.down('md')]: {
@@ -160,6 +160,13 @@ const useStyles = makeStyles((theme) => ({
     marginTop: '2.5rem',
     '& p': {
       fontSize: '0.8rem',
+      [theme.breakpoints.down('md')]: {
+        fontSize: '1rem',
+      },
+    },
+    [theme.breakpoints.down('md')]: {
+      margin: 'auto',
+      paddingLeft: '40px',
     },
   },
   footerLogo: {
@@ -251,7 +258,7 @@ const Footer = ({ inView, setInView }) => {
         )}
         {phoneView && (
           <Row className={classes.contact}>
-            <Row style={{ marginLeft: 'auto' }}>
+            <Row style={{ marginLeft: 'auto', marginTop: '15px' }}>
               <img src="/Logo.png" className={classes.footerLogo} />
             </Row>
             <Row>

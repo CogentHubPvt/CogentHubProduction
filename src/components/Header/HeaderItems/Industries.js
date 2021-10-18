@@ -4,8 +4,6 @@ import TrendingFlatIcon from '@material-ui/icons/TrendingFlat'
 
 const useStyles = makeStyles((theme) => ({
   insights: {
-    position: 'absolute',
-    zIndex: '999',
     width: '100%',
     overflow: 'hidden',
     paddingLeft: '4rem',

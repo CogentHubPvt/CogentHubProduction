@@ -20,6 +20,11 @@ const useStyles = makeStyles((theme) => ({
     height: '100%',
   },
   bannerVideo: {
+    // width: '100%',
+    // height: '100vh',
+    // top: 100,
+    // left: 0,
+    // position: 'absolute',
     position: 'relative',
     width: '100%',
     top: '0',
@@ -108,10 +113,17 @@ const useStyles = makeStyles((theme) => ({
     backgroundImage: `url(${Background})`,
     width: '100%',
     height: '100vh',
-    top: 100,
+    [theme.breakpoints.down('md')]: {
+      height: '100vh',
+      top: 20,
+    },
+    top: 0,
     left: 0,
     position: 'absolute',
     zIndex: -2,
+  },
+  banner: {
+    position: 'relative',
   },
 }))
 
@@ -134,7 +146,7 @@ export default function BannerCaraousel({}) {
 
   return (
     <div className={classes.container}>
-      <div>
+      <div className={classes.banner}>
         <video
           src="https://cogent-images-and-files.s3.ap-south-1.amazonaws.com/bannerVideo.mp4"
           loop

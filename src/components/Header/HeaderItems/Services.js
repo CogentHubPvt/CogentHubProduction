@@ -4,13 +4,13 @@ import TrendingFlatIcon from '@material-ui/icons/TrendingFlat'
 
 const useStyles = makeStyles((theme) => ({
   insights: {
-    position: 'absolute',
-    zIndex: '999',
     width: '100%',
     overflow: 'hidden',
     paddingLeft: '4rem',
     backgroundColor: theme.background.green,
     '& a': {
+      position: 'relative',
+      zIndex: '10000',
       float: 'left',
       color: 'white',
       textAlign: 'center',

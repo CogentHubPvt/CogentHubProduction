@@ -45,7 +45,7 @@ function IndustriesPage({
           img={img}
         />
       </div>
-      <div data-aos="fade-right">
+      {/* <div data-aos="fade-right">
         <IndustriesHighlights
           retailDataOne={retailDataOne}
           retailDataTwo={retailDataTwo}
@@ -54,7 +54,7 @@ function IndustriesPage({
           retailCaptionTwo={retailCaptionTwo}
           retailCaptionThree={retailCaptionThree}
         />
-      </div>
+      </div> */}
       <div data-aos="fade-right">
         <IndustriesSolutions
           solutions={solutions}
