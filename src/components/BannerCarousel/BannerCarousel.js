@@ -90,8 +90,8 @@ const useStyles = makeStyles((theme) => ({
     '$ h1': {
       fontSize: '19px',
       fontWeight: 'bold',
-      textShadow:
-        '2px 2px 0px  #000, -2px -2px 0px  #000, 2px -2px 0px  #000, -2px 2px 0px  #000',
+      // textShadow:
+      //   '2px 2px 0px  #000, -2px -2px 0px  #000, 2px -2px 0px  #000, -2px 2px 0px  #000',
     },
   },
   title: {
@@ -100,8 +100,8 @@ const useStyles = makeStyles((theme) => ({
       fontSize: '16px',
     },
     fontWeight: 'bold',
-    textShadow:
-      '1px 1px 0px  #000, -1px -1px 0px  #000, 1px -1px 0px  #000, -2px 2px 0px  #000',
+    // textShadow:
+    //   '1px 1px 0px  #000, -1px -1px 0px  #000, 1px -1px 0px  #000, -2px 2px 0px  #000',
   },
   caption: {
     fontSize: '20px',

@@ -45,6 +45,7 @@ const useStyles = makeStyles((theme) => ({
       margin: '1.7rem 1.5rem 0 1.5rem',
       textDecoration: 'none',
       fontSize: '20px',
+      fontWeight: '400',
     },
     '& p': {
       float: 'left',
