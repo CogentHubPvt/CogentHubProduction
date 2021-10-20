@@ -1,4 +1,5 @@
 import { React, useState, useEffect } from 'react'
+import CookieConsent, { Cookies } from 'react-cookie-consent'
 import { ThemeProvider } from '@material-ui/core/styles'
 import HomePage from './components/pages/HomePage'
 import CareerPage from './components/pages/CareerPage'
@@ -26,6 +27,21 @@ function App() {
   const [isHeader, setIsHeader] = useState(false)
   return (
     <div style={{ fontFamily: 'Light', overflowX: 'hidden', width: 'auto' }}>
+      <CookieConsent
+        location="bottom"
+        buttonText="I Agree"
+        cookieName="cogentCookie"
+        style={{ background: '#2B373B' }}
+        buttonStyle={{
+          color: '#4e503b',
+          fontSize: '16px',
+          borderRadius: '10px',
+        }}
+        expires={150}
+      >
+        This website uses cookies to ensure you get the best experience on our
+        website.{' '}
+      </CookieConsent>
       <Router>
         <ThemeProvider theme={theme}>
           <Route path="/" exact>
