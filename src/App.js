@@ -10,6 +10,7 @@ import Login from './components/Login/Login'
 import AddBlogPage from './components/pages/AddBlogPage'
 import AddJobsPage from './components/pages/AddJobsPage'
 import BlogsPage from './components/pages/BlogsPage'
+import PrivacyPolicy from './PrivacyPolicy/PrivacyPolicy'
 import ContactUsPage from './components/pages/ContactUsPage'
 import theme from './Theme/theme'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
@@ -173,6 +174,9 @@ function App() {
           </Route>
           <Route path="/contactUs" exact>
             <ContactUsPage setIsHeader={setIsHeader} isHeader={isHeader} />
+          </Route>
+          <Route path="/privacyPolicy" exact>
+            <PrivacyPolicy />
           </Route>
         </ThemeProvider>
       </Router>

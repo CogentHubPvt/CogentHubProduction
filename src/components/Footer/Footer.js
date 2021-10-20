@@ -226,6 +226,7 @@ const Footer = ({ inView, setInView }) => {
           <p style={{ fontSize: '19px', fontWeight: 'bold' }}>About Us</p>
           <a href="/career">Join Our Family</a>
           <a href="/contactUs">Contact Us</a>
+          <a href="/privacyPolicy">Privacy Policy</a>
         </Col>
         <Col md={true} className={classes.services}>
           <p style={{ fontSize: '19px', fontWeight: 'bold' }}>Get In Touch</p>
