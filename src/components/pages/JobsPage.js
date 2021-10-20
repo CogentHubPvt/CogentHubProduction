@@ -65,7 +65,8 @@ function JobsPage() {
       <AvailableRoles
         setLoading={setLoading}
         isLoading={isLoading}
-        jobs={pageJobs}
+        jobs={currentPosts}
+        setPageJobs={setPageJobs}
         count={count}
         paginate={paginate}
       />

@@ -89,7 +89,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const AvailableRoles = ({ jobs, setLoading, isLoading, count, paginate }) => {
+const AvailableRoles = ({
+  setLoading,
+  isLoading,
+  count,
+  paginate,
+  setPageJobs,
+  jobs,
+}) => {
   const classes = useStyles()
 
   let items = []
@@ -98,6 +105,7 @@ const AvailableRoles = ({ jobs, setLoading, isLoading, count, paginate }) => {
     AOS.init({
       duration: 1000,
     })
+    setPageJobs(jobs)
   }, [])
 
   // useEffect(() => {

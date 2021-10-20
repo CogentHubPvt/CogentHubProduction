@@ -77,7 +77,7 @@ const Studies = ({ inView }) => {
                   src="https://e-file.huawei.com/-/media/EBG/Images/SolutionV4/enterprise-collaboration/03-remote-collabration.jpg?la=id-ID"
                 />
                 <Card.Body>
-                  <Card.Title>
+                  <Card.Title style={{ fontWeight: 'bold' }}>
                     M-Commerce: The Drastic Evolution of Retail
                   </Card.Title>
                   <Card.Text>{content.ReportOne}</Card.Text>
@@ -106,7 +106,7 @@ const Studies = ({ inView }) => {
                   src="https://c1.wallpaperflare.com/preview/482/39/625/workspace-workplace-partnership-office.jpg"
                 />
                 <Card.Body>
-                  <Card.Title>
+                  <Card.Title style={{ fontWeight: 'bold' }}>
                     Farm To Table Business Model Affecting the Food-Tech Sector
                   </Card.Title>
                   <Card.Text>{content.ReportTwo}</Card.Text>
@@ -135,7 +135,9 @@ const Studies = ({ inView }) => {
                   src="https://c4.wallpaperflare.com/wallpaper/283/270/523/business-circuit-computer-internet-wallpaper-preview.jpg"
                 />
                 <Card.Body>
-                  <Card.Title>Global Fashion & Retail Market</Card.Title>
+                  <Card.Title style={{ fontWeight: 'bold' }}>
+                    Global Fashion & Retail Market
+                  </Card.Title>
                   <Card.Text>{content.ReportThree}</Card.Text>
                 </Card.Body>
                 <Card.Footer>
@@ -162,7 +164,7 @@ const Studies = ({ inView }) => {
                   src="https://images.pexels.com/photos/8867429/pexels-photo-8867429.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
                 />
                 <Card.Body>
-                  <Card.Title>
+                  <Card.Title style={{ fontWeight: 'bold' }}>
                     Customer Retention: Grow Your Business and Explode Return on
                     investment (ROI) by Selling More to Current Customers
                   </Card.Title>
@@ -192,7 +194,7 @@ const Studies = ({ inView }) => {
                   src="https://cogent-images-and-files.s3.ap-south-1.amazonaws.com/business-customer-service-concept-4FBV7WS.jpg"
                 />
                 <Card.Body>
-                  <Card.Title>
+                  <Card.Title style={{ fontWeight: 'bold' }}>
                     How To Save Sales And Solve Customer Problems With Live Chat
                   </Card.Title>
                   <Card.Text>{content.ReportFive}</Card.Text>
@@ -221,7 +223,7 @@ const Studies = ({ inView }) => {
                   src="https://images.pexels.com/photos/7681077/pexels-photo-7681077.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
                 />
                 <Card.Body>
-                  <Card.Title>
+                  <Card.Title style={{ fontWeight: 'bold' }}>
                     Re-Commerce: Management of Fashion and Retail Based On Reuse
                   </Card.Title>
                   <Card.Text>{content.ReportSix}</Card.Text>
