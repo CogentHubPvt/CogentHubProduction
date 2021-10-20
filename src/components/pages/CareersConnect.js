@@ -100,7 +100,7 @@ const CareersConnect = () => {
                     solution-driven team players.
                   </Card.Text>
                   <div className={classes.stayConnectedLinks}>
-                    <a href="#">Search For Jobs</a>
+                    <a href="/jobs">Search For Jobs</a>
                     <div className={classes.underline}></div>
                   </div>
                 </Card.Body>
@@ -125,13 +125,13 @@ const CareersConnect = () => {
                     the people who work here.
                   </Card.Text>
                   <div className={classes.stayConnectedLinks}>
-                    <a href="#">Read Our Blogs</a>
+                    <a href="/blogs">Read Our Blogs</a>
                     {/* <div className={classes.underline}></div> */}
                   </div>
                 </Card.Body>
               </Card>
             </Col>
-            <Col md={true}>
+            {/* <Col md={true}>
               <FeedbackOutlinedIcon className={classes.blogIcon} />
               <Card>
                 <Card.Body>
@@ -151,11 +151,10 @@ const CareersConnect = () => {
                   </Card.Text>
                   <div className={classes.stayConnectedLinks}>
                     <a href="#">Get Notified</a>
-                    {/* <div className={classes.underline}></div> */}
                   </div>
                 </Card.Body>
               </Card>
-            </Col>
+            </Col> */}
           </Row>
         </div>
       </div>
