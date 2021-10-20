@@ -90,7 +90,7 @@
   "EcommerceImg": "/ecommerce.jpg",
   "FoodTechImg": "/foodTech.jpg",
   "TravelTechImg": "/travel.jpg",
-  "EdTechImg": "/edTech.jpg",
+  "EdTechImg": "https://images.pexels.com/photos/5198240/pexels-photo-5198240.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
   "IntegratedBpoImage": "https://images.pexels.com/photos/3184357/pexels-photo-3184357.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
   "KnowledgeServicesImage": "https://images.pexels.com/photos/3182773/pexels-photo-3182773.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
   "BackOfficeImage": "https://images.pexels.com/photos/8867429/pexels-photo-8867429.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",

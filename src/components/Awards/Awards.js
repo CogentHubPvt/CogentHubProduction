@@ -74,6 +74,7 @@ function Awards() {
           <Card style={{ margin: '5px' }}>
             <Card.Img
               variant="top"
+              style={{ height: '240px' }}
               src="https://www.cogenthub.com/img/award1.jpg"
             />
             <Card.Body>

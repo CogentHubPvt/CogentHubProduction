@@ -48,6 +48,11 @@ const useStyles = makeStyles((theme) => ({
     padding: '1rem 1rem',
     borderRadius: '10px',
   },
+  onHoverWhite: {
+    '&:hover, &:focus': {
+      color: 'white',
+    },
+  },
 }))
 
 const Blogs = ({ inView, setInView }) => {
@@ -140,7 +145,8 @@ const Blogs = ({ inView, setInView }) => {
         <div className={classes.blogContainer}>
           <div style={{ textAlign: 'right', padding: '1rem' }}>
             <Button
-              variant="outline-success"
+              variant="outline-warning"
+              className={classes.onHoverWhite}
               onClick={() => {
                 setShowBlogCheck(false)
               }}
@@ -178,7 +184,8 @@ const Blogs = ({ inView, setInView }) => {
                 Debarpita
               </small>
               <Button
-                variant="outline-success"
+                variant="outline-warning"
+                className={classes.onHoverWhite}
                 style={{ float: 'right' }}
                 onClick={() => {
                   setShowBlogCheck(true)

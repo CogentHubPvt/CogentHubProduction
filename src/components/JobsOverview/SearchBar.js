@@ -38,39 +38,7 @@ const SearchBar = ({ jobs, setPageJobs, currentJobs }) => {
     })
   }, [])
 
-  return (
-    <>
-      <div className={classes.jobsHead} data-aos="fade-left">
-        <h1>Search Jobs At CogentHub</h1>
-        <div className={classes.searchBar} data-aos="fade-left">
-          <InputGroup
-            className="mb-3"
-            size="lg"
-            onChange={(e) => {
-              console.log(e.target.value)
-              console.log(jobs)
-              setPageJobs(
-                jobs.filter((job) => job.name.includes(e.target.value)),
-              )
-            }}
-          >
-            <FormControl
-              placeholder="Search for Jobs"
-              aria-label="Jobs"
-              aria-describedby="Jobs"
-            />
-            <Button
-              variant="warning"
-              id="button-addon1"
-              style={{ color: 'white' }}
-            >
-              Search
-            </Button>
-          </InputGroup>
-        </div>
-      </div>
-    </>
-  )
+  return <></>
 }
 
 export default SearchBar
