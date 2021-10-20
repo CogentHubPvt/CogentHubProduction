@@ -23,7 +23,9 @@ function Discover() {
       >
         <HeaderTemp />
       </div>
-      <Vision />
+      <div data-aos="fade-down">
+        <Vision />
+      </div>
       {/* <Mission /> */}
       <div>
         <GrowthStory />

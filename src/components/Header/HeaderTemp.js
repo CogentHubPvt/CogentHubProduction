@@ -191,6 +191,9 @@ const HeaderTemp = ({ setIsHeader, isHeader }) => {
     } else {
       setInsights(!insights)
     }
+    if (add != null) {
+      setAdd(false)
+    }
     if (services != null) {
       setServices(false)
     }
@@ -228,6 +231,9 @@ const HeaderTemp = ({ setIsHeader, isHeader }) => {
     if (insights != null) {
       setInsights(false)
     }
+    if (add != null) {
+      setAdd(false)
+    }
     if (industries != null) {
       setIndustries(false)
     }
@@ -262,6 +268,9 @@ const HeaderTemp = ({ setIsHeader, isHeader }) => {
     if (insights != null) {
       setInsights(false)
     }
+    if (add != null) {
+      setAdd(false)
+    }
     if (services != null) {
       setServices(false)
     }
@@ -281,6 +290,9 @@ const HeaderTemp = ({ setIsHeader, isHeader }) => {
       setAchievements(true)
     } else {
       setAchievements(!achievements)
+    }
+    if (add != null) {
+      setAdd(false)
     }
     if (insights != null) {
       setInsights(false)
@@ -315,6 +327,9 @@ const HeaderTemp = ({ setIsHeader, isHeader }) => {
       setCareer(true)
     } else {
       setCareer(!career)
+    }
+    if (add != null) {
+      setAdd(false)
     }
     if (insights != null) {
       setInsights(false)
@@ -371,25 +386,23 @@ const HeaderTemp = ({ setIsHeader, isHeader }) => {
     // }
     if (add === null) {
       setAdd(true)
-      setIsHeader(true)
     } else {
       setAdd(!add)
-      setIsHeader(!isHeader)
+    }
+    if (services != null) {
+      setServices(false)
     }
     if (insights != null) {
       setInsights(false)
     }
-    if (services != null) {
-      setServices(false)
+    if (industries != null) {
+      setIndustries(false)
     }
     if (achievements != null) {
       setAchievements(false)
     }
     if (career != null) {
       setCareer(false)
-    }
-    if (industries != null) {
-      setIndustries(false)
     }
     if (discover != null) {
       setDiscover(false)

@@ -9,12 +9,13 @@ const useStyles = makeStyles((theme) => ({
     padding: '3rem',
   },
   bannerContent: {
-    position: 'relative',
-    top: '-4rem',
+    marginTop: '1rem',
   },
   logo: {
     '& img': {
       opacity: '0.75',
+      width: '12rem',
+      height: '12rem',
     },
   },
 }))
@@ -29,7 +30,7 @@ function Vision() {
   }, [])
 
   return (
-    <div className={classes.container} data-aos="fade-down">
+    <div className={classes.container}>
       <div className={classes.logo}>
         <img src="/cogentHubLogo.png" />
       </div>
@@ -38,11 +39,11 @@ function Vision() {
           <h1>Our Vision</h1>
         </div>
         <div>
-          <h2>
+          <p style={{ fontWeight: 'bold', marginTop: '1rem' }}>
             “ To be globally preferred organization, specializing in the field
             of technology, creating value for all our stakeholders – Associates,
             Customers, Investors, Suppliers & Society. ”
-          </h2>
+          </p>
         </div>
         <div>
           <p>

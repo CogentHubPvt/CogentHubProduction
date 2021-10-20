@@ -82,13 +82,15 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: '25vh',
     fontSize: '3rem',
   },
+  filterButton: {
+    '&:hover, &:focus': {
+      color: 'white',
+    },
+  },
 }))
 
-const AvailableRoles = () => {
+const AvailableRoles = ({ jobs, setLoading, isLoading, count, paginate }) => {
   const classes = useStyles()
-  const [jobs, setJobs] = useState(['1'])
-  const [isLoading, setLoading] = useState(true)
-  const [count, setCount] = useState(0)
 
   let items = []
 
@@ -98,19 +100,19 @@ const AvailableRoles = () => {
     })
   }, [])
 
-  useEffect(() => {
-    axios
-      .get('https://cogenthub-api.herokuapp.com/jobs/getJobs')
-      .then((result) => {
-        console.log(result.data.jobs)
-        setJobs(result.data.jobs)
-        setCount(Math.ceil(result.data.jobs.length / 4))
-        setLoading(false)
-      })
-      .catch((error) => {
-        console.log(error.message)
-      })
-  }, [])
+  // useEffect(() => {
+  //   axios
+  //     .get('https://cogenthub-api.herokuapp.com/jobs/getJobs')
+  //     .then((result) => {
+  //       console.log(result.data.jobs)
+  //       setJobs(result.data.jobs)
+  //       setCount(Math.ceil(result.data.jobs.length / 4))
+  //       setLoading(false)
+  //     })
+  //     .catch((error) => {
+  //       console.log(error.message)
+  //     })
+  // }, [])
 
   return (
     <>
@@ -130,7 +132,12 @@ const AvailableRoles = () => {
             <a>|</a>
             <a href="#">Most Relevant</a>
             <div className={classes.rightAlign}>
-              <Button variant="outline-success">Filter Results</Button>{' '}
+              <Button
+                variant="outline-warning"
+                className={classes.filterButton}
+              >
+                Filter Results
+              </Button>{' '}
             </div>
           </div>
           <Container className={classes.jobs} data-aos="zoom-in-up">
@@ -145,7 +152,13 @@ const AvailableRoles = () => {
             </Row>
           </Container>
           {console.log(items)};
-          <Pagination count={count} className={classes.pagination} />
+          <Pagination
+            count={count}
+            className={classes.pagination}
+            onChange={(event, value) => {
+              paginate(value)
+            }}
+          />
         </>
       )}
     </>

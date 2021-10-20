@@ -101,7 +101,7 @@ const useStyles = makeStyles((theme) => ({
       color: 'white',
       '&:hover, &:focus': {
         borderBottom: '5px solid white',
-        fontSize: '18px',
+        fontSize: '17px',
       },
       padding: '0',
       textDecoration: 'none',

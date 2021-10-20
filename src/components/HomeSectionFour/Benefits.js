@@ -77,17 +77,17 @@ const Benefits = () => {
           <Col sm className={classes.card} data-aos="fade-down">
             <SecurityOutlinedIcon className={classes.icon} />
             <h3>{content.BenefitTitleTwo}</h3>
-            <p>{content.BenefitTextOne}</p>
+            <p>{content.BenefitTextTwo}</p>
           </Col>
           <Col sm className={classes.card} data-aos="fade-down">
             <SupervisedUserCircleOutlinedIcon className={classes.icon} />
             <h3>{content.BenefitTitleThree}</h3>
-            <p>{content.BenefitTextOne}</p>
+            <p>{content.BenefitTextThree}</p>
           </Col>
           <Col sm className={classes.card} data-aos="fade-down">
             <MonetizationOnOutlinedIcon className={classes.icon} />
             <h3>{content.BenefitTitleFour}</h3>
-            <p>{content.BenefitTextOne}</p>
+            <p>{content.BenefitTextFour}</p>
           </Col>
         </Row>
       </div>

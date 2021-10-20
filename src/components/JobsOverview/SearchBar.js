@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const SearchBar = () => {
+const SearchBar = ({ jobs, setPageJobs, currentJobs }) => {
   const classes = useStyles()
 
   useEffect(() => {
@@ -43,7 +43,17 @@ const SearchBar = () => {
       <div className={classes.jobsHead} data-aos="fade-left">
         <h1>Search Jobs At CogentHub</h1>
         <div className={classes.searchBar} data-aos="fade-left">
-          <InputGroup className="mb-3" size="lg">
+          <InputGroup
+            className="mb-3"
+            size="lg"
+            onChange={(e) => {
+              console.log(e.target.value)
+              console.log(jobs)
+              setPageJobs(
+                jobs.filter((job) => job.name.includes(e.target.value)),
+              )
+            }}
+          >
             <FormControl
               placeholder="Search for Jobs"
               aria-label="Jobs"
