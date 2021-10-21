@@ -171,7 +171,7 @@ function ContactUsPage() {
           </Row>
           <Row>
             <Col style={{ textAlign: 'center' }}>
-              <Button variant="outline-success">Submit</Button>{' '}
+              <Button variant="outline-warning">Submit</Button>{' '}
             </Col>
           </Row>
         </Form>
