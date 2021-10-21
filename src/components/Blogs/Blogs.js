@@ -67,6 +67,7 @@ const Blogs = ({ inView, setInView }) => {
   const [imageFour, setImageFour] = useState('')
   const [imageFive, setImageFive] = useState('')
   const [isAdmin, setAdmin] = useState(false)
+  const [images, setImages] = useState([])
 
   useEffect(() => {
     axios
@@ -92,31 +93,16 @@ const Blogs = ({ inView, setInView }) => {
       .catch((error) => {
         console.log(error.message)
       })
-  }, [blogs])
+  }, [])
 
   const showBlog = (id) => {
     setLoading(true)
+    setShowBlogCheck(true)
     axios
       .post('https://cogenthub-api.herokuapp.com/blogs/getBlogById', { id: id })
       .then((response) => {
         console.log('blogs', response.data.blog[0])
         setCurrentBlog(response.data.blog[0])
-        setShowBlogCheck(true)
-        if (response.data.blog[0].images[0] != undefined) {
-          setImageOne(response.data.blog[0].images[0])
-        }
-        if (response.data.blog[0].images[1] != undefined) {
-          setImageTwo(response.data.blog[0].images[1])
-        }
-        if (response.data.blog[0].images[2] != undefined) {
-          setImageThree(response.data.blog[0].images[2])
-        }
-        if (response.data.blog[0].images[3] != undefined) {
-          setImageFour(response.data.blog[0].images[3])
-        }
-        if (response.data.blog[0].images[4] != undefined) {
-          setImageFive(response.data.blog[0].images[4])
-        }
         setLoading(false)
       })
       .catch((error) => {
@@ -142,70 +128,84 @@ const Blogs = ({ inView, setInView }) => {
   return (
     <div className={classes.container}>
       {showBlogCheck && (
-        <div className={classes.blogContainer}>
-          <div style={{ textAlign: 'right', padding: '1rem' }}>
-            <Button
-              variant="outline-warning"
-              className={classes.onHoverWhite}
-              onClick={() => {
-                setShowBlogCheck(false)
-              }}
-            >
-              Go Back To Blogs
-            </Button>{' '}
-          </div>
-          <img src="/combine_images.jpg" className={classes.blog} />
+        <div>
+          {loading && (
+            <div className={classes.loading}>
+              <Spinner animation="border" role="status">
+                <span className="visually-hidden">Loading...</span>
+              </Spinner>
+            </div>
+          )}
+          {!loading && (
+            <div className={classes.blogContainer}>
+              <div style={{ textAlign: 'right', padding: '1rem' }}>
+                <Button
+                  variant="outline-warning"
+                  className={classes.onHoverWhite}
+                  onClick={() => {
+                    setShowBlogCheck(false)
+                  }}
+                >
+                  Go Back To Blogs
+                </Button>{' '}
+              </div>
+              {/* <img src="/combine_images.jpg" className={classes.blog} />
           <img src="/page04_1.jpg" className={classes.blog} />
           <img src="/page05_1.jpg" className={classes.blog} />
           <img src="/page06_1.jpg" className={classes.blog} />
           <img src="/page07_1.jpg" className={classes.blog} />
           <img src="/page08_1.jpg" className={classes.blog} />
           <img src="/page09_1.jpg" className={classes.blog} />
-          <img src="/page10_1.jpg" className={classes.blog} />
+          <img src="/page10_1.jpg" className={classes.blog} /> */}
+              <div>
+                {currentBlog.images.map((image) => {
+                  return <img src={image} className={classes.blog} />
+                })}
+              </div>
+            </div>
+          )}
         </div>
       )}
       {!showBlogCheck && (
         <div>
-          <Card className={classes.blogs}>
-            <Card.Body>
-              <Card.Title>E-Commerce Trends in the UK</Card.Title>
-              <Card.Text>
-                UK retail sales in 2019 grew 3.4%, reaching £394 billion,
-                despite the uncertainty of Brexit and contentious elections.
-                Over the past ten years, online sales have increased by an
-                impressive 324% and now account for 19% of total retail sales.
-                It makes UK the third-largest online market in the world and the
-                biggest in Europe. Keep reading to learn more about the
-                Ecommerce Trends in the UK.
-              </Card.Text>
-            </Card.Body>
-            <Card.Footer>
-              <small className="text-muted" className={classes.author}>
-                Debarpita
-              </small>
-              <Button
-                variant="outline-warning"
-                className={classes.onHoverWhite}
-                style={{ float: 'right' }}
-                onClick={() => {
-                  setShowBlogCheck(true)
-                }}
-              >
-                Read More
-              </Button>{' '}
-              {isAdmin && (
-                <Button
-                  variant="outline-danger"
-                  style={{ float: 'right', marginRight: '1rem' }}
-                  onClick={() => {
-                    deleteBlog(1)
-                  }}
-                >
-                  Delete
-                </Button>
-              )}
-            </Card.Footer>
-          </Card>
+          {blogs.map((blog) => {
+            return (
+              <div>
+                <Card className={classes.blogs}>
+                  <Card.Body>
+                    <Card.Title>{blog.title}</Card.Title>
+                    <Card.Text>{blog.introduction}</Card.Text>
+                  </Card.Body>
+                  <Card.Footer>
+                    <small className="text-muted" className={classes.author}>
+                      {blog.author}
+                    </small>
+                    <Button
+                      variant="outline-warning"
+                      className={classes.onHoverWhite}
+                      style={{ float: 'right' }}
+                      onClick={() => {
+                        showBlog(blog._id)
+                      }}
+                    >
+                      Read More
+                    </Button>{' '}
+                    {isAdmin && (
+                      <Button
+                        variant="outline-danger"
+                        style={{ float: 'right', marginRight: '1rem' }}
+                        onClick={() => {
+                          deleteBlog(1)
+                        }}
+                      >
+                        Delete
+                      </Button>
+                    )}
+                  </Card.Footer>
+                </Card>
+              </div>
+            )
+          })}
         </div>
       )}
       {/* {!showBlogCheck && (

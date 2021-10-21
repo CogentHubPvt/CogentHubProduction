@@ -33,6 +33,7 @@ const useStyles = makeStyles((theme) => ({
   },
   imageUpload: {
     margin: '1rem',
+    textAlign: 'left',
   },
   body: {
     margin: '1rem',
@@ -110,164 +111,204 @@ const AddBlog = () => {
   const [subContentThree, setSubContentThree] = useState('')
   const [subHeadingFour, setSubHeadingFour] = useState('')
   const [subContentFour, setSubContentFour] = useState('')
+  const [author, setAuthor] = useState('')
   const [isPreview, setPreview] = useState(false)
   const images = []
 
-  const handleSubmit = async () => {
-    console.log('image', image)
-    let formData = new FormData()
-    formData.append('title', title)
-    formData.append('introduction', body)
-    formData.append('subHeadingOne', subHeadingOne)
-    formData.append('subHeadingTwo', subHeadingTwo)
-    formData.append('subHeadingThree', subHeadingThree)
-    formData.append('subHeadingFour', subHeadingFour)
-    formData.append('contentOne', subContentOne)
-    formData.append('contentTwo', subContentTwo)
-    formData.append('contentThree', subContentThree)
-    formData.append('contentFour', subContentFour)
+  // const handleSubmit = async () => {
+  //   console.log('image', image)
+  //   let formData = new FormData()
+  // formData.append('title', title)
+  // formData.append('introduction', body)
+  //   formData.append('subHeadingOne', subHeadingOne)
+  //   formData.append('subHeadingTwo', subHeadingTwo)
+  //   formData.append('subHeadingThree', subHeadingThree)
+  //   formData.append('subHeadingFour', subHeadingFour)
+  //   formData.append('contentOne', subContentOne)
+  //   formData.append('contentTwo', subContentTwo)
+  //   formData.append('contentThree', subContentThree)
+  //   formData.append('contentFour', subContentFour)
 
-    console.log('Image Form', imageForm)
-    console.log('images')
-    console.log(image)
-    console.log(imageTwo)
-    console.log(imageThree)
-    console.log(imageFour)
-    console.log(imageFive)
+  //   console.log('Image Form', imageForm)
+  //   console.log('images')
+  //   console.log(image)
+  //   console.log(imageTwo)
+  //   console.log(imageThree)
+  //   console.log(imageFour)
+  //   console.log(imageFive)
 
-    let newStateArray = []
-    let counter = 0
+  //   let newStateArray = []
+  //   let counter = 0
 
-    if (image.file != '') {
-      newStateArray.push(image.file)
-      counter = counter + 1
-      // setImageForm(newStateArray)
-    }
-    if (imageTwo.file != '') {
-      // let newStateArray = imageForm.slice()
-      newStateArray.push(imageTwo.file)
-      counter = counter + 1
-      // setImageForm(newStateArray)
-    }
-    if (imageThree.file != '') {
-      // let newStateArray = imageForm.slice()
-      newStateArray.push(imageThree.file)
-      counter = counter + 1
-      // setImageForm(newStateArray)
-    }
-    if (imageFour.file != '') {
-      // let newStateArray = imageForm.slice()
-      newStateArray.push(imageFour.file)
-      counter = counter + 1
-      // setImageForm(newStateArray)
-    }
-    if (imageFive.file != '') {
-      // let newStateArray = imageForm.slice()
-      newStateArray.push(imageFive.file)
-      counter = counter + 1
-      // setImageForm(newStateArray)
-    }
+  //   if (image.file != '') {
+  //     newStateArray.push(image.file)
+  //     counter = counter + 1
+  //     // setImageForm(newStateArray)
+  //   }
+  //   if (imageTwo.file != '') {
+  //     // let newStateArray = imageForm.slice()
+  //     newStateArray.push(imageTwo.file)
+  //     counter = counter + 1
+  //     // setImageForm(newStateArray)
+  //   }
+  //   if (imageThree.file != '') {
+  //     // let newStateArray = imageForm.slice()
+  //     newStateArray.push(imageThree.file)
+  //     counter = counter + 1
+  //     // setImageForm(newStateArray)
+  //   }
+  //   if (imageFour.file != '') {
+  //     // let newStateArray = imageForm.slice()
+  //     newStateArray.push(imageFour.file)
+  //     counter = counter + 1
+  //     // setImageForm(newStateArray)
+  //   }
+  //   if (imageFive.file != '') {
+  //     // let newStateArray = imageForm.slice()
+  //     newStateArray.push(imageFive.file)
+  //     counter = counter + 1
+  //     // setImageForm(newStateArray)
+  //   }
 
-    console.log(newStateArray)
+  //   console.log(newStateArray)
 
-    newStateArray.forEach((item) => formData.append('file', item))
+  //   newStateArray.forEach((item) => formData.append('file', item))
 
-    const config = {
-      headers: { 'content-type': 'multipart/form-data' },
-    }
-    axios
-      .post('https://cogenthub-api.herokuapp.com/blogs', formData, config)
-      .then((response) => {
-        console.log(response)
-      })
-      .catch((error) => {
-        console.log(error.response)
-      })
-  }
+  // const config = {
+  //   headers: { 'content-type': 'multipart/form-data' },
+  // }
+  //   axios
+  //     .post('https://cogenthub-api.herokuapp.com/blogs', formData, config)
+  //     .then((response) => {
+  //       console.log(response)
+  //     })
+  //     .catch((error) => {
+  //       console.log(error.response)
+  //     })
+  // }
 
-  const imageOneHandler = (e) => {
-    const objectUrl = URL.createObjectURL(e.target.files[0])
-    setImage({
-      url: objectUrl,
-      file: e.target.files[0],
-    })
-  }
-  const imageTwoHandler = (e) => {
-    const objectUrl = URL.createObjectURL(e.target.files[0])
-    setImageTwo({
-      url: objectUrl,
-      file: e.target.files[0],
-    })
-  }
-  const imageThreeHandler = (e) => {
-    const objectUrl = URL.createObjectURL(e.target.files[0])
-    setImageThree({
-      url: objectUrl,
-      file: e.target.files[0],
-    })
-  }
-  const imageFourHandler = (e) => {
-    const objectUrl = URL.createObjectURL(e.target.files[0])
-    setImageFour({
-      url: objectUrl,
-      file: e.target.files[0],
-    })
-  }
-  const imageFiveHandler = (e) => {
-    const objectUrl = URL.createObjectURL(e.target.files[0])
-    setImageFive({
-      url: objectUrl,
-      file: e.target.files[0],
-    })
-  }
+  // const imageOneHandler = (e) => {
+  //   const objectUrl = URL.createObjectURL(e.target.files[0])
+  //   setImage({
+  //     url: objectUrl,
+  //     file: e.target.files[0],
+  //   })
+  // }
+  // const imageTwoHandler = (e) => {
+  //   const objectUrl = URL.createObjectURL(e.target.files[0])
+  //   setImageTwo({
+  //     url: objectUrl,
+  //     file: e.target.files[0],
+  //   })
+  // }
+  // const imageThreeHandler = (e) => {
+  //   const objectUrl = URL.createObjectURL(e.target.files[0])
+  //   setImageThree({
+  //     url: objectUrl,
+  //     file: e.target.files[0],
+  //   })
+  // }
+  // const imageFourHandler = (e) => {
+  //   const objectUrl = URL.createObjectURL(e.target.files[0])
+  //   setImageFour({
+  //     url: objectUrl,
+  //     file: e.target.files[0],
+  //   })
+  // }
+  // const imageFiveHandler = (e) => {
+  //   const objectUrl = URL.createObjectURL(e.target.files[0])
+  //   setImageFive({
+  //     url: objectUrl,
+  //     file: e.target.files[0],
+  //   })
+  // }
 
   const titleHandler = (e) => {
     setTitle(e.target.value)
   }
-  const subOneHandler = (e) => {
-    setSubHeadingOne(e.target.value)
-  }
-  const subTwoHandler = (e) => {
-    setSubHeadingTwo(e.target.value)
-  }
-  const subThreeHandler = (e) => {
-    setSubHeadingThree(e.target.value)
-  }
-  const subFourHandler = (e) => {
-    setSubHeadingFour(e.target.value)
-  }
+  // const subOneHandler = (e) => {
+  //   setSubHeadingOne(e.target.value)
+  // }
+  // const subTwoHandler = (e) => {
+  //   setSubHeadingTwo(e.target.value)
+  // }
+  // const subThreeHandler = (e) => {
+  //   setSubHeadingThree(e.target.value)
+  // }
+  // const subFourHandler = (e) => {
+  //   setSubHeadingFour(e.target.value)
+  // }
 
   const handleBody = (e) => {
     setBody(e.target.value)
     e.target.style.height = 'inherit'
     e.target.style.height = `${e.target.scrollHeight}px`
   }
-  const handleContentOne = (e) => {
-    setSubContentOne(e.target.value)
-    e.target.style.height = 'inherit'
-    e.target.style.height = `${e.target.scrollHeight}px`
-  }
-  const handleContentTwo = (e) => {
-    setSubContentTwo(e.target.value)
-    e.target.style.height = 'inherit'
-    e.target.style.height = `${e.target.scrollHeight}px`
-  }
-  const handleContentThree = (e) => {
-    setSubContentThree(e.target.value)
-    e.target.style.height = 'inherit'
-    e.target.style.height = `${e.target.scrollHeight}px`
-  }
+  // const handleContentOne = (e) => {
+  //   setSubContentOne(e.target.value)
+  //   e.target.style.height = 'inherit'
+  //   e.target.style.height = `${e.target.scrollHeight}px`
+  // }
+  // const handleContentTwo = (e) => {
+  //   setSubContentTwo(e.target.value)
+  //   e.target.style.height = 'inherit'
+  //   e.target.style.height = `${e.target.scrollHeight}px`
+  // }
+  // const handleContentThree = (e) => {
+  //   setSubContentThree(e.target.value)
+  //   e.target.style.height = 'inherit'
+  //   e.target.style.height = `${e.target.scrollHeight}px`
+  // }
 
-  const handleContentFour = (e) => {
-    setSubContentFour(e.target.value)
-    e.target.style.height = 'inherit'
-    e.target.style.height = `${e.target.scrollHeight}px`
-  }
+  // const handleContentFour = (e) => {
+  //   setSubContentFour(e.target.value)
+  //   e.target.style.height = 'inherit'
+  //   e.target.style.height = `${e.target.scrollHeight}px`
+  // }
   const handlePreview = () => {
     setPreview(true)
   }
   const handlePreviewBack = () => {
     setPreview(false)
+  }
+
+  const handleImages = (e) => {
+    setImageForm(e.target.files)
+    console.log('files', e.target.files)
+  }
+
+  const handleAuthor = (e) => {
+    setAuthor(e.target.value)
+  }
+
+  const handleSubmit = () => {
+    console.log(imageForm)
+    let formData = new FormData()
+    formData.append('title', title)
+    formData.append('introduction', body)
+    formData.append('author', author)
+    console.log(typeof imageForm)
+    let array = Array.from(imageForm)
+    console.log('Arrayyyyy', array)
+    // formData.append('files', array)
+    array.forEach((item) => formData.append('files', item))
+
+    const config = {
+      headers: { 'content-type': 'multipart/form-data' },
+    }
+
+    axios
+      .post(
+        'https://cogenthub-api.herokuapp.com/blogs/blogUpload',
+        formData,
+        config,
+      )
+      .then((response) => {
+        console.log(response)
+      })
+      .catch((error) => {
+        console.log(error.response)
+      })
   }
 
   return (
@@ -282,7 +323,15 @@ const AddBlog = () => {
             style={{ display: isPreview != true ? 'block' : 'none' }}
           >
             <Form.Group controlId="formFileLg" className="mb-3">
-              <Form.Control type="file" size="lg" onChange={imageOneHandler} />
+              <Form.Control
+                type="file"
+                multiple
+                size="lg"
+                onChange={handleImages}
+              />
+              <Form.Text className="text-muted">
+                Enter the image files in order.
+              </Form.Text>
             </Form.Group>
           </div>
           {image.url != '' && (
@@ -327,6 +376,20 @@ const AddBlog = () => {
             <p>{body}</p>
           </div>
           <div
+            className={classes.addBody}
+            style={{ display: isPreview != true ? 'block' : 'none' }}
+          >
+            <InputGroup>
+              <InputGroup.Text>Enter Author Name</InputGroup.Text>
+              <FormControl
+                aria-label="Large"
+                aria-describedby="inputGroup-sizing-sm"
+                className={classes.titleField}
+                onChange={handleAuthor}
+              />
+            </InputGroup>
+          </div>
+          {/* <div
             className={classes.imageUpload}
             style={{ display: isPreview != true ? 'block' : 'none' }}
           >
@@ -525,7 +588,7 @@ const AddBlog = () => {
           </div>
           <div className={classes.body}>
             <p>{subContentFour}</p>
-          </div>
+          </div> */}
         </div>
       )}
       {!isPreview && (
