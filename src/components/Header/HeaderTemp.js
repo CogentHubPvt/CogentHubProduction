@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
       padding: '14px 16px',
       margin: '1.7rem 1.5rem 0 1.5rem',
       textDecoration: 'none',
-      fontSize: '20px',
+      fontSize: theme.fontSize.h2,
       fontWeight: '400',
     },
     '& p': {
@@ -124,7 +124,6 @@ const useStyles = makeStyles((theme) => ({
     marginTop: '10px',
     '&:hover': {
       backgroundColor: '#58B19F',
-      
     },
   },
   dropdown: {
