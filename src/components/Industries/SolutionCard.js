@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
   icon: {
     width: '60px',
     height: '60px',
-    color: theme.background.green,
+    color: theme.background.yellow,
   },
   iconContainer: {
     textAlign: 'center',

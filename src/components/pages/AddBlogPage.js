@@ -1,5 +1,6 @@
 import { React, useState, useEffect } from 'react'
 import AddBlog from '../AddBlog/AddBlog'
+import RichTextEditor from '../AddBlog/RichTextEditor'
 import HeaderTemp from '../Header/HeaderTemp'
 import Footer from '../Footer/Footer'
 import AOS from 'aos'
@@ -21,7 +22,7 @@ function AddBlogPage() {
       >
         <HeaderTemp />
       </div>
-      <AddBlog />
+      <RichTextEditor />
       <Footer />
     </>
   )

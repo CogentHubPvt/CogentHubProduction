@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   previewButton: {
-    backgroundColor: theme.background.green,
+    backgroundColor: theme.background.yellow,
     padding: '10px',
     margin: '1rem',
     borderRadius: '20px',

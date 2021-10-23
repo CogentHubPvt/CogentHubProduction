@@ -64,13 +64,13 @@ const useStyles = makeStyles((theme) => ({
   icon: {
     width: '210px',
     height: '210px',
-    color: theme.background.green,
+    color: theme.background.yellow,
   },
   benefitsInfoTitle: {
     display: 'flex',
     justifyContent: 'left',
     paddingTop: '20px',
-    color: theme.background.green,
+    color: theme.background.yellow,
   },
   benefitsInfoSubtext: {
     display: 'flex',

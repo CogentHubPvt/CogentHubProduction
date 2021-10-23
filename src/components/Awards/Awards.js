@@ -41,46 +41,42 @@ function Awards() {
           <h1>Awards & Certifications</h1>
         </div>
         <CardGroup>
-          <Card style={{ margin: '5px' }}>
+          <Card style={{ margin: '10px' }}>
             <Card.Img
               variant="top"
-              style={{ height: '240px' }}
               src="https://www.cogenthub.com/img/award4.jpg"
             />
             <Card.Body>
               <Card.Title>ISO/IEC 27701 CERTIFIED</Card.Title>
             </Card.Body>
           </Card>
-          <Card style={{ margin: '5px' }}>
+          <Card style={{ margin: '10px' }}>
             <Card.Img
               variant="top"
-              style={{ height: '240px' }}
               src="https://www.cogenthub.com/img/award2.jpg"
             />
             <Card.Body>
               <Card.Title>ISO 9001 CERTIFIED</Card.Title>
             </Card.Body>
           </Card>
-          <Card style={{ margin: '5px' }}>
+          <Card style={{ margin: '10px' }}>
             <Card.Img
               variant="top"
-              style={{ height: '240px' }}
               src="https://www.cogenthub.com/img/award3.jpg"
             />
             <Card.Body>
               <Card.Title>ISO/IEC 27001 CERTIFIED</Card.Title>
             </Card.Body>
           </Card>
-          <Card style={{ margin: '5px' }}>
+          {/* <Card style={{ margin: '5px' }}>
             <Card.Img
               variant="top"
-              style={{ height: '240px' }}
               src="https://www.cogenthub.com/img/award1.jpg"
             />
             <Card.Body>
               <Card.Title>CERTIFICATION OF HONOUR</Card.Title>
             </Card.Body>
-          </Card>
+          </Card> */}
         </CardGroup>
       </div>
     </>

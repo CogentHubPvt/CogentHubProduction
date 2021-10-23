@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: '2rem',
   },
   search: {
-    backgroundColor: theme.background.green,
+    backgroundColor: theme.background.yellow,
     color: 'white',
   },
 }))

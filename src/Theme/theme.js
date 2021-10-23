@@ -6,8 +6,7 @@ const theme = createTheme({
   },
   background: {
     white: '#F2EFC4',
-    green: '#FFCB05',
-    lightGreen: '#B2F2D0',
+    green: '#BED730',
     yellow: '#FFCB05',
   },
   text: {

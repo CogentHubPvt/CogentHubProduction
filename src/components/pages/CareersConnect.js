@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
     top: '2rem',
     zIndex: '12',
-    color: theme.background.green,
+    color: theme.background.yellow,
   },
   teamIcon: {
     width: '9rem',
@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
     top: '2.5rem',
     zIndex: '12',
-    color: theme.background.green,
+    color: theme.background.yellow,
   },
   stayConnectedLinks: {
     '& a': {

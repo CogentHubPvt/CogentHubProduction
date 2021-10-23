@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   header: {
-    backgroundColor: theme.background.green,
+    backgroundColor: theme.background.yellow,
     color: 'white',
     minHeight: '63px',
   },

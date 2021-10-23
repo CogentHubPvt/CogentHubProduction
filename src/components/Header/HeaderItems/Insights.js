@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     overflow: 'hidden',
     paddingLeft: '4rem',
-    backgroundColor: theme.background.green,
+    backgroundColor: theme.background.yellow,
     '& a': {
       float: 'left',
       color: 'white',
