@@ -122,6 +122,10 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '20px',
     color: 'white',
     marginTop: '10px',
+    '&:hover': {
+      backgroundColor: '#58B19F',
+      
+    },
   },
   dropdown: {
     position: 'relative',
@@ -516,7 +520,7 @@ const HeaderTemp = ({ setIsHeader, isHeader }) => {
         )}
         <div className={classes.rightAlign}>
           {!isAdmin && (
-            <div>
+            <div className={classes.buttonContainer}>
               <a href="/login" className={classes.button}>
                 Sign In
               </a>
