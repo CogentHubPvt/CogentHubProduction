@@ -8,9 +8,6 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('md')]: {
       width: '90%',
     },
-
-    fontFamily:'Poppins',
-
     minHeight: '250px',
     textAlign: 'center',
     boxShadow: 'rgb(0 0 0 / 24%) 0px 3px 8px',
