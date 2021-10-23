@@ -76,10 +76,17 @@ const Studies = ({ inView }) => {
                   className={classes.image}
                   src="https://e-file.huawei.com/-/media/EBG/Images/SolutionV4/enterprise-collaboration/03-remote-collabration.jpg?la=id-ID"
                 />
+                <Card.Header
+                  style={{
+                    fontWeight: 'bold',
+                    fontSize: '23px',
+                    paddingTop: '7px',
+                    paddingBottom: '14px',
+                  }}
+                >
+                  M-Commerce: A Drastic Evolution in the Retail Market
+                </Card.Header>
                 <Card.Body>
-                  <Card.Title style={{ fontWeight: 'bold' }}>
-                    M-Commerce: The Drastic Evolution of Retail
-                  </Card.Title>
                   <Card.Text>{content.ReportOne}</Card.Text>
                 </Card.Body>
                 <Card.Footer>
@@ -105,10 +112,17 @@ const Studies = ({ inView }) => {
                   className={classes.image}
                   src="https://c1.wallpaperflare.com/preview/482/39/625/workspace-workplace-partnership-office.jpg"
                 />
+                <Card.Header
+                  style={{
+                    fontWeight: 'bold',
+                    fontSize: '23px',
+                    paddingTop: '7px',
+                    paddingBottom: '14px',
+                  }}
+                >
+                  Farm To Table Business Model Affecting the Food-Tech Sector
+                </Card.Header>
                 <Card.Body>
-                  <Card.Title style={{ fontWeight: 'bold' }}>
-                    Farm To Table Business Model Affecting the Food-Tech Sector
-                  </Card.Title>
                   <Card.Text>{content.ReportTwo}</Card.Text>
                 </Card.Body>
                 <Card.Footer>
@@ -134,10 +148,17 @@ const Studies = ({ inView }) => {
                   className={classes.image}
                   src="https://c4.wallpaperflare.com/wallpaper/283/270/523/business-circuit-computer-internet-wallpaper-preview.jpg"
                 />
+                <Card.Header
+                  style={{
+                    fontWeight: 'bold',
+                    fontSize: '23px',
+                    paddingTop: '7px',
+                    paddingBottom: '14px',
+                  }}
+                >
+                  Global Fashion & Retail Market: Current Status and Ananlysis
+                </Card.Header>
                 <Card.Body>
-                  <Card.Title style={{ fontWeight: 'bold' }}>
-                    Global Fashion & Retail Market
-                  </Card.Title>
                   <Card.Text>{content.ReportThree}</Card.Text>
                 </Card.Body>
                 <Card.Footer>
@@ -163,11 +184,18 @@ const Studies = ({ inView }) => {
                   className={classes.image}
                   src="https://images.pexels.com/photos/8867429/pexels-photo-8867429.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
                 />
+                <Card.Header
+                  style={{
+                    fontWeight: 'bold',
+                    fontSize: '23px',
+                    paddingTop: '7px',
+                    paddingBottom: '14px',
+                  }}
+                >
+                  Customer Retention: Grow Your Business by Selling More to
+                  Current Customers
+                </Card.Header>
                 <Card.Body>
-                  <Card.Title style={{ fontWeight: 'bold' }}>
-                    Customer Retention: Grow Your Business and Explode Return on
-                    investment (ROI) by Selling More to Current Customers
-                  </Card.Title>
                   <Card.Text>{content.ReportFour}</Card.Text>
                 </Card.Body>
                 <Card.Footer>
@@ -193,10 +221,17 @@ const Studies = ({ inView }) => {
                   className={classes.image}
                   src="https://cogent-images-and-files.s3.ap-south-1.amazonaws.com/business-customer-service-concept-4FBV7WS.jpg"
                 />
+                <Card.Header
+                  style={{
+                    fontWeight: 'bold',
+                    fontSize: '23px',
+                    paddingTop: '7px',
+                    paddingBottom: '14px',
+                  }}
+                >
+                  How To Save Sales And Solve Customer Problems With Live Chat
+                </Card.Header>
                 <Card.Body>
-                  <Card.Title style={{ fontWeight: 'bold' }}>
-                    How To Save Sales And Solve Customer Problems With Live Chat
-                  </Card.Title>
                   <Card.Text>{content.ReportFive}</Card.Text>
                 </Card.Body>
                 <Card.Footer>
@@ -222,10 +257,17 @@ const Studies = ({ inView }) => {
                   className={classes.image}
                   src="https://images.pexels.com/photos/7681077/pexels-photo-7681077.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
                 />
+                <Card.Header
+                  style={{
+                    fontWeight: 'bold',
+                    fontSize: '23px',
+                    paddingTop: '7px',
+                    paddingBottom: '14px',
+                  }}
+                >
+                  Re-Commerce: Management of Fashion and Retail Based On Reuse
+                </Card.Header>
                 <Card.Body>
-                  <Card.Title style={{ fontWeight: 'bold' }}>
-                    Re-Commerce: Management of Fashion and Retail Based On Reuse
-                  </Card.Title>
                   <Card.Text>{content.ReportSix}</Card.Text>
                 </Card.Body>
                 <Card.Footer>
