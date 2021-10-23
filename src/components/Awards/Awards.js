@@ -16,6 +16,15 @@ const useStyles = makeStyles((theme) => ({
       margin: '3rem',
     },
   },
+  awards: {
+    width: '80%',
+    margin: 'auto',
+  },
+  subContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignContent: 'center',
+  },
 }))
 
 function Awards() {
@@ -40,34 +49,26 @@ function Awards() {
         <div style={{ textAlign: 'center', margin: '2rem' }}>
           <h1>Awards & Certifications</h1>
         </div>
-        <CardGroup>
+        <CardGroup className={classes.awards}>
           <Card style={{ margin: '10px' }}>
-            <Card.Img
-              variant="top"
-              src="https://www.cogenthub.com/img/award4.jpg"
-            />
+            <Card.Img variant="top" src="/award1.jpg" />
             <Card.Body>
               <Card.Title>ISO/IEC 27701 CERTIFIED</Card.Title>
             </Card.Body>
           </Card>
           <Card style={{ margin: '10px' }}>
-            <Card.Img
-              variant="top"
-              src="https://www.cogenthub.com/img/award2.jpg"
-            />
+            <Card.Img variant="top" src="/award2.jpg" />
             <Card.Body>
               <Card.Title>ISO 9001 CERTIFIED</Card.Title>
             </Card.Body>
           </Card>
           <Card style={{ margin: '10px' }}>
-            <Card.Img
-              variant="top"
-              src="https://www.cogenthub.com/img/award3.jpg"
-            />
+            <Card.Img variant="top" src="/award3.jpg" />
             <Card.Body>
               <Card.Title>ISO/IEC 27001 CERTIFIED</Card.Title>
             </Card.Body>
           </Card>
+
           {/* <Card style={{ margin: '5px' }}>
             <Card.Img
               variant="top"

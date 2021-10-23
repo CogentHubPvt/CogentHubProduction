@@ -485,10 +485,7 @@ const HeaderTemp = ({ setIsHeader, isHeader }) => {
       )}
       <div className={classes.leftAlign}>
         <a href="/" className={classes.logoLink}>
-          <img
-            src="https://www.cogenthub.com/img/logo.svg"
-            className={classes.logo}
-          />
+          <img src="/cogentLogo.jpg" className={classes.logo} />
         </a>
         <a href="#home" onClick={onInsights} className={classes.headerItem}>
           Insights
