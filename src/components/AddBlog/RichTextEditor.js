@@ -8,6 +8,7 @@ import AOS from 'aos'
 import CardGroup from 'react-bootstrap/CardGroup'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form'
 import useWindowDimensions from '../../useWindowDimensions'
 import DOMPurify from 'dompurify'
 const axios = require('axios')
@@ -53,12 +54,29 @@ const useStyles = makeStyles((theme) => ({
   Image: {
     margin: 'auto',
   },
+  blogEditor: {
+    margin: '3rem',
+  },
+  button: {
+    width: '100%',
+    marginTop: '2rem',
+    color: 'white',
+    '&:hover': {
+      color: 'white',
+    },
+  },
+  buttonContainer: {
+    textAlign: 'center',
+  },
 }))
 
 function RichTextEditor() {
   const classes = useStyles()
   const [phoneView, setPhoneView] = useState(false)
   const { height, width } = useWindowDimensions()
+  const [title, setTitle] = useState('')
+  const [introduction, setIntroduction] = useState('')
+  const [thumbnail, setThumbnail] = useState('')
   const [editorState, setEditorState] = useState(() =>
     EditorState.createEmpty(),
   )
@@ -99,7 +117,9 @@ function RichTextEditor() {
       },
       entityToHTML: (entity, originalText) => {
         if (entity.type === 'LINK') {
-          return `<a href="${entity.data.url}">${originalText}</a>`
+          console.log('Here Link')
+          console.log(entity.data)
+          return `<a href="${entity.data.url}" target="_blank">${originalText}</a>`
         } else if (entity.type === 'IMAGE') {
           console.log('entity', entity)
           return `<img src="${entity.data.src}" height="${entity.data.height}" width="${entity.data.width}" alt="${entity.data.alt}" />`
@@ -202,26 +222,73 @@ function RichTextEditor() {
     console.log(typeof convertedContent)
     const formData = new FormData()
     const content = editorState.getCurrentContent()
-    formData.append('blog', JSON.stringify({ content: convertToRaw(content) }))
-    console.log('TESTTTTT', JSON.stringify({ content: convertToRaw(content) }))
+    formData.append('blog', JSON.stringify(convertToRaw(content)))
+    formData.append('title', title)
+    formData.append('introduction', introduction),
+      formData.append('image', thumbnail)
+    const config = {
+      headers: { 'content-type': 'multipart/form-data' },
+    }
+    console.log('FORM DATA')
+    console.log(title)
+    console.log(introduction)
+    console.log(thumbnail)
     axios
-      .post('http://localhost:5000/blogs/htmlPost', {
-        blog: JSON.stringify(convertToRaw(content)),
-      })
+      .post(
+        'https://cogenthub-api.herokuapp.com/blogs/htmlPost',
+        formData,
+        config,
+      )
       .then((res) => {
         console.log('response', res)
         // console.log('responseJSON', res.json())
         // res.json()
       })
       .catch((err) => {
-        console.log(err)
+        console.log(err.response)
       })
+  }
+
+  const onTitleChange = (e) => {
+    setTitle(e.target.value)
+  }
+
+  const onIntroductionChange = (e) => {
+    console.log(e.target.value)
+    setIntroduction(e.target.value)
+  }
+
+  const onThumbnailChange = (e) => {
+    console.log('file', e.target.files[0])
+    setThumbnail(e.target.files[0])
   }
 
   return (
     <>
-      <div className="App">
-        <header className={classes.appHeader}>Rich Text Editor Example</header>
+      <div className={classes.blogEditor}>
+        <header className={classes.appHeader}>Create Blog</header>
+        <Form>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Title</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Enter Title"
+              onChange={onTitleChange}
+            />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Label>Brief Introduction</Form.Label>
+            <Form.Control
+              as="textarea"
+              placeholder="Enter Introduction"
+              onChange={onIntroductionChange}
+            />
+          </Form.Group>
+          <Form.Group controlId="formFile" className="mb-3">
+            <Form.Label>Thumbnail Image</Form.Label>
+            <Form.Control type="file" onChange={onThumbnailChange} />
+          </Form.Group>
+        </Form>
         <Editor
           handlePastedFiles={handlePastedFiles}
           editorState={editorState}
@@ -250,9 +317,13 @@ function RichTextEditor() {
             },
           }}
         />
-        <div>
-          <Button variant="outline-warning" onClick={onSubmit}>
-            Warning
+        <div className={classes.buttonContainer}>
+          <Button
+            variant="warning"
+            onClick={onSubmit}
+            className={classes.button}
+          >
+            Submit
           </Button>{' '}
         </div>
         <div

@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { useSpring, animated } from 'react-spring'
+import { convertToHTML } from 'draft-convert'
+import DOMPurify from 'dompurify'
 import { makeStyles } from '@material-ui/styles'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import Spinner from 'react-bootstrap/Spinner'
+import { EditorState, convertToRaw, convertFromRaw } from 'draft-js'
+import { stateToHTML } from 'draft-js-export-html'
 
 const axios = require('axios')
 
@@ -48,6 +52,12 @@ const useStyles = makeStyles((theme) => ({
     padding: '1rem 1rem',
     borderRadius: '10px',
   },
+  blog: {
+    '& img': {
+      display: 'flex',
+      margin: 'auto',
+    },
+  },
   onHoverWhite: {
     '&:hover, &:focus': {
       color: 'white',
@@ -68,18 +78,36 @@ const Blogs = ({ inView, setInView }) => {
   const [imageFive, setImageFive] = useState('')
   const [isAdmin, setAdmin] = useState(false)
   const [images, setImages] = useState([])
+  const [convertedContent, setConvertedContent] = useState(null)
+  const [editorState, setEditorState] = useState(() =>
+    EditorState.createEmpty(),
+  )
 
-  useEffect(() => {
+  useEffect(async () => {
     axios
       .get('https://cogenthub-api.herokuapp.com/blogs/getBlogs')
-      .then((response) => {
+      .then(async (response) => {
         console.log('BLOGSSSSS')
         console.log(response.data.blogs)
+        let content = convertFromRaw(JSON.parse(response.data.blogs[1].post))
+        if (content) {
+          console.log('Here')
+          setEditorState(() => {
+            console.log('Setting')
+            EditorState.createWithContent(content)
+          })
+          console.log('Content')
+          console.log(content)
+          setConvertedContent(stateToHTML(content))
+          console.log('HERERERRERER')
+          console.log(convertedContent)
+        }
         setBlog(response.data.blogs)
         setLoading(false)
       })
       .catch((error) => {
-        console.log(error.response)
+        console.log('There is an error')
+        console.log(error)
       })
     let token = localStorage.getItem('token')
     axios
@@ -102,7 +130,8 @@ const Blogs = ({ inView, setInView }) => {
       .post('https://cogenthub-api.herokuapp.com/blogs/getBlogById', { id: id })
       .then((response) => {
         console.log('blogs', response.data.blog[0])
-        setCurrentBlog(response.data.blog[0])
+        let content = convertFromRaw(JSON.parse(response.data.blog[0].post))
+        setCurrentBlog(stateToHTML(content))
         setLoading(false)
       })
       .catch((error) => {
@@ -123,6 +152,17 @@ const Blogs = ({ inView, setInView }) => {
       .catch((error) => {
         console.log(error.response)
       })
+  }
+
+  const TestFunction = () => {
+    console.log('In Test Function')
+    console.log(convertedContent)
+  }
+
+  const createMarkup = (html) => {
+    return {
+      __html: DOMPurify.sanitize(html),
+    }
   }
 
   return (
@@ -157,11 +197,10 @@ const Blogs = ({ inView, setInView }) => {
           <img src="/page08_1.jpg" className={classes.blog} />
           <img src="/page09_1.jpg" className={classes.blog} />
           <img src="/page10_1.jpg" className={classes.blog} /> */}
-              <div>
-                {currentBlog.images.map((image) => {
-                  return <img src={image} className={classes.blog} />
-                })}
-              </div>
+              <div
+                className={classes.blog}
+                dangerouslySetInnerHTML={createMarkup(currentBlog)}
+              ></div>
             </div>
           )}
         </div>
