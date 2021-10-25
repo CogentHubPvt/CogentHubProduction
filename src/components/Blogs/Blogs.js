@@ -89,19 +89,6 @@ const Blogs = ({ inView, setInView }) => {
       .then(async (response) => {
         console.log('BLOGSSSSS')
         console.log(response.data.blogs)
-        let content = convertFromRaw(JSON.parse(response.data.blogs[1].post))
-        if (content) {
-          console.log('Here')
-          setEditorState(() => {
-            console.log('Setting')
-            EditorState.createWithContent(content)
-          })
-          console.log('Content')
-          console.log(content)
-          setConvertedContent(stateToHTML(content))
-          console.log('HERERERRERER')
-          console.log(convertedContent)
-        }
         setBlog(response.data.blogs)
         setLoading(false)
       })
@@ -146,8 +133,18 @@ const Blogs = ({ inView, setInView }) => {
         id: id,
       })
       .then((response) => {
-        console.log('blogs', response.data.blog[0])
-        setLoading(false)
+        console.log('Deleted')
+        console.log('blogs', response)
+        axios
+          .get('https://cogenthub-api.herokuapp.com/blogs/getBlogs')
+          .then(async (response) => {
+            setBlog(response.data.blogs)
+            setLoading(false)
+          })
+          .catch((error) => {
+            console.log('There is an error')
+            console.log(error)
+          })
       })
       .catch((error) => {
         console.log(error.response)
@@ -207,44 +204,52 @@ const Blogs = ({ inView, setInView }) => {
       )}
       {!showBlogCheck && (
         <div>
-          {blogs.map((blog) => {
-            return (
-              <div>
-                <Card className={classes.blogs}>
-                  <Card.Body>
-                    <Card.Title>{blog.title}</Card.Title>
-                    <Card.Text>{blog.introduction}</Card.Text>
-                  </Card.Body>
-                  <Card.Footer>
-                    <small className="text-muted" className={classes.author}>
-                      {blog.author}
-                    </small>
-                    <Button
-                      variant="outline-warning"
-                      className={classes.onHoverWhite}
-                      style={{ float: 'right' }}
-                      onClick={() => {
-                        showBlog(blog._id)
-                      }}
-                    >
-                      Read More
-                    </Button>{' '}
-                    {isAdmin && (
+          {loading && (
+            <div className={classes.loading}>
+              <Spinner animation="border" role="status">
+                <span className="visually-hidden">Loading...</span>
+              </Spinner>
+            </div>
+          )}
+          {!loading &&
+            blogs.map((blog) => {
+              return (
+                <div>
+                  <Card className={classes.blogs}>
+                    <Card.Body>
+                      <Card.Title>{blog.title}</Card.Title>
+                      <Card.Text>{blog.introduction}</Card.Text>
+                    </Card.Body>
+                    <Card.Footer>
+                      <small className="text-muted" className={classes.author}>
+                        {blog.author}
+                      </small>
                       <Button
-                        variant="outline-danger"
-                        style={{ float: 'right', marginRight: '1rem' }}
+                        variant="outline-warning"
+                        className={classes.onHoverWhite}
+                        style={{ float: 'right' }}
                         onClick={() => {
-                          deleteBlog(1)
+                          showBlog(blog._id)
                         }}
                       >
-                        Delete
-                      </Button>
-                    )}
-                  </Card.Footer>
-                </Card>
-              </div>
-            )
-          })}
+                        Read More
+                      </Button>{' '}
+                      {isAdmin && (
+                        <Button
+                          variant="outline-danger"
+                          style={{ float: 'right', marginRight: '1rem' }}
+                          onClick={() => {
+                            deleteBlog(blog._id)
+                          }}
+                        >
+                          Delete
+                        </Button>
+                      )}
+                    </Card.Footer>
+                  </Card>
+                </div>
+              )
+            })}
         </div>
       )}
       {/* {!showBlogCheck && (
