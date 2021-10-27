@@ -107,7 +107,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   logo: {
-    width: '210px',
+    width: '230px',
     height: '70px',
   },
   logoLink: {
