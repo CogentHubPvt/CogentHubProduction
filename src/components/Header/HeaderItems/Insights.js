@@ -48,9 +48,9 @@ function Test({ boolean }) {
         <TrendingFlatIcon />
       </p>
       <a href="/blogs">Blogs</a>
-      <a href="#">Global Trend Studies</a>
+      {/* <a href="#">Global Trend Studies</a>
       <a href="#">Case Studies</a>
-      <a href="#">Podcasts in Spotify</a>
+      <a href="#">Podcasts in Spotify</a> */}
     </animated.div>
   )
 }

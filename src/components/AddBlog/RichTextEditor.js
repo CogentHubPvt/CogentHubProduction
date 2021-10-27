@@ -81,6 +81,8 @@ function RichTextEditor() {
   const [tags, setTags] = useState('')
   const [category, setCategory] = useState('')
   const [routeName, setRouteName] = useState('')
+  const [faqNumber, setFaqNumber] = useState('')
+  const [faq, setFaq] = useState([1, 2, 3])
   const [editorState, setEditorState] = useState(() =>
     EditorState.createEmpty(),
   )
@@ -96,6 +98,10 @@ function RichTextEditor() {
       setPhoneView(false)
     }
   }, [])
+
+  useEffect(() => {
+    setFaq(Array.apply(null, Array(faqNumber)))
+  }, [faqNumber])
 
   const createMarkup = (html) => {
     return {
@@ -292,6 +298,11 @@ function RichTextEditor() {
     setRouteName(e.target.value)
   }
 
+  const onFaqNumberChange = (e) => {
+    console.log('faqNumber', e.target.value)
+    setFaqNumber(e.target.value)
+  }
+
   return (
     <>
       <div className={classes.blogEditor}>
@@ -355,6 +366,36 @@ function RichTextEditor() {
               <option value="3">Digital Marketing</option>
             </Form.Select>
           </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Number of FAQs</Form.Label>
+            <Form.Select
+              aria-label="Default select example"
+              onChange={onFaqNumberChange}
+            >
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </Form.Select>
+          </Form.Group>
+          {faq.map(() => {
+            return (
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>FAQ</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Enter Tags"
+                  onChange={onTagsChange}
+                />
+              </Form.Group>
+            )
+          })}
         </Form>
         <Editor
           handlePastedFiles={handlePastedFiles}

@@ -231,6 +231,12 @@ const Blogs = ({ inView, setInView }) => {
                       <small className="text-muted" className={classes.author}>
                         {blog.author}
                       </small>
+                      <small className="text-muted" className={classes.author}>
+                        {blog.category}
+                      </small>
+                      <small className="text-muted" className={classes.author}>
+                        {blog.tags}
+                      </small>
                       <Button
                         variant="outline-warning"
                         className={classes.onHoverWhite}
