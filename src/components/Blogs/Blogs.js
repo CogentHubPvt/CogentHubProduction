@@ -111,19 +111,21 @@ const Blogs = ({ inView, setInView }) => {
   }, [])
 
   const showBlog = (id) => {
-    setLoading(true)
-    setShowBlogCheck(true)
-    axios
-      .post('https://cogenthub-api.herokuapp.com/blogs/getBlogById', { id: id })
-      .then((response) => {
-        console.log('blogs', response.data.blog[0])
-        let content = convertFromRaw(JSON.parse(response.data.blog[0].post))
-        setCurrentBlog(stateToHTML(content))
-        setLoading(false)
-      })
-      .catch((error) => {
-        console.log(error.response)
-      })
+    // setLoading(true)
+    // setShowBlogCheck(true)
+    // axios
+    //   .post('https://cogenthub-api.herokuapp.com/blogs/getBlogById', { id: id })
+    //   .then((response) => {
+    //     console.log('blogs', response.data.blog[0])
+    //     let content = convertFromRaw(JSON.parse(response.data.blog[0].post))
+    //     setCurrentBlog(stateToHTML(content))
+    //     setLoading(false)
+    //   })
+    //   .catch((error) => {
+    //     console.log(error.response)
+    //   })
+    let url = 'blog/' + id
+    window.location.href = url
   }
 
   const deleteBlog = (id) => {
@@ -216,8 +218,13 @@ const Blogs = ({ inView, setInView }) => {
               return (
                 <div>
                   <Card className={classes.blogs}>
+                    <Card.Img src={blog.image} className={classes.thumbnail} />
                     <Card.Body>
-                      <Card.Title>{blog.title}</Card.Title>
+                      <Card.Title
+                        style={{ fontWeight: 'bold', fontSize: '24px' }}
+                      >
+                        {blog.title}
+                      </Card.Title>
                       <Card.Text>{blog.introduction}</Card.Text>
                     </Card.Body>
                     <Card.Footer>
@@ -229,7 +236,7 @@ const Blogs = ({ inView, setInView }) => {
                         className={classes.onHoverWhite}
                         style={{ float: 'right' }}
                         onClick={() => {
-                          showBlog(blog._id)
+                          showBlog(blog.routeName)
                         }}
                       >
                         Read More

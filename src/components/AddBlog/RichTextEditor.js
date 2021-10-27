@@ -77,6 +77,10 @@ function RichTextEditor() {
   const [title, setTitle] = useState('')
   const [introduction, setIntroduction] = useState('')
   const [thumbnail, setThumbnail] = useState('')
+  const [author, setAuthor] = useState('')
+  const [tags, setTags] = useState('')
+  const [category, setCategory] = useState('')
+  const [routeName, setRouteName] = useState('')
   const [editorState, setEditorState] = useState(() =>
     EditorState.createEmpty(),
   )
@@ -226,6 +230,10 @@ function RichTextEditor() {
     formData.append('title', title)
     formData.append('introduction', introduction),
       formData.append('image', thumbnail)
+    formData.append('author', author)
+    formData.append('category', category)
+    formData.append('tags', tags)
+    formData.append('routeName', routeName)
     const config = {
       headers: { 'content-type': 'multipart/form-data' },
     }
@@ -233,6 +241,10 @@ function RichTextEditor() {
     console.log(title)
     console.log(introduction)
     console.log(thumbnail)
+    console.log(author)
+    console.log(category)
+    console.log(tags)
+    console.log(routeName)
     axios
       .post(
         'https://cogenthub-api.herokuapp.com/blogs/htmlPost',
@@ -253,6 +265,18 @@ function RichTextEditor() {
     setTitle(e.target.value)
   }
 
+  const onAuthorChange = (e) => {
+    setAuthor(e.target.value)
+  }
+
+  const onCategoryChange = (e) => {
+    setCategory(e.target.value)
+  }
+
+  const onTagsChange = (e) => {
+    setTags(e.target.value)
+  }
+
   const onIntroductionChange = (e) => {
     console.log(e.target.value)
     setIntroduction(e.target.value)
@@ -263,11 +287,24 @@ function RichTextEditor() {
     setThumbnail(e.target.files[0])
   }
 
+  const onRouteChange = (e) => {
+    console.log('routeName', e.target.value)
+    setRouteName(e.target.value)
+  }
+
   return (
     <>
       <div className={classes.blogEditor}>
         <header className={classes.appHeader}>Create Blog</header>
         <Form>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Route Name</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Enter Route Name"
+              onChange={onRouteChange}
+            />
+          </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Title</Form.Label>
             <Form.Control
@@ -287,6 +324,36 @@ function RichTextEditor() {
           <Form.Group controlId="formFile" className="mb-3">
             <Form.Label>Thumbnail Image</Form.Label>
             <Form.Control type="file" onChange={onThumbnailChange} />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Author</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Enter Author"
+              onChange={onAuthorChange}
+            />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Tags</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Enter Tags"
+              onChange={onTagsChange}
+            />
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>Category</Form.Label>
+            <Form.Select
+              aria-label="Default select example"
+              onChange={onCategoryChange}
+            >
+              <option value="1">Select Category</option>
+              <option value="1">Festival</option>
+              <option value="2">BPO</option>
+              <option value="3">IT</option>
+              <option value="3">Marketing</option>
+              <option value="3">Digital Marketing</option>
+            </Form.Select>
           </Form.Group>
         </Form>
         <Editor

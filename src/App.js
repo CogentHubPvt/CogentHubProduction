@@ -13,6 +13,7 @@ import AddJobsPage from './components/pages/AddJobsPage'
 import BlogsPage from './components/pages/BlogsPage'
 import PrivacyPolicy from './PrivacyPolicy/PrivacyPolicy'
 import ContactUsPage from './components/pages/ContactUsPage'
+import BlogFind from './components/Blogs/BlogFind'
 import theme from './Theme/theme'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import content from './ContentJson/content.json'
@@ -25,6 +26,7 @@ import './fonts/GraphikBold.otf'
 function App() {
   const [service, setService] = useState('')
   const [isHeader, setIsHeader] = useState(false)
+  const [currentBlog, setCurrentBlog] = useState({})
   return (
     <div style={{ fontFamily: 'Light', overflowX: 'hidden', width: 'auto' }}>
       <CookieConsent
@@ -194,6 +196,12 @@ function App() {
           <Route path="/privacyPolicy" exact>
             <PrivacyPolicy />
           </Route>
+          <Route path="/blog/:name" exact>
+            <BlogFind setCurrentBlog={setCurrentBlog} />
+          </Route>
+          {/* <Route path="/blogs/:name" exact>
+            <CurrentBlog currentBlog={currentBlog} />
+          </Route> */}
         </ThemeProvider>
       </Router>
     </div>
