@@ -1,19 +1,1 @@
-@font-face {
-  font-family: 'Bold';
-  src: local('Bold'), url('./fonts/GraphikBold.otf') format('woff');
-  /* other formats include: 'woff2', 'truetype, 'opentype',
-                              'embedded-opentype', and 'svg' */
-}
-@font-face {
-  font-family: 'Light';
-  src: local('Light'), url('./fonts/GraphikLight.otf') format('woff');
-  /* other formats include: 'woff2', 'truetype, 'opentype',
-                                'embedded-opentype', and 'svg' */
-}
 
-@font-face {
-  font-family: 'Medium';
-  src: local('Medium'), url('./fonts/GraphikMedium.otf') format('woff');
-  /* other formats include: 'woff2', 'truetype, 'opentype',
-                                'embedded-opentype', and 'svg' */
-}
