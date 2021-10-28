@@ -359,11 +359,11 @@ function RichTextEditor() {
               onChange={onCategoryChange}
             >
               <option value="1">Select Category</option>
-              <option value="1">Festival</option>
-              <option value="2">BPO</option>
-              <option value="3">IT</option>
-              <option value="3">Marketing</option>
-              <option value="3">Digital Marketing</option>
+              <option value="Festival">Festival</option>
+              <option value="BPO">BPO</option>
+              <option value="IT">IT</option>
+              <option value="Marketing">Marketing</option>
+              <option value="Digital Marketing">Digital Marketing</option>
             </Form.Select>
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">

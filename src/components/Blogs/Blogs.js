@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from 'react'
-import { useSpring, animated } from 'react-spring'
-import { convertToHTML } from 'draft-convert'
-import DOMPurify from 'dompurify'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import ListGroup from 'react-bootstrap/ListGroup'
 import { makeStyles } from '@material-ui/styles'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import Spinner from 'react-bootstrap/Spinner'
-import { EditorState, convertToRaw, convertFromRaw } from 'draft-js'
-import { stateToHTML } from 'draft-js-export-html'
+import { EditorState } from 'draft-js'
+import Form from 'react-bootstrap/Form'
+import AccessTimeIcon from '@material-ui/icons/AccessTime'
+import ClassIcon from '@material-ui/icons/Class'
+import PersonIcon from '@material-ui/icons/Person'
+import GroupWorkIcon from '@material-ui/icons/GroupWork'
 
 const axios = require('axios')
 
@@ -25,6 +29,8 @@ const useStyles = makeStyles((theme) => ({
   author: {
     fontSize: theme.fontSize.p,
     marginTop: '10px',
+    marginRight: '10px',
+    marginLeft: '10px',
   },
   currentBlogContainer: {
     padding: '6rem 2rem',
@@ -63,25 +69,31 @@ const useStyles = makeStyles((theme) => ({
       color: 'white',
     },
   },
+  categories: {
+    margin: '1rem',
+    padding: '1rem 1rem',
+  },
+  footerIcon: {
+    fontSize: '18px',
+    marginRight: '5px',
+  },
 }))
 
 const Blogs = ({ inView, setInView }) => {
   const classes = useStyles()
   const [blogs, setBlog] = useState([])
-  const [currentBlog, setCurrentBlog] = useState({})
-  const [showBlogCheck, setShowBlogCheck] = useState(false)
   const [loading, setLoading] = useState(true)
-  const [imageOne, setImageOne] = useState('')
-  const [imageTwo, setImageTwo] = useState('')
-  const [imageThree, setImageThree] = useState('')
-  const [imageFour, setImageFour] = useState('')
-  const [imageFive, setImageFive] = useState('')
   const [isAdmin, setAdmin] = useState(false)
-  const [images, setImages] = useState([])
-  const [convertedContent, setConvertedContent] = useState(null)
-  const [editorState, setEditorState] = useState(() =>
-    EditorState.createEmpty(),
-  )
+  const [festival, setFestival] = useState(false)
+  const [festivalDisabled, setFestivalDisabled] = useState(false)
+  const [bpo, setBpo] = useState(false)
+  const [bpoDisabled, setBpoDisabled] = useState(false)
+  const [it, setIt] = useState(false)
+  const [itDisabled, setItDisabled] = useState(false)
+  const [marketing, setMarketing] = useState(false)
+  const [marketingDisabled, setMarketingDisabled] = useState(false)
+  const [dMarketing, setDmarketing] = useState(false)
+  const [dMarketingDisabled, setDmarketingDisabled] = useState(false)
 
   useEffect(async () => {
     axios
@@ -109,6 +121,53 @@ const Blogs = ({ inView, setInView }) => {
         console.log(error.message)
       })
   }, [])
+
+  useEffect(async () => {
+    let temp = 'None'
+    setLoading(true)
+    if (festival == true) {
+      temp = 'Festival'
+    } else if (it == true) {
+      temp = 'IT'
+    } else if (bpo == true) {
+      temp = 'BPO'
+    } else if (marketing == true) {
+      temp = 'Marketing'
+    } else if (dMarketing == true) {
+      temp = 'Digital Marketing'
+    } else {
+      temp == 'None'
+    }
+    if (temp != 'None') {
+      axios
+        .post('https://cogenthub-api.herokuapp.com/blogs/getBlogByCategory', {
+          category: temp,
+        })
+        .then(async (response) => {
+          console.log('BLOGSSSSS CATEGORY')
+          console.log(response.data.blog)
+          setBlog(response.data.blog)
+          setLoading(false)
+        })
+        .catch((error) => {
+          console.log('There is an error')
+          console.log(error)
+        })
+    } else {
+      axios
+        .get('https://cogenthub-api.herokuapp.com/blogs/getBlogs')
+        .then(async (response) => {
+          console.log('BLOGSSSSS')
+          console.log(response.data.blogs)
+          setBlog(response.data.blogs)
+          setLoading(false)
+        })
+        .catch((error) => {
+          console.log('There is an error')
+          console.log(error)
+        })
+    }
+  }, [festival, it, bpo, marketing, dMarketing])
 
   const showBlog = (id) => {
     // setLoading(true)
@@ -153,225 +212,266 @@ const Blogs = ({ inView, setInView }) => {
       })
   }
 
-  const TestFunction = () => {
-    console.log('In Test Function')
-    console.log(convertedContent)
-  }
-
-  const createMarkup = (html) => {
-    return {
-      __html: DOMPurify.sanitize(html),
-    }
-  }
-
   return (
     <div className={classes.container}>
-      {showBlogCheck && (
-        <div>
-          {loading && (
-            <div className={classes.loading}>
-              <Spinner animation="border" role="status">
-                <span className="visually-hidden">Loading...</span>
-              </Spinner>
-            </div>
-          )}
-          {!loading && (
-            <div className={classes.blogContainer}>
-              <div style={{ textAlign: 'right', padding: '1rem' }}>
-                <Button
-                  variant="outline-warning"
-                  className={classes.onHoverWhite}
-                  onClick={() => {
-                    setShowBlogCheck(false)
-                  }}
-                >
-                  Go Back To Blogs
-                </Button>{' '}
+      <div>
+        <Row>
+          <Col md={8}>
+            {loading && (
+              <div className={classes.loading}>
+                <Spinner animation="border" role="status">
+                  <span className="visually-hidden">Loading...</span>
+                </Spinner>
               </div>
-              {/* <img src="/combine_images.jpg" className={classes.blog} />
-          <img src="/page04_1.jpg" className={classes.blog} />
-          <img src="/page05_1.jpg" className={classes.blog} />
-          <img src="/page06_1.jpg" className={classes.blog} />
-          <img src="/page07_1.jpg" className={classes.blog} />
-          <img src="/page08_1.jpg" className={classes.blog} />
-          <img src="/page09_1.jpg" className={classes.blog} />
-          <img src="/page10_1.jpg" className={classes.blog} /> */}
-              <div
-                className={classes.blog}
-                dangerouslySetInnerHTML={createMarkup(currentBlog)}
-              ></div>
-            </div>
-          )}
-        </div>
-      )}
-      {!showBlogCheck && (
-        <div>
-          {loading && (
-            <div className={classes.loading}>
-              <Spinner animation="border" role="status">
-                <span className="visually-hidden">Loading...</span>
-              </Spinner>
-            </div>
-          )}
-          {!loading &&
-            blogs.map((blog) => {
-              return (
-                <div>
-                  <Card className={classes.blogs}>
-                    <Card.Img src={blog.image} className={classes.thumbnail} />
-                    <Card.Body>
-                      <Card.Title
-                        style={{ fontWeight: 'bold', fontSize: '24px' }}
-                      >
-                        {blog.title}
-                      </Card.Title>
-                      <Card.Text>{blog.introduction}</Card.Text>
-                    </Card.Body>
-                    <Card.Footer>
-                      <small className="text-muted" className={classes.author}>
-                        {blog.author}
-                      </small>
-                      <small className="text-muted" className={classes.author}>
-                        {blog.category}
-                      </small>
-                      <small className="text-muted" className={classes.author}>
-                        {blog.tags}
-                      </small>
-                      <Button
-                        variant="outline-warning"
-                        className={classes.onHoverWhite}
-                        style={{ float: 'right' }}
-                        onClick={() => {
-                          showBlog(blog.routeName)
-                        }}
-                      >
-                        Read More
-                      </Button>{' '}
-                      {isAdmin && (
+            )}
+            {!loading &&
+              blogs.map((blog) => {
+                return (
+                  <div>
+                    <Card className={classes.blogs}>
+                      <Card.Img
+                        src={blog.image}
+                        className={classes.thumbnail}
+                      />
+                      <Card.Body>
+                        <Card.Title
+                          style={{ fontWeight: 'bold', fontSize: '24px' }}
+                        >
+                          {blog.title}
+                        </Card.Title>
+                        <Card.Text>{blog.introduction}</Card.Text>
+                      </Card.Body>
+                      <Card.Footer>
+                        <small
+                          className="text-muted"
+                          className={classes.author}
+                        >
+                          <PersonIcon className={classes.footerIcon} />
+                          <span style={{ paddingTop: '10px' }}>
+                            {blog.author}
+                          </span>
+                        </small>
+                        <small
+                          className="text-muted"
+                          className={classes.author}
+                        >
+                          <ClassIcon className={classes.footerIcon} />
+                          <span style={{ paddingTop: '10px' }}>
+                            {blog.category}
+                          </span>
+                        </small>
+                        {/* <small
+                          className="text-muted"
+                          className={classes.author}
+                        >
+                          <GroupWorkIcon className={classes.footerIcon} />
+                          <span style={{ paddingTop: '10px' }}>
+                            {blog.tags}
+                          </span>
+                        </small> */}
+                        <small
+                          className="text-muted"
+                          className={classes.author}
+                        >
+                          <AccessTimeIcon className={classes.footerIcon} />
+                          <span style={{ paddingTop: '10px' }}>
+                            {blog.date}
+                          </span>
+                        </small>
                         <Button
-                          variant="outline-danger"
-                          style={{ float: 'right', marginRight: '1rem' }}
+                          variant="outline-warning"
+                          className={classes.onHoverWhite}
+                          style={{ float: 'right' }}
                           onClick={() => {
-                            deleteBlog(blog._id)
+                            showBlog(blog.routeName)
                           }}
                         >
-                          Delete
-                        </Button>
-                      )}
-                    </Card.Footer>
-                  </Card>
+                          Read More
+                        </Button>{' '}
+                        {isAdmin && (
+                          <Button
+                            variant="outline-danger"
+                            style={{ float: 'right', marginRight: '1rem' }}
+                            onClick={() => {
+                              deleteBlog(blog._id)
+                            }}
+                          >
+                            Delete
+                          </Button>
+                        )}
+                        {isAdmin && (
+                          <Button
+                            variant="outline-primary"
+                            style={{ float: 'right', marginRight: '1rem' }}
+                            onClick={() => {
+                              console.log('Edit')
+                            }}
+                          >
+                            Edit
+                          </Button>
+                        )}
+                      </Card.Footer>
+                    </Card>
+                  </div>
+                )
+              })}
+          </Col>
+          <Col md={4}>
+            <ListGroup as="ol" numbered className={classes.categories}>
+              <ListGroup.Item
+                as="li"
+                className="d-flex justify-content-between align-items-start"
+              >
+                <div className="ms-2 me-auto">
+                  <div className="fw-bold">Festival</div>
                 </div>
-              )
-            })}
-        </div>
-      )}
-      {/* {!showBlogCheck && (
-        <div>
-          <h1 className={classes.blogTitle}>Latest Blogs</h1>
-          {loading && (
-            <div className={classes.loading}>
-              <Spinner animation="border" role="status">
-                <span className="visually-hidden">Loading...</span>
-              </Spinner>
-            </div>
-          )}
-          {!loading &&
-            blogs.map((blog) => {
-              return (
-                <Card className={classes.blogs}>
-                  <Card.Body>
-                    <Card.Title>{blog.title}</Card.Title>
-                    <Card.Text>{blog.introduction}</Card.Text>
-                  </Card.Body>
-                  <Card.Footer>
-                    <small className="text-muted" className={classes.author}>
-                      Author Name
-                    </small>
-                    <Button
-                      variant="outline-success"
-                      style={{ float: 'right' }}
-                      onClick={() => {
-                        showBlog(blog._id)
-                      }}
-                    >
-                      Read More
-                    </Button>{' '}
-                    {isAdmin && (
-                      <Button
-                        variant="outline-danger"
-                        style={{ float: 'right', marginRight: '1rem' }}
-                        onClick={() => {
-                          deleteBlog(blog._id)
-                        }}
-                      >
-                        Delete
-                      </Button>
-                    )}
-                  </Card.Footer>
-                </Card>
-              )
-            })}
-        </div>
-      )}
-      {showBlogCheck && (
-        <div className={classes.currentBlogContainer}>
-          <div className={classes.imageContainer}>
-            <img src={imageOne} className={classes.blogImage} />
-          </div>
-          <div>
-            <h1>{currentBlog.title}</h1>
-          </div>
-          <div>
-            <p>{currentBlog.introduction}</p>
-          </div>
-          <div className={classes.imageContainer}>
-            <img src={imageTwo} className={classes.blogImage} />
-          </div>
-          <div>
-            <h2>{currentBlog.subHeadingOne}</h2>
-          </div>
-          <div>
-            <p>{currentBlog.contentOne}</p>
-          </div>
-          <div>
-            <div className={classes.imageContainer}>
-              <img src={imageThree} className={classes.blogImage} />
-            </div>
-            <h2>{currentBlog.subHeadingTwo}</h2>
-          </div>
-          <div>
-            <p>{currentBlog.contentTwo}</p>
-          </div>
-          <div className={classes.imageContainer}>
-            <img src={imageFour} className={classes.blogImage} />
-          </div>
-          <div>
-            <h2>{currentBlog.subHeadingThree}</h2>
-          </div>
-          <div>
-            <p>{currentBlog.contentThree}</p>
-          </div>
-          <div className={classes.imageContainer}>
-            <img src={imageFive} className={classes.blogImage} />
-          </div>
-          <div>
-            <h2>{currentBlog.subHeadingFour}</h2>
-          </div>
-          <div>
-            <p>{currentBlog.contentFour}</p>
-          </div>
-          <div style={{ textAlign: 'right' }}>
-            <Button
-              variant="outline-success"
-              onClick={() => {
-                setShowBlogCheck(false)
-              }}
-            >
-              Go Back To Blogs
-            </Button>{' '}
-          </div>
-        </div>
-      )} */}
+                {!festivalDisabled && (
+                  <Form.Check
+                    type="checkbox"
+                    value="Festival"
+                    onChange={(e) => {
+                      if (festival == false) {
+                        setBpoDisabled(true)
+                        setItDisabled(true)
+                        setMarketingDisabled(true)
+                        setDmarketingDisabled(true)
+                      }
+                      if (festival == true) {
+                        setBpoDisabled(false)
+                        setItDisabled(false)
+                        setMarketingDisabled(false)
+                        setDmarketingDisabled(false)
+                      }
+                      setFestival(!festival)
+                    }}
+                  />
+                )}
+                {festivalDisabled && <Form.Check type="checkbox" disabled />}
+              </ListGroup.Item>
+              <ListGroup.Item
+                as="li"
+                className="d-flex justify-content-between align-items-start"
+              >
+                <div className="ms-2 me-auto">
+                  <div className="fw-bold">BPO</div>
+                </div>
+                {!bpoDisabled && (
+                  <Form.Check
+                    type="checkbox"
+                    value="BPO"
+                    onChange={(e) => {
+                      if (bpo == false) {
+                        setFestivalDisabled(true)
+                        setItDisabled(true)
+                        setMarketingDisabled(true)
+                        setDmarketingDisabled(true)
+                      }
+                      if (bpo == true) {
+                        setFestivalDisabled(false)
+                        setItDisabled(false)
+                        setMarketingDisabled(false)
+                        setDmarketingDisabled(false)
+                      }
+                      setBpo(!bpo)
+                    }}
+                  />
+                )}
+                {bpoDisabled && <Form.Check type="checkbox" disabled />}
+              </ListGroup.Item>
+              <ListGroup.Item
+                as="li"
+                className="d-flex justify-content-between align-items-start"
+              >
+                <div className="ms-2 me-auto">
+                  <div className="fw-bold">IT</div>
+                </div>
+                {!itDisabled && (
+                  <Form.Check
+                    type="checkbox"
+                    value="IT"
+                    onChange={(e) => {
+                      if (it == false) {
+                        setBpoDisabled(true)
+                        setFestivalDisabled(true)
+                        setMarketingDisabled(true)
+                        setDmarketingDisabled(true)
+                      }
+                      if (it == true) {
+                        setBpoDisabled(false)
+                        setFestivalDisabled(false)
+                        setMarketingDisabled(false)
+                        setDmarketingDisabled(false)
+                      }
+                      setIt(!it)
+                    }}
+                  />
+                )}
+                {itDisabled && <Form.Check type="checkbox" disabled />}
+              </ListGroup.Item>
+              <ListGroup.Item
+                as="li"
+                className="d-flex justify-content-between align-items-start"
+              >
+                <div className="ms-2 me-auto">
+                  <div className="fw-bold">Marketing</div>
+                </div>
+                {!marketingDisabled && (
+                  <Form.Check
+                    type="checkbox"
+                    value="Marketing"
+                    onChange={(e) => {
+                      if (marketing == false) {
+                        setBpoDisabled(true)
+                        setItDisabled(true)
+                        setFestivalDisabled(true)
+                        setDmarketingDisabled(true)
+                      }
+                      if (marketing == true) {
+                        setBpoDisabled(false)
+                        setItDisabled(false)
+                        setFestivalDisabled(false)
+                        setDmarketingDisabled(false)
+                      }
+                      setMarketing(!marketing)
+                    }}
+                  />
+                )}
+                {marketingDisabled && <Form.Check type="checkbox" disabled />}
+              </ListGroup.Item>
+              <ListGroup.Item
+                as="li"
+                className="d-flex justify-content-between align-items-start"
+              >
+                <div className="ms-2 me-auto">
+                  <div className="fw-bold">Digital Marketing</div>
+                </div>
+                {!dMarketingDisabled && (
+                  <Form.Check
+                    type="checkbox"
+                    value="Digital Marketing"
+                    onChange={(e) => {
+                      if (dMarketing == false) {
+                        setBpoDisabled(true)
+                        setItDisabled(true)
+                        setMarketingDisabled(true)
+                        setFestivalDisabled(true)
+                      }
+                      if (dMarketing == true) {
+                        setBpoDisabled(false)
+                        setItDisabled(false)
+                        setMarketingDisabled(false)
+                        setFestivalDisabled(false)
+                      }
+                      setDmarketing(!dMarketing)
+                    }}
+                  />
+                )}
+                {dMarketingDisabled && <Form.Check type="checkbox" disabled />}
+              </ListGroup.Item>
+            </ListGroup>
+          </Col>
+        </Row>
+      </div>
     </div>
   )
 }
