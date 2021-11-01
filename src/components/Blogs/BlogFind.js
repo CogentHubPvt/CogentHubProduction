@@ -24,6 +24,8 @@ const useStyles = makeStyles((theme) => ({
     '& img': {
       display: 'flex',
       margin: 'auto',
+      width: '100%',
+      height: 'auto',
     },
   },
   onHoverWhite: {
@@ -43,6 +45,7 @@ const BlogFind = () => {
   const classes = useStyles()
   let { name } = useParams()
   const [currentBlog, setCurrentBlog] = useState({})
+  const [title, setTitle] = useState('')
   const [isLoading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -55,6 +58,7 @@ const BlogFind = () => {
         console.log(response)
         let content = convertFromRaw(JSON.parse(response.data.blog[0].post))
         setCurrentBlog(stateToHTML(content))
+        setTitle(response.data.blog[0].title)
         let blogName = response.data.blog[0].routeName
         let url = '/blogs/' + blogName
         setLoading(false)
@@ -94,6 +98,9 @@ const BlogFind = () => {
                 Go Back To Blogs
               </Button>{' '}
             </div>
+            <h1 style={{ fontWeight: 'bold', marginBottom: '15px' }}>
+              {title}
+            </h1>
             <div
               className={classes.blog}
               dangerouslySetInnerHTML={createMarkup(currentBlog)}

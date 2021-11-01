@@ -14,6 +14,7 @@ import BlogsPage from './components/pages/BlogsPage'
 import PrivacyPolicy from './PrivacyPolicy/PrivacyPolicy'
 import ContactUsPage from './components/pages/ContactUsPage'
 import BlogFind from './components/Blogs/BlogFind'
+import BlogEdit from './components/Blogs/BlogEdit'
 import theme from './Theme/theme'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import content from './ContentJson/content.json'
@@ -199,9 +200,9 @@ function App() {
           <Route path="/blog/:name" exact>
             <BlogFind setCurrentBlog={setCurrentBlog} />
           </Route>
-          {/* <Route path="/blogs/:name" exact>
-            <CurrentBlog currentBlog={currentBlog} />
-          </Route> */}
+          <Route path="/blogs/editBlog" exact>
+            <BlogEdit />
+          </Route>
         </ThemeProvider>
       </Router>
     </div>

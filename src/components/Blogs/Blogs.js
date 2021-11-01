@@ -12,6 +12,7 @@ import AccessTimeIcon from '@material-ui/icons/AccessTime'
 import ClassIcon from '@material-ui/icons/Class'
 import PersonIcon from '@material-ui/icons/Person'
 import GroupWorkIcon from '@material-ui/icons/GroupWork'
+import BlogEdit from './BlogEdit'
 
 const axios = require('axios')
 
@@ -94,6 +95,8 @@ const Blogs = ({ inView, setInView }) => {
   const [marketingDisabled, setMarketingDisabled] = useState(false)
   const [dMarketing, setDmarketing] = useState(false)
   const [dMarketingDisabled, setDmarketingDisabled] = useState(false)
+  const [isEdit, setEdit] = useState(false)
+  const [currentId, setCurrentId] = useState('')
 
   useEffect(async () => {
     axios
@@ -215,52 +218,53 @@ const Blogs = ({ inView, setInView }) => {
   return (
     <div className={classes.container}>
       <div>
-        <Row>
-          <Col md={8}>
-            {loading && (
-              <div className={classes.loading}>
-                <Spinner animation="border" role="status">
-                  <span className="visually-hidden">Loading...</span>
-                </Spinner>
-              </div>
-            )}
-            {!loading &&
-              blogs.map((blog) => {
-                return (
-                  <div>
-                    <Card className={classes.blogs}>
-                      <Card.Img
-                        src={blog.image}
-                        className={classes.thumbnail}
-                      />
-                      <Card.Body>
-                        <Card.Title
-                          style={{ fontWeight: 'bold', fontSize: '24px' }}
-                        >
-                          {blog.title}
-                        </Card.Title>
-                        <Card.Text>{blog.introduction}</Card.Text>
-                      </Card.Body>
-                      <Card.Footer>
-                        <small
-                          className="text-muted"
-                          className={classes.author}
-                        >
-                          <PersonIcon className={classes.footerIcon} />
-                          <span style={{ paddingTop: '10px' }}>
-                            {blog.author}
-                          </span>
-                        </small>
-                        <small
-                          className="text-muted"
-                          className={classes.author}
-                        >
-                          <ClassIcon className={classes.footerIcon} />
-                          <span style={{ paddingTop: '10px' }}>
-                            {blog.category}
-                          </span>
-                        </small>
-                        {/* <small
+        {!isEdit && (
+          <Row>
+            <Col md={8}>
+              {loading && (
+                <div className={classes.loading}>
+                  <Spinner animation="border" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                  </Spinner>
+                </div>
+              )}
+              {!loading &&
+                blogs.map((blog) => {
+                  return (
+                    <div>
+                      <Card className={classes.blogs}>
+                        <Card.Img
+                          src={blog.image}
+                          className={classes.thumbnail}
+                        />
+                        <Card.Body>
+                          <Card.Title
+                            style={{ fontWeight: 'bold', fontSize: '24px' }}
+                          >
+                            {blog.title}
+                          </Card.Title>
+                          <Card.Text>{blog.introduction}</Card.Text>
+                        </Card.Body>
+                        <Card.Footer>
+                          <small
+                            className="text-muted"
+                            className={classes.author}
+                          >
+                            <PersonIcon className={classes.footerIcon} />
+                            <span style={{ paddingTop: '10px' }}>
+                              {blog.author}
+                            </span>
+                          </small>
+                          <small
+                            className="text-muted"
+                            className={classes.author}
+                          >
+                            <ClassIcon className={classes.footerIcon} />
+                            <span style={{ paddingTop: '10px' }}>
+                              {blog.category}
+                            </span>
+                          </small>
+                          {/* <small
                           className="text-muted"
                           className={classes.author}
                         >
@@ -269,208 +273,217 @@ const Blogs = ({ inView, setInView }) => {
                             {blog.tags}
                           </span>
                         </small> */}
-                        <small
-                          className="text-muted"
-                          className={classes.author}
-                        >
-                          <AccessTimeIcon className={classes.footerIcon} />
-                          <span style={{ paddingTop: '10px' }}>
-                            {blog.date}
-                          </span>
-                        </small>
-                        <Button
-                          variant="outline-warning"
-                          className={classes.onHoverWhite}
-                          style={{ float: 'right' }}
-                          onClick={() => {
-                            showBlog(blog.routeName)
-                          }}
-                        >
-                          Read More
-                        </Button>{' '}
-                        {isAdmin && (
+                          <small
+                            className="text-muted"
+                            className={classes.author}
+                          >
+                            <AccessTimeIcon className={classes.footerIcon} />
+                            <span style={{ paddingTop: '10px' }}>
+                              {blog.date}
+                            </span>
+                          </small>
                           <Button
-                            variant="outline-danger"
-                            style={{ float: 'right', marginRight: '1rem' }}
+                            variant="outline-warning"
+                            className={classes.onHoverWhite}
+                            style={{ float: 'right' }}
                             onClick={() => {
-                              deleteBlog(blog._id)
+                              showBlog(blog.routeName)
                             }}
                           >
-                            Delete
-                          </Button>
-                        )}
-                        {isAdmin && (
-                          <Button
-                            variant="outline-primary"
-                            style={{ float: 'right', marginRight: '1rem' }}
-                            onClick={() => {
-                              console.log('Edit')
-                            }}
-                          >
-                            Edit
-                          </Button>
-                        )}
-                      </Card.Footer>
-                    </Card>
+                            Read More
+                          </Button>{' '}
+                          {isAdmin && (
+                            <Button
+                              variant="outline-danger"
+                              style={{ float: 'right', marginRight: '1rem' }}
+                              onClick={() => {
+                                deleteBlog(blog._id)
+                              }}
+                            >
+                              Delete
+                            </Button>
+                          )}
+                          {isAdmin && (
+                            <Button
+                              variant="outline-primary"
+                              style={{ float: 'right', marginRight: '1rem' }}
+                              onClick={() => {
+                                setEdit(true)
+                                setCurrentId(blog._id)
+                              }}
+                            >
+                              Edit
+                            </Button>
+                          )}
+                        </Card.Footer>
+                      </Card>
+                    </div>
+                  )
+                })}
+            </Col>
+            <Col md={4}>
+              <ListGroup as="ol" numbered className={classes.categories}>
+                <ListGroup.Item
+                  as="li"
+                  className="d-flex justify-content-between align-items-start"
+                >
+                  <div className="ms-2 me-auto">
+                    <div className="fw-bold">Festival</div>
                   </div>
-                )
-              })}
-          </Col>
-          <Col md={4}>
-            <ListGroup as="ol" numbered className={classes.categories}>
-              <ListGroup.Item
-                as="li"
-                className="d-flex justify-content-between align-items-start"
-              >
-                <div className="ms-2 me-auto">
-                  <div className="fw-bold">Festival</div>
-                </div>
-                {!festivalDisabled && (
-                  <Form.Check
-                    type="checkbox"
-                    value="Festival"
-                    onChange={(e) => {
-                      if (festival == false) {
-                        setBpoDisabled(true)
-                        setItDisabled(true)
-                        setMarketingDisabled(true)
-                        setDmarketingDisabled(true)
-                      }
-                      if (festival == true) {
-                        setBpoDisabled(false)
-                        setItDisabled(false)
-                        setMarketingDisabled(false)
-                        setDmarketingDisabled(false)
-                      }
-                      setFestival(!festival)
-                    }}
-                  />
-                )}
-                {festivalDisabled && <Form.Check type="checkbox" disabled />}
-              </ListGroup.Item>
-              <ListGroup.Item
-                as="li"
-                className="d-flex justify-content-between align-items-start"
-              >
-                <div className="ms-2 me-auto">
-                  <div className="fw-bold">BPO</div>
-                </div>
-                {!bpoDisabled && (
-                  <Form.Check
-                    type="checkbox"
-                    value="BPO"
-                    onChange={(e) => {
-                      if (bpo == false) {
-                        setFestivalDisabled(true)
-                        setItDisabled(true)
-                        setMarketingDisabled(true)
-                        setDmarketingDisabled(true)
-                      }
-                      if (bpo == true) {
-                        setFestivalDisabled(false)
-                        setItDisabled(false)
-                        setMarketingDisabled(false)
-                        setDmarketingDisabled(false)
-                      }
-                      setBpo(!bpo)
-                    }}
-                  />
-                )}
-                {bpoDisabled && <Form.Check type="checkbox" disabled />}
-              </ListGroup.Item>
-              <ListGroup.Item
-                as="li"
-                className="d-flex justify-content-between align-items-start"
-              >
-                <div className="ms-2 me-auto">
-                  <div className="fw-bold">IT</div>
-                </div>
-                {!itDisabled && (
-                  <Form.Check
-                    type="checkbox"
-                    value="IT"
-                    onChange={(e) => {
-                      if (it == false) {
-                        setBpoDisabled(true)
-                        setFestivalDisabled(true)
-                        setMarketingDisabled(true)
-                        setDmarketingDisabled(true)
-                      }
-                      if (it == true) {
-                        setBpoDisabled(false)
-                        setFestivalDisabled(false)
-                        setMarketingDisabled(false)
-                        setDmarketingDisabled(false)
-                      }
-                      setIt(!it)
-                    }}
-                  />
-                )}
-                {itDisabled && <Form.Check type="checkbox" disabled />}
-              </ListGroup.Item>
-              <ListGroup.Item
-                as="li"
-                className="d-flex justify-content-between align-items-start"
-              >
-                <div className="ms-2 me-auto">
-                  <div className="fw-bold">Marketing</div>
-                </div>
-                {!marketingDisabled && (
-                  <Form.Check
-                    type="checkbox"
-                    value="Marketing"
-                    onChange={(e) => {
-                      if (marketing == false) {
-                        setBpoDisabled(true)
-                        setItDisabled(true)
-                        setFestivalDisabled(true)
-                        setDmarketingDisabled(true)
-                      }
-                      if (marketing == true) {
-                        setBpoDisabled(false)
-                        setItDisabled(false)
-                        setFestivalDisabled(false)
-                        setDmarketingDisabled(false)
-                      }
-                      setMarketing(!marketing)
-                    }}
-                  />
-                )}
-                {marketingDisabled && <Form.Check type="checkbox" disabled />}
-              </ListGroup.Item>
-              <ListGroup.Item
-                as="li"
-                className="d-flex justify-content-between align-items-start"
-              >
-                <div className="ms-2 me-auto">
-                  <div className="fw-bold">Digital Marketing</div>
-                </div>
-                {!dMarketingDisabled && (
-                  <Form.Check
-                    type="checkbox"
-                    value="Digital Marketing"
-                    onChange={(e) => {
-                      if (dMarketing == false) {
-                        setBpoDisabled(true)
-                        setItDisabled(true)
-                        setMarketingDisabled(true)
-                        setFestivalDisabled(true)
-                      }
-                      if (dMarketing == true) {
-                        setBpoDisabled(false)
-                        setItDisabled(false)
-                        setMarketingDisabled(false)
-                        setFestivalDisabled(false)
-                      }
-                      setDmarketing(!dMarketing)
-                    }}
-                  />
-                )}
-                {dMarketingDisabled && <Form.Check type="checkbox" disabled />}
-              </ListGroup.Item>
-            </ListGroup>
-          </Col>
-        </Row>
+                  {!festivalDisabled && (
+                    <Form.Check
+                      type="checkbox"
+                      value="Festival"
+                      onChange={(e) => {
+                        if (festival == false) {
+                          setBpoDisabled(true)
+                          setItDisabled(true)
+                          setMarketingDisabled(true)
+                          setDmarketingDisabled(true)
+                        }
+                        if (festival == true) {
+                          setBpoDisabled(false)
+                          setItDisabled(false)
+                          setMarketingDisabled(false)
+                          setDmarketingDisabled(false)
+                        }
+                        setFestival(!festival)
+                      }}
+                    />
+                  )}
+                  {festivalDisabled && <Form.Check type="checkbox" disabled />}
+                </ListGroup.Item>
+                <ListGroup.Item
+                  as="li"
+                  className="d-flex justify-content-between align-items-start"
+                >
+                  <div className="ms-2 me-auto">
+                    <div className="fw-bold">BPO</div>
+                  </div>
+                  {!bpoDisabled && (
+                    <Form.Check
+                      type="checkbox"
+                      value="BPO"
+                      onChange={(e) => {
+                        if (bpo == false) {
+                          setFestivalDisabled(true)
+                          setItDisabled(true)
+                          setMarketingDisabled(true)
+                          setDmarketingDisabled(true)
+                        }
+                        if (bpo == true) {
+                          setFestivalDisabled(false)
+                          setItDisabled(false)
+                          setMarketingDisabled(false)
+                          setDmarketingDisabled(false)
+                        }
+                        setBpo(!bpo)
+                      }}
+                    />
+                  )}
+                  {bpoDisabled && <Form.Check type="checkbox" disabled />}
+                </ListGroup.Item>
+                <ListGroup.Item
+                  as="li"
+                  className="d-flex justify-content-between align-items-start"
+                >
+                  <div className="ms-2 me-auto">
+                    <div className="fw-bold">IT</div>
+                  </div>
+                  {!itDisabled && (
+                    <Form.Check
+                      type="checkbox"
+                      value="IT"
+                      onChange={(e) => {
+                        if (it == false) {
+                          setBpoDisabled(true)
+                          setFestivalDisabled(true)
+                          setMarketingDisabled(true)
+                          setDmarketingDisabled(true)
+                        }
+                        if (it == true) {
+                          setBpoDisabled(false)
+                          setFestivalDisabled(false)
+                          setMarketingDisabled(false)
+                          setDmarketingDisabled(false)
+                        }
+                        setIt(!it)
+                      }}
+                    />
+                  )}
+                  {itDisabled && <Form.Check type="checkbox" disabled />}
+                </ListGroup.Item>
+                <ListGroup.Item
+                  as="li"
+                  className="d-flex justify-content-between align-items-start"
+                >
+                  <div className="ms-2 me-auto">
+                    <div className="fw-bold">Marketing</div>
+                  </div>
+                  {!marketingDisabled && (
+                    <Form.Check
+                      type="checkbox"
+                      value="Marketing"
+                      onChange={(e) => {
+                        if (marketing == false) {
+                          setBpoDisabled(true)
+                          setItDisabled(true)
+                          setFestivalDisabled(true)
+                          setDmarketingDisabled(true)
+                        }
+                        if (marketing == true) {
+                          setBpoDisabled(false)
+                          setItDisabled(false)
+                          setFestivalDisabled(false)
+                          setDmarketingDisabled(false)
+                        }
+                        setMarketing(!marketing)
+                      }}
+                    />
+                  )}
+                  {marketingDisabled && <Form.Check type="checkbox" disabled />}
+                </ListGroup.Item>
+                <ListGroup.Item
+                  as="li"
+                  className="d-flex justify-content-between align-items-start"
+                >
+                  <div className="ms-2 me-auto">
+                    <div className="fw-bold">Digital Marketing</div>
+                  </div>
+                  {!dMarketingDisabled && (
+                    <Form.Check
+                      type="checkbox"
+                      value="Digital Marketing"
+                      onChange={(e) => {
+                        if (dMarketing == false) {
+                          setBpoDisabled(true)
+                          setItDisabled(true)
+                          setMarketingDisabled(true)
+                          setFestivalDisabled(true)
+                        }
+                        if (dMarketing == true) {
+                          setBpoDisabled(false)
+                          setItDisabled(false)
+                          setMarketingDisabled(false)
+                          setFestivalDisabled(false)
+                        }
+                        setDmarketing(!dMarketing)
+                      }}
+                    />
+                  )}
+                  {dMarketingDisabled && (
+                    <Form.Check type="checkbox" disabled />
+                  )}
+                </ListGroup.Item>
+              </ListGroup>
+            </Col>
+          </Row>
+        )}
+        {isEdit && (
+          <div>
+            <BlogEdit blogId={currentId} />
+          </div>
+        )}
       </div>
     </div>
   )
