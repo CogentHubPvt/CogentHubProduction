@@ -423,7 +423,7 @@ const HeaderTemp = ({ setIsHeader, isHeader }) => {
             <Offcanvas.Header closeButton style={{ paddingBottom: '0' }}>
               <Offcanvas.Title className={classes.sideBarTitle}>
                 <a href="/">
-                  <img src="https://www.cogenthub.com/img/logo.svg" />
+                  <img src="/cogentLogo.jpg" />
                 </a>
               </Offcanvas.Title>
             </Offcanvas.Header>
